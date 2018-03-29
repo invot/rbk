@@ -1,0 +1,61 @@
+@{
+    string menuClass(int id){
+         if (@ViewBag.id == id) {
+            return "nav-link active";
+        } else {
+            return "nav-link";
+        }
+    }
+
+    string collapseClass(int id){
+        if(@ViewBag.id >= 4 && @ViewBag.id <= 15 ) {
+            return "collapse show";
+        } else {
+            return "collapse";
+        }
+    } 
+}
+
+<div id="sidebar">
+
+    <div class="p-2 logo-holder">
+        <a href="/Index" class="navbar-brand"><img src="/img/logo-w.png" height="34" /></a>
+    </div>
+
+    <!-- <p>
+        @ViewBag.id
+    </p> -->
+
+    <!-- <h4>Contents</h4> -->
+    <ul class="nav flex-column p-4">
+        <li class="nav-item"><a class="@menuClass(1)" href="/Basics">Basic Principles</a></li>
+        <li class="nav-item"><a class="@menuClass(2)" href="/Environments">Supported Environments</a></li>
+        <li class="nav-item"><a class="@menuClass(3)" href="/Accessibility">Accessibility</a></li>
+        <li class="nav-item">
+            <a class="nav-link" href="#componentsList" data-toggle="collapse" aria-expanded="false" aria-controls="componentsList">
+            Components &nbsp; <i class="fas fa-caret-down"></i>
+            </a>
+            <div class="@collapseClass(@ViewBag.id)" id="componentsList">
+            <ul class="nav sub-nav flex-column">
+                <li class="nav-item"><a class="@menuClass(4)" href="/comps/Typography">Typography</a></li>
+                <li class="nav-item"><a class="@menuClass(5)" href="/comps/Links">Links &amp; Buttons</a></li>
+                <li class="nav-item"><a class="@menuClass(6)" href="/comps/Containers">Containers</a></li>
+                <li class="nav-item"><a class="@menuClass(7)" href="/comps/Menus">Menus &amp; Navigation</a></li>
+                <li class="nav-item"><a class="@menuClass(8)" href="/comps/Lists">Lists &amp; Tables</a></li>
+                <li class="nav-item"><a class="@menuClass(9)" href="/comps/Alerts">Alerts &amp; Notifications</a></li>
+                <li class="nav-item"><a class="@menuClass(10)" href="/comps/Status">Status Indicators</a></li>
+                <li class="nav-item"><a class="@menuClass(11)" href="/comps/Tabs">Tabs &amp; Accordions</a></li>
+                <li class="nav-item"><a class="@menuClass(12)" href="/comps/Forms">Forms &amp; Inputs</a></li>
+                <li class="nav-item"><a class="@menuClass(13)" href="/comps/Adv">Advanced Inputs</a></li>
+                <li class="nav-item"><a class="@menuClass(14)" href="/comps/Modals">Modals</a></li>
+                <li class="nav-item"><a class="@menuClass(15)" href="/comps/Maps">Maps</a></li>
+            </ul>
+            </div>
+        </li>
+        <li class="nav-item"><a class="@menuClass(16)" href="/Utilities">Utilities</a></li>
+        <li class="nav-item"><a class="@menuClass(17)" href="/Icons">Icons</a></li>
+        <li class="nav-item"><a class="@menuClass(18)" href="/Animation">Animation</a></li>
+        <li class="nav-item"><a class="@menuClass(19)" href="/Resources">Resources</a></li>
+    </ul>
+
+</div>

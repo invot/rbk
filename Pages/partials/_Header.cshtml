@@ -1,0 +1,37 @@
+<nav class="navbar">
+
+      <a asp-page="/Index" class="navbar-brand"><img src="./img/logo-color.png" height="40" /></a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a asp-page="/Index" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a asp-page="/About" class="nav-link" >About</a>
+            </li>
+            <li class="nav-item">
+                <a asp-page="/Contact" class="nav-link">Contact</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a asp-page="/Contact" class="nav-link disabled">Contact (disabled)</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a asp-page="/Index" class="dropdown-item" >Home</a>
+                    <a asp-page="/About" class="dropdown-item" >About</a>
+                    <a asp-page="/Contact" class="dropdown-item" >Contact</a>
+                </div>
+            </li> -->
+            <li class="nav-item">
+                <a href="#" class="nav-link">You're here: @ViewData["Title"]</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>WiKids | @ViewData["Title"]</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" href="~/apple-touch-icon.png">
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="~/css/main.css" />
+
+</head>
+<body class="bg-grey">
+    @{  
+        // <header id="mainHead" class="bg-light">
+        // @Html.Partial("./partials/_Header")
+        // </header> 
+    }
+    <div id="content" class="content">
+        <aside id="mainSide" class="bg-primary">
+            @Html.Partial("./partials/_Sidebar")
+        </aside>
+        <main id="main" class="mt-4">
+            @RenderBody()
+            <footer id="fmain">
+                @Html.Partial("./partials/_Footer")
+            </footer>
+        </main> 
+    </div>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+</body>
+</html>

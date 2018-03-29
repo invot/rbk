@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Guidelines";
+    var pg = ViewBag;
+        pg.title = "Guidelines";
+        pg.id = 0;
+        pg.parent = null;
+        pg.hasSidebar = true;
+        pg.type = "default";
+}
+
+<section class="introduction">
+    <div class="wrapper">
+
+        <blockquote class="jumbotron">
+            <h1>User Interface Design Kit</h1>
+            <p class="lead">This design kit includes the resources to create user interfaces consistent with DCF's design principles, language, and best practices. Rather than focusing on pixels, developers can focus on application logic, while designers can focus on user experience, interactions, and flows.</p>
+            <p>These patterns and components provide a unified language and consistent look and feel when designing apps and products within the DCF ecosystem.</p>
+        </blockquote>
+
+        <p>The DCF UI Kit is built off of <a href="https://getbootstrap.com/" target="_blank">Bootstrap 4</a>, a powerful frontend framework known for being cross-compatable with all major browsers and rich in features. It's only dependency is <a href="https://jquery.com/" target="_blank">jQuery</a>. Both of these tools are vastly popular and well-documented.</p>
+
+        <p>Other javascript plugins were used to allow for advanced input controls or animations. Information about these libraries can be found under <a href="/Resources">resources</a>.</p>
+
+        <div class="row mt-4">
+            <div class="col-6">
+                
+                <ol class="list-group small">
+                    <li class="list-group-item list-group-item-light"><h4>Resources For Developers:</h4></li>
+                    <li class="list-group-item">Helpful code snippets writen in both plain HTML and Razor syntax</li>
+                    <li class="list-group-item">Components that are pre-styled and elegant out-of-the-box</li>
+                    <li class="list-group-item">Code that plays nicely with other libraries</li>
+                </ol>   
+            </div>
+            <div class="col-6">
+                <ol class="list-group small">
+                    <li class="list-group-item list-group-item-light"><h4>Resources For Designers:</h4></li>
+                    <li class="list-group-item">Componets based off of Bootstrap 4 frontend framework</li>
+                    <li class="list-group-item">Clear explanations of design principles</li>
+                    <li class="list-group-item">Easy templating with .jade/.pug mixins</li>
+                </ol>   
+            </div>
+        </div>
+
+
+    </div>
+</section>

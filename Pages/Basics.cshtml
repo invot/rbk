@@ -1,0 +1,70 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Basics";
+    var pg = ViewBag;
+        pg.title = "Basics";
+        pg.id = 1;
+        pg.parent = null;
+        pg.hasSidebar = true;
+        pg.type = "default";
+}
+
+<section class="introduction">
+    <div class="wrapper">
+
+        <blockquote class="jumbotron">
+            <h1>The Basics</h1>
+            <p class="lead">It's important to keep these core principles in mind while making design decisions.</p>
+            <p>These patterns and components provide a unified language and consistent look and feel when designing apps and products within the DCF ecosystem.</p>
+        </blockquote>
+
+        <div class="row no-gutters">
+            <div class="col-6">
+                <div class="card m-2">
+                    <div class="card-header">
+                        CLARITY
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Eliminate ambiguity. Enable people to see, understand, and act with confidence.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card m-2">
+                    <div class="card-header">
+                        EFFICIENCY
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Streamline and optimize workflows. Intelligently anticipate needs to help people work better, smarter, and faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters">  
+            <div class="col-6">
+                <div class="card m-2">
+                    <div class="card-header">
+                        CONSISTENCY
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Create familiarity and strengthen intuition by applying the same solution to the same problem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card m-2">
+                    <div class="card-header">
+                        BEAUTY
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Demonstrate respect for people's time and attention through thoughtful and elegant craftsmanship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
