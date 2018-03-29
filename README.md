@@ -1,8 +1,8 @@
 # Bootstrap 4 Razor Pages
 
-Using new Dotnet Core 2 Razor pages with Bootstrap 4
+### Using new Dotnet Core 2 Razor pages with Bootstrap 4
 
-![image](https://cloud.githubusercontent.com/assets/14539/26036748/fa4dddfc-38e3-11e7-9246-2d2a8077b3b2.png)
+This project is intended for DCF staff only. The files can be ran locally on any machine with .NET SDK installed. 
 
 ## Features
 
@@ -28,6 +28,12 @@ To run website:
 
 ```bash
 dotnet run
+```
+
+To compile SASS:
+
+```bash
+gulp
 ```
 
 ## Author
