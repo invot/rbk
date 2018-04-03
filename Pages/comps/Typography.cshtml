@@ -13,11 +13,211 @@
 <section class="introduction">
     <div class="wrapper">
 
-        <blockquote class="jumbotron">
-            <h1>Typography</h1>
-            <!-- <p class="lead"></p>
-            <p></p> -->
-        </blockquote>
+        <div class="jumbotron">
+            <h1 class="display-4">Typography</h1>
+
+            <p class="lead">The most important part of a user interface is the text. Words inform. Words instruct. Words are the first line of defense between a well-informed and happy user versus a confused and angry user.  The way in which an application speaks to a user should be at the front of every designer's and developer's mind. </p>
+
+            <hr />
+            <p>Bootstrap sets basic global display, typography, and link styles. When more control is needed, check out the <a href="https://getbootstrap.com/docs/4.0/utilities/text/" target="_blank">textual utility classes</a>.</p>
+            <p><a href="https://getbootstrap.com/docs/4.0/content/typography/" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> &nbsp; Bootstrap Documentation</a></p>
+        </div>
+
+        <div class="p-4 mb-4">
+            <h2>Writing for Web Applications</h2>
+
+            <p>Eyetracking research shows that people scan text in various patterns; The most common being the "F" pattern<sup>[1]</sup>. Forming a literal "F" shape, this pattern can also be synonymous with "fast."  That's how users prefer to read content. </p>
+
+            <p><b>Besides the first few sentences, it is unlikely for a user to read a paragraph of text with their full attention</b>. These chances only diminish as they scroll further down the page.</p> 
+
+            <p>This is why text must be concise in a web application. Anything longer than two sentences will likely cause the user's attention to stray. </p>
+
+            <hr />
+
+            <p class="small text-muted">[1: <a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/" target="_blank">nngroup.com</a>] Users first read in a <b>horizontal movement</b>, usually across the upper part of the content area. This initial element forms the F's top bar. Next, users move a little ways down the page and read a few words across in a <b>second horizontal movement</b>. This action forms the F's lower bar.  Finally, users perform a brisk scan down the content's left side in a <b>vertical movement</b>. This action forms the F's stem.</p>
+
+            <hr />
+
+            <p>The typical page in an application focuses on either collecting or reporting information. People do not sign in to an application eager to read paragraphs of technical or instructional information. Once a user has grown accustomed to an application, they will likely never read the text again. This is why the interface should center around the information it is presenting or asking for. Text fills up the tiny places around those elements, explaining what they are and how they will respond to changes. Text should never get in the way. An application's usability can skyrocket when adhering to a few simple writing habits:</p>
+
+            <ol>
+                <li><b>Let the Design do the Talking</b></li>
+                <p>As often as possible, "show, don't tell."  A self-explanatory interface outperforms one that is not. Rely on design patterns to explain the functionality and context of an element or page. Explanatory text should be used only in special cases.</p>
+
+                <li><b>Chunk Content</b></li>
+                <p>Chunking makes content more scannable by breaking it into manageable sections. It's much less likely for a user to feel overwhelmed when paragrahs are broken up into parts.</p>
+
+                <li><b>Use Simple and Concise Sentences</b></li>
+                <p>Start content with the most important piece of information so readers can get the main point, regardless of how much they read. The ideal standard is no more than 20 words per sentence, five sentences per paragraph. Use dashes instead of semi-colons, or break the sentence into two.</p>
+
+                <li><b>Maintain a Reasonable Reading Level</b></li>
+                <p>Beyond avoiding complex sentences, complex words or phrases can impede a user's workflow. Consider the possibility of a user knowing english as a second language. Or if they lack a high-school education. Maintaining a lower reading level provides access to a larger audience of users and often results in a higher quality of writing.</p>
+
+                <li><b>Use Active Voice</b></li>
+                <p>In a sentence written in the active voice, the subject of sentence performs the action. In a sentence written in the passive voice the subject receives the action. Passive voice sentences often use more words, can be vague, and can lead to a tangle of prepositional phrases. Active voice ensure credit is given for every action, providing enough information to explain a problem and how to fix it.</p>
+
+                <li><b>Avoid Using Adverbs</b></li>
+                <p>Like dandelions, the use of one adverb can often multiply into many. Adverbs are used to modify a verb, often end in "-ly", and can quickly clutter a piece of writing when left unchecked. Instead of "very hot," consider only saying "hot," or using a more percise word like "scorching."</p>
+                
+            </ol>
+
+        </div>
+
+        <div class="jumbotron mb-4">
+
+            <div class="row">
+            <div class="col-lg-4">
+                <div class="bs-component">
+                <h3>Headings</h3>
+                <hr />
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+                <h3>
+                    Heading
+                    <small class="text-muted">with muted text</small>
+                </h3>
+                <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bs-component">
+                <h3>Example body text</h3>
+                <hr />
+                <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+                <p><small>This line of text is meant to be treated as fine print.</small></p>
+                <p>The following is <strong>rendered as bold text</strong>.</p>
+                <p>The following is <em>rendered as italicized text</em>.</p>
+                <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="bs-component">
+                <h3>Emphasis classes</h3>
+                <hr />
+                <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+                <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+                <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+                <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                <p class="text-secondary">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                </div>
+
+            </div>
+            </div>
+
+            <!-- Blockquotes -->
+
+            <div class="row">
+            <div class="col-lg-12">
+                <h3>Blockquotes</h3>
+                <hr />
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-4">
+                <div class="bs-component">
+                <blockquote class="blockquote">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bs-component">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bs-component">
+                <blockquote class="blockquote text-right">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                </blockquote>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="bg-white p-4 mb-4">
+
+            <h3>Headings</h3>
+
+            <p>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.</p>
+
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col" style="width:15%">Heading</th>
+                <th scope="col">Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>
+                    <p><code>&lt;h1&gt;&lt;/h1&gt;</code></p>
+
+                </td>
+                <td><h1>Page Header</h1>
+                    <p class="text-secondary">Every page or view in an web application should include this tag <u>only once</u> and only to display the title of the page.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p><code>&lt;h2&gt;&lt;/h2&gt;</code></p>
+
+                </td>
+                <td><h2>Section Header</h2>
+                    <p class="text-secondary">For pages that need to be broken down into sections, label each with this tag.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p><code>&lt;h3&gt;&lt;/h3&gt;</code></p>
+
+                </td>
+                <td><span class="h3">Sub-Section Header</span><br />
+                    <p class="text-secondary">For sections that need to be further borken down. Never use these outside of a section not labled with an Section Heading.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p><code>&lt;h4&gt;&lt;/h4&gt;</code></p>
+
+                </td>
+                <td><h4>Component Header</h4>
+                    <p class="text-secondary">For components that can be used throughout the application. Use only once per component to display its title.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p><code>&lt;h5&gt;&lt;/h5&gt;</code></p>
+
+                </td>
+                <td><span class="h5">Component Subheader</span><br />
+                    <p class="text-secondary">For components that need to be broken down into sections, label each with this tag.</p>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <p><code>&lt;h6&gt;&lt;/h6&gt;</code></p>
+
+                </td>
+                <td><span class="h6">Mini-Header</span><br />
+                    <p class="text-secondary">For any case not covered above, use this tag.</p>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+
+        </div>
 
     </div>
 </section>

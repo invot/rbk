@@ -1,26 +1,27 @@
+@import "bootstrap/functions";
+
 $theme-colors: (
-  "primary":    #353B48,
-  "secondary":  #3193D1,
+  "primary":    #445566,
+  "secondary":  #6c8694,
   "success":    #469d6f,
-  "info":       #3972b8,
+  "info":       #4f92b3,
   "warning":    #c48d37,
-  "danger":     #f44336,
+  "danger":     #f54343,
   "light":      #8d9dad,
   "dark":       #2c3a4c,
-  "grey":       #e9ecef   
+  "grey":       #e9ecef
 );
 
 $font-family-sans-serif: 'Open Sans',sans-serif;
-$headings-font-family:   'Libre Baskerville',sans-serif;
-// $headings-font-family: $font-family-sans-serif;
+$headings-font-family:   'Barlow Semi Condensed', sans-serif;
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
-$h1-font-size:                $font-size-base * 1.8 !default;
-$h2-font-size:                $font-size-base * 1.6 !default;
-$h3-font-size:                $font-size-base * 1.4 !default;
-$h4-font-size:                $font-size-base * 1.2 !default;
-$h5-font-size:                $font-size-base * 1.1 !default;
-$h6-font-size:                $font-size-base !default;
+$h1-font-size:                $font-size-base * 2.2 !default;
+$h2-font-size:                $font-size-base * 2.0 !default;
+$h3-font-size:                $font-size-base * 1.8 !default;
+$h4-font-size:                $font-size-base * 1.6 !default;
+$h5-font-size:                $font-size-base * 1.4 !default;
+$h6-font-size:                $font-size-base * 1.2 !default;
 
 
 $btn-border-width:            0 !default;
@@ -38,24 +39,43 @@ a:hover, .btn:hover, label:before, label:after {
   cursor: pointer;
 }
 
-
 button:not(.btn-link), .btn:not(.btn-link) {
   box-shadow:inset 0 -2px 0 0 rgba(0,0,0,.2), 1px 1px 2px rgba(0,0,0,.1);
 }
 
-.jumbotron, .list-group {
-  box-shadow:2px 2px 4px rgba(0,0,0,.2);
-  color: #456;
+.btn-group-vertical>.btn-group:not(:last-child)>.btn, .btn-group-vertical>.btn:not(:last-child):not(.dropdown-toggle) {
+    box-shadow: 1px 1px 2px rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.1);
 }
 
+.btn-group>.btn-group:not(:last-child)>.btn, .btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-right:1px solid rgba(0,0,0,.1);
+}
+
+@each $color, $value in $theme-colors {
+    .btn-outline-#{$color} {
+        border-width: 1px !important;
+        border-color:rgba(0,0,0,.1) !important;
+        box-shadow:1px 1px 2px rgba(0,0,0,.1)!important;
+    }
+}
+
+.jumbotron, .list-group {
+  box-shadow:2px 2px 4px rgba(0,0,0,.2);
+}
+
+.jumbotron {
+    padding: 2rem !important;
+  }
+
 $jumbotron-bg:                         #fafafa;
-$list-group-bg:                        #fafafa;
-$list-group-hover-bg:               rgba(255,255,255,.8) !default;
-$list-group-active-bg:              rgba(255,255,255,.8) !default;
-$list-group-disabled-bg:            rgba(255,255,255,.4) !default;
-$list-group-action-active-bg:       rgba(255,255,255,.8) !default;
+// $list-group-bg:                        #fafafa;
+// $list-group-hover-bg:               rgba(255,255,255,.8) !default;
+// $list-group-active-bg:              rgba(255,255,255,.8) !default;
+// $list-group-disabled-bg:            rgba(255,255,255,.4) !default;
+// $list-group-action-active-bg:       rgba(255,255,255,.8) !default;
 $list-group-border-width:           0px !default;
 
-$link-color:                theme-color("light") !default;
+$link-color:                theme-color("info") !default;
 $link-decoration:           none !default;
 $link-hover-decoration:     underline !default;
