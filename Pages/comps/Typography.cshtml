@@ -23,7 +23,7 @@
             <p><a href="https://getbootstrap.com/docs/4.0/content/typography/" class="btn btn-primary" target="_blank"><i class="fas fa-external-link-alt"></i> &nbsp; Bootstrap Documentation</a></p>
         </div>
 
-        <div class="p-4 mb-4">
+        <div class="mb-4">
             <h2>Writing for Web Applications</h2>
 
             <p>Eyetracking research shows that people scan text in various patterns; The most common being the "F" pattern<sup>[1]</sup>. Forming a literal "F" shape, this pattern can also be synonymous with "fast."  That's how users prefer to read content. </p>
@@ -54,7 +54,7 @@
                 <p>Beyond avoiding complex sentences, complex words or phrases can impede a user's workflow. Consider the possibility of a user knowing english as a second language. Or if they lack a high-school education. Maintaining a lower reading level provides access to a larger audience of users and often results in a higher quality of writing.</p>
 
                 <li><b>Use Active Voice</b></li>
-                <p>In a sentence written in the active voice, the subject of sentence performs the action. In a sentence written in the passive voice the subject receives the action. Passive voice sentences often use more words, can be vague, and can lead to a tangle of prepositional phrases. Active voice ensure credit is given for every action, providing enough information to explain a problem and how to fix it.</p>
+                <p>In a sentence written in the active voice, the subject of the sentence performs the action. In a sentence written in the passive voice the subject receives the action. Passive voice sentences often use more words, can be vague, and can lead to a tangle of prepositional phrases. Active voice ensure credit is given for every action, providing enough information to explain a problem and how to fix it.</p>
 
                 <li><b>Avoid Using Adverbs</b></li>
                 <p>Like dandelions, the use of one adverb can often multiply into many. Adverbs are used to modify a verb, often end in "-ly", and can quickly clutter a piece of writing when left unchecked. Instead of "very hot," consider only saying "hot," or using a more percise word like "scorching."</p>
@@ -146,7 +146,7 @@
             </div>
         </div>
 
-        <div class="bg-white p-4 mb-4">
+        <div class="mb-4">
 
             <h3>Headings</h3>
 
@@ -216,6 +216,190 @@
                 </tr>
             </tbody>
             </table>
+
+            <div class="mb-2">
+                <p>Headings can be <a href="https://getbootstrap.com/docs/4.0/content/typography/#customizing-headings" target="_blank">customized</a> using Bootstrap classes. However, ensure headings are modified sparingly.  
+            </div>
+
+        </div>
+
+        <div class="mb-4">
+
+            <h3>Typographical Elements</h3>
+
+            <p>Styling and code references for <a href="https://getbootstrap.com/docs/4.0/content/typography/#inline-text-elements" target="_blank">common inline HTML5 elements</a>.</p>
+
+            <div class="row border-top">
+                <div class="col-6">
+                    <p>You can use the mark tag to <code>&lt;mark&gt;</code>highlight<code>&lt;/mark&gt;</code> text.</p>
+                </div>    
+                <div class="col-6">
+                    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;del&gt;</code>This line of text is meant to be treated as deleted text.<code>&lt;/del&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                    <span class="small text-muted">*Proper display of this feature is not supported in IE/Edge</span>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;s&gt;</code>This line of text is meant to be treated as no longer accurate.<code>&lt;/s&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;ins&gt;</code>This line of text is meant to be treated as an addition to the document.<code>&lt;/ins&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;u&gt;</code>This line of text will render as underlined<code>&lt;/u&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><u>This line of text will render as underlined</u></p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;small&gt;</code>This line of text is meant to be treated as fine print.<code>&lt;/small&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><small>This line of text is meant to be treated as fine print.</small></p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;strong&gt;</code>This line rendered as bold text.<code>&lt;/strong&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><strong>This line rendered as bold text.</strong></p>
+                </div>
+            </div>
+            <div class="row border-top">
+                <div class="col-6">
+                    <p><code>&lt;em&gt;</code>This line rendered as italicized text.<code>&lt;/em&gt;</code></p>
+                </div>    
+                <div class="col-6">
+                    <p><em>This line rendered as italicized text.</em></p>
+                </div>
+            </div>
+
+            <div class="p-4"></div>
+
+
+
+        </div>
+
+        <div class="mb-4">
+
+            <h3>Lists</h3>
+
+            <p>Remove the default <code class="highlighter-rouge">list-style</code> and left margin on <a href="https://getbootstrap.com/docs/4.0/content/typography/#unstyled" target="_blank">list items</a> (immediate children only). <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested lists as well.</p>
+
+            <div class="row mb-4 p-2">
+                <div class="col-6 bg-grey border">
+<pre><code>&lt;ul class="list-unstyled"&gt;</code>
+    <code>&lt;li&gt;</code>Lorem ipsum dolor sit amet<code>&lt;/li&gt;</code>
+    <code>&lt;li&gt;</code>Consectetur adipiscing elit<code>&lt;/li&gt;</code>
+    <code>&lt;li&gt;</code>Nulla volutpat aliquam velit
+        <code>&lt;ul&gt;</code>
+        <code>&lt;li&gt;</code>Phasellus iaculis neque<code>&lt;/li&gt;</code>
+        <code>&lt;li&gt;</code>Purus sodales ultricies<code>&lt;/li&gt;</code>
+        <code>&lt;li&gt;</code>Vestibulum laoreet porttitor sem<code>&lt;/li&gt;</code>
+        <code>&lt;li&gt;</code>Ac tristique libero volutpat at<code>&lt;/li&gt;</code>
+        <code>&lt;/ul&gt;</code>
+    <code>&lt;/li&gt;</code>
+    <code>&lt;li&gt;</code>Faucibus porta lacus fringilla vel<code>&lt;/li&gt;</code>
+    <code>&lt;li&gt;</code>Aenean sit amet erat nunc<code>&lt;/li&gt;</code>
+<code>&lt;/ul&gt;</code></pre>
+                </div>
+                <div class="col-6">
+                    <ul class="list-unstyled">
+                        <li>Lorem ipsum dolor sit amet</li>
+                        <li>Consectetur adipiscing elit</li>
+                        <li>Nulla volutpat aliquam velit
+                            <ul>
+                            <li>Phasellus iaculis neque</li>
+                            <li>Purus sodales ultricies</li>
+                            <li>Vestibulum laoreet porttitor sem</li>
+                            <li>Ac tristique libero volutpat at</li>
+                            </ul>
+                        </li>
+                        <li>Faucibus porta lacus fringilla vel</li>
+                        <li>Aenean sit amet erat nunc</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Align terms and descriptions <a href="https://getbootstrap.com/docs/4.0/content/typography/#description-list-alignment" target="_blank">horizontally</a> by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a <code class="highlighter-rouge">.text-truncate</code> class to truncate the text with an ellipsis.</p>
+
+            <div class="row p-2">
+                <div class="col-12 p-4 bg-grey border mb-4"><pre>
+<code>&lt;dl class="row"&gt;</code>
+    <code>&lt;dt class="col-sm-3"&gt;</code>Description lists<code>&lt;/dt&gt;</code>
+    <code>&lt;dd class="col-sm-9"&gt;</code>A description list is perfect for defining terms.<code>&lt;/dd&gt;</code>
+
+    <code>&lt;dt class="col-sm-3"&gt;</code>Euismod<code>&lt;/dt&gt;</code>
+    <code>&lt;dd class="col-sm-9"&gt;</code>
+        <code>&lt;p&gt;</code>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.<code>&lt;/p&gt;</code>
+        <code>&lt;p&gt;</code>Donec id elit non mi porta gravida at eget metus.<code>&lt;/p&gt;</code>
+    <code>&lt;/dd&gt;</code>
+
+    <code>&lt;dt class="col-sm-3"&gt;</code>Malesuada porta<code>&lt;/dt&gt;</code>
+    <code>&lt;dd class="col-sm-9"&gt;</code>Etiam porta sem malesuada magna mollis euismod.<code>&lt;/dd&gt;</code>
+
+    <code>&lt;dt class="col-sm-3 text-truncate"&gt;</code>Truncated term is truncated<code>&lt;/dt&gt;</code>
+    <code>&lt;dd class="col-sm-9"&gt;</code>Fusce dapibus, ut fermentum massa justo sit amet risus.<code>&lt;/dd&gt;</code>
+
+    <code>&lt;dt class="col-sm-3"&gt;</code>Nesting<code>&lt;/dt&gt;</code>
+    <code>&lt;dd class="col-sm-9"&gt;</code>
+        <code>&lt;dl class="row"&gt;</code>
+        <code>&lt;dt class="col-sm-4"&gt;</code>Nested definition list<code>&lt;/dt&gt;</code>
+        <code>&lt;dd class="col-sm-8"&gt;</code>Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.<code>&lt;/dd&gt;</code>
+        <code>&lt;/dl&gt;</code>
+    <code>&lt;/dd&gt;</code>
+<code>&lt;/dl&gt;</code></pre>
+                </div>
+                <div class="col-12">
+                    <dl class="row">
+                        <dt class="col-sm-3">Description lists</dt>
+                        <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+                        <dt class="col-sm-3">Euismod</dt>
+                        <dd class="col-sm-9">
+                            <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+                            <p>Donec id elit non mi porta gravida at eget metus.</p>
+                        </dd>
+
+                        <dt class="col-sm-3">Malesuada porta</dt>
+                        <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+                        <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+                        <dd class="col-sm-9">Fusce dapibus, ut fermentum massa justo sit amet risus.</dd>
+
+                        <dt class="col-sm-3">Nesting</dt>
+                        <dd class="col-sm-9">
+                            <dl class="row">
+                            <dt class="col-sm-4">Nested definition list</dt>
+                            <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="p-4"></div>
 
         </div>
 

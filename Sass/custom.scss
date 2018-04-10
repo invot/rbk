@@ -2,9 +2,9 @@
 
 $theme-colors: (
   "primary":    #445566,
-  "secondary":  #6c8694,
+  "secondary":  #4f92b3,
   "success":    #469d6f,
-  "info":       #4f92b3,
+  "info":       #22b0b2,
   "warning":    #c48d37,
   "danger":     #f54343,
   "light":      #8d9dad,
@@ -12,8 +12,29 @@ $theme-colors: (
   "grey":       #e9ecef
 );
 
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
 $font-family-sans-serif: 'Open Sans',sans-serif;
 $headings-font-family:   'Barlow Semi Condensed', sans-serif;
+
+ins {
+  text-decoration: none;
+  border-bottom:1px dashed theme-color("secondary");
+  background-color: rgba(theme-color("info"), .1);
+}
+
+del {
+  text-decoration: theme-color("danger") wavy line-through;
+}
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $h1-font-size:                $font-size-base * 2.2 !default;
@@ -69,13 +90,15 @@ button:not(.btn-link), .btn:not(.btn-link) {
   }
 
 $jumbotron-bg:                         #fafafa;
-// $list-group-bg:                        #fafafa;
-// $list-group-hover-bg:               rgba(255,255,255,.8) !default;
-// $list-group-active-bg:              rgba(255,255,255,.8) !default;
-// $list-group-disabled-bg:            rgba(255,255,255,.4) !default;
-// $list-group-action-active-bg:       rgba(255,255,255,.8) !default;
 $list-group-border-width:           0px !default;
 
 $link-color:                theme-color("info") !default;
 $link-decoration:           none !default;
 $link-hover-decoration:     underline !default;
+
+
+pre {
+  code {
+    color: $pink!important;
+  }
+}
