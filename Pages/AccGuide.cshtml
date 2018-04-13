@@ -10,14 +10,23 @@
         pg.type = "default";
 }
 
+<style>
+    h2 {
+        border-bottom:1px solid rgba(0,0,0,.1);
+        margin-top:1.5em;
+        padding-bottom:0.25em;
+        margin-bottom:0.75em;
+    }
+</style>
+
 <section class="introduction">
     <div class="wrapper">
 
-<h1>Accessibility Guidelines</h1>
+<h1><a href="/Accessibility/"><i class="far fa-caret-square-left fa-xs align-baseline"></i></a> Accessibility Guidelines</h1>
 
-
-<p><a href="#intro">Skip Table of Contents</a></p>
-<nav role="navigation">
+<hr/ >
+<!--<p><a href="#intro">Skip Table of Contents</a></p>-->
+<!--<nav role="navigation">
 <ul>
     <li><a href="#intro">Introduction</a></li>
     <li><a href="#standards">A note about standards compliance</a></li>
@@ -81,50 +90,35 @@
     <li><a href="#testing">7. Testing</li>
     <li><a href="#finalword">A final word</li>
 </ul>
-</nav>
+</nav>-->
 
 <main role="main">
 
 <h2><a name="intro">Introduction</a></h2>
 
-<p>	When someone says "assistive technology", what do you immediately think of? If you're like most people, chances are you think about making your site work with a screenreader, or maybe screenreader compatibility plus making it possible for people to navigate your site using only the keyboard.</p>
+<p>When someone says "assistive technology", what do you immediately think of? If you're like most people, chances are you think about making your site work with a screenreader, or maybe screenreader compatibility plus making it possible for people to navigate your site using only the keyboard.</p>
 
-<p>	Assistive technology setups go far beyond screenreader use, though, and many ways in which people make their technology work with them (rather than against them) aren't necessarily things people think of as "assistive technology". The most common assistive tech on the internet, for instance? Sighted users increasing a browser's font size so they can read the text more clearly.</p>
+<p>Assistive technology setups go far beyond screenreader use, though, and many ways in which people make their technology work with them (rather than against them) aren't necessarily things people think of as "assistive technology". The most common assistive tech on the internet, for instance? Sighted users increasing a browser's font size so they can read the text more clearly.</p>
 
-<p>	Today's browser environments make it easy for people to adapt and customize their experience through the use of extensions and custom configurations. Many people don't even identify their customizations as meeting accessibility needs, but the line between workflow customization and assistive technology is getting blurrier and blurrier.</p>
+<p>Today's browser environments make it easy for people to adapt and customize their experience through the use of extensions and custom configurations. Many people don't even identify their customizations as meeting accessibility needs, but the line between workflow customization and assistive technology is getting blurrier and blurrier.</p>
 
-<p>	This booklet gives you a set of tips you can use to help your website work with various forms of assistive technology. Not every tip and suggestion is appropriate in every case. Some sites won't need some of them; some use cases will contradict each other. Accessibility can be an art, not a science, and some things that make your site more accessible for one group of people will make it less accessible for others. Everything's a tradeoff: the key is to be aware of what tradeoffs you're making.</p>
+<p>Not every tip and suggestion is appropriate in every case. Some sites won't need some of them; some use cases will contradict each other. <b>Accessibility can be an art, not a science</b>, and some things that make your site more accessible for one group of people will make it less accessible for others. Everything's a tradeoff: the key is to be aware of what tradeoffs you're making.</p>
 
-<p>	Some of the tips that follow are things that have been included in every web development course and book since the early days of the WWW, and some of them are relatively recent &mdash; some might even be completely new to you. Some of the tips are to fix major structural problems with how a site works (or doesn't); others are small touches that nobody might miss if you don't do them, but doing them is a nice touch and will make your users' experience subtly better.</p>
+<p>Each tip is also labelled with what type of access it helps with:</p>
 
-<p>	Each tip is also labelled with what type of access it helps with:</p>
-
-<ul><li>Cognitive access: Tips to help people with cognitive issues such as comprehension or reading ability (dyslexia, for instance).</li>
-<li>Screenreader access: Tips to help your site function properly for people using screenreaders.</li>
-<li>Visual access: Tips to help people who are accessing a site visually, but have needs such as large text, strong contrast, etc.</li>
-<li>Keyboard access: Tips to help people who aren't able to use a pointing device, and so interact with the site by keyboard navigation. (This can also encompass people who interact with the computer without pointing device or keyboard, such as speech-to-text (dictation) users &mdash; most dictation software can emulate pointing devices, but the process is pretty annoying, so many dictation users opt to use "keyboard mode" instead.)</li>
-<li>Deaf/hard of hearing access: Tips to help people who are Deaf or hard of hearing, or have trouble comprehending speech or recorded speech.</li>
-<li>Speech-to-text/dictation access: Tips to help people who use dictation technology. (While for the most part these people will be served by the keyboard access tips, there is a pool of accessibility tips specifically useful for people using dictation.)</li></ul>
-
+<ul>
+    <li><b>Cognitive access</b>: Tips to help people with cognitive issues such as comprehension or reading ability (dyslexia, for instance).</li>
+<li><b>Screenreader access</b>: Tips to help your site function properly for people using screenreaders.</li>
+<li><b>Visual access</b>: Tips to help people who are accessing a site visually, but have needs such as large text, strong contrast, etc.</li>
+<li><b>Keyboard access</b>: Tips to help people who aren't able to use a pointing device, and so interact with the site by keyboard navigation. (This can also encompass people who interact with the computer without pointing device or keyboard, such as speech-to-text (dictation) users &mdash; most dictation software can emulate pointing devices, but the process is pretty annoying, so many dictation users opt to use "keyboard mode" instead.)</li>
+<li><b>Deaf/hard of hearing access</b>: Tips to help people who are Deaf or hard of hearing, or have trouble comprehending speech or recorded speech.</li>
+<li><b>Speech-to-text/dictation access</b>: Tips to help people who use dictation technology. (While for the most part these people will be served by the keyboard access tips, there is a pool of accessibility tips specifically useful for people using dictation.)</li></ul>
 
 <p>	An important note: Many of these tips are not unanimously accepted. Some are the right thing to do in some cases and the wrong thing to do in others. Others improve access for one group of assistive technology users, while making the experience worse for others. Accessibility is often a series of compromises and trade-offs, and each site has to make decisions about which trade-offs to make, based on their own demographics and target market.</p>
 
-<p>	Don't get discouraged, though. The state of web accessibility is so awful in a lot of ways that even paying the slightest attention to your site's accessibility (and being willing to address any issues that are brought to your attention) will make you stand out. If you're sincerely trying, most people will give you leeway.</p>
-
-
-
 <h2><a name="standards">A note about standards compliance</a></h2>
 
-
-
-<p>	While you're reading through these tips, you'll notice not a lot of time is spent talking about formally-codified accessibility standards, such as Section 508 or WCAG (Web Content Accessibility Guidelines) A, AA, or AAA compliance. These standards definitely have their place, and many of the tips given here are derived from them. </p>
-
-<p>	Unfortunately, those standards also very high-level, and growing increasingly outdated. Section 508 was last updated in December of 2000; WCAG 2.0 was last updated December 2008. That doesn't mean they no longer apply, but it does mean they don't always know how to cope with today's modern web. It's possible for a site to be entirely standards-compliant and still be inaccessible.</p>
-
-<p>	WCAG 2.0 also receives a large amount of criticism, both from the design/development perspective and the perspective of people with disabilities. Many assistive technology users report that common implementations of several WCAG requirements actively disrupt their use of the web and make it harder for them to use their assistive technology.</p>
-
-<p>	If the site you work on is for a government agency or is required to meet certain standards (as a condition of receiving funding, for instance) a good resource for interpreting the standards is WebAIM 
-(http://www.webaim.org). They provide checklists and validators that will help you interpret the standards, as well as plain-English explanations:</p>
+<p>If the site you work on is required to meet certain standards (as a condition of receiving funding, for instance) a good resource for interpreting the standards is <a href="http://www.webaim.org">WebAIM</a>. They provide checklists and validators that will help you interpret the standards, as well as plain-English explanations:</p>
 
 	<ul><li><a href="http://webaim.org/standards/508/checklist">Section 508</a></li>
 	<li><a href="http://webaim.org/standards/wcag/checklist">WCAG 2.0 </a></li></ul>
@@ -133,16 +127,15 @@
 
 <p>	Instead, adapt your design and development philosophy to adhere to the principles of Universal Design from the ground up. The Universal Design movement may be aimed primarily at physical spaces, but most of the principles can be adapted to online use as well:</p>
 
-<ul><li>Equitable use: No one method of access should be privileged over another, and access must be identical when possible, equivalent when not.</li>
-<li>Flexibility in use: The design accommodates a wide range of individual preferences and abilities, and is adaptable to what people want to do with it.</li>
-<li>Simple and intuitive: The design is consistent and easy to understand, regardless of the user's experience, knowledge, language skills, or cognitive ability.</li>
-<li>Perceptible information: The design communicates necessary information effectively, regardless of ambient conditions or the user's sensory abilities.</li>
-<li>Tolerance for error: The design minimizes hazards and the adverse consequences of accidental/unintentional actions, provides failsafes and warnings, and never makes the user doubt what will happen if they do something.</li></ul>
-
-<p>	Designing with those principles in mind from the very beginning does a lot more for the accessibility of your site than trying to "bolt on" access features later or trying to pore through checklists and decide what you need to change in order to make your site meet the standards. It's always a good idea to go through the standards at least once in your design process to make sure you haven't missed anything obvious, but it's a better idea to design universally to begin with.</p>
+<ul>
+<li><b>Equitable use</b>: No one method of access should be privileged over another, and access must be identical when possible, equivalent when not.</li>
+<li><b>Flexibility in use</b>: The design accommodates a wide range of individual preferences and abilities, and is adaptable to what people want to do with it.</li>
+<li><b>Simple and intuitive</b>: The design is consistent and easy to understand, regardless of the user's experience, knowledge, language skills, or cognitive ability.</li>
+<li><b>Perceptible information</b>: The design communicates necessary information effectively, regardless of ambient conditions or the user's sensory abilities.</li>
+<li><b>Tolerance for error</b>: The design minimizes hazards and the adverse consequences of accidental/unintentional actions, provides failsafes and warnings, and never makes the user doubt what will happen if they do something.</li>
+</ul>
 
 <p>	You might find it useful to create accessibility personas, especially if you already have personas as part of your website design process. A good example of using accessibility personas can be found at <a href="http://diveintoaccessibility.info/by_person.html">Dive Into Accessibility.</a> The tips themselves are fairly dated in places &mdash; the book was published in 2002 &mdash; but it shows how you can construct accessibility personas and figure out which tips apply to them.</p>
-
 
 
 <h2><a name="images">1. Images</a></h2>
@@ -151,12 +144,16 @@
 
 <p>	<strong>Cognitive access</strong>: Including the height and width lets the browser allocate enough room when it's rendering the content, and prevents a slow-loading page from redrawing itself long after the rest of the page has loaded. If a user has already started reading the text when the page redraws once the browser knows how much room to leave for the image, they can lose their place in what they're reading.</p>
 
-<p>	Instead of:</p>
-	<code>&lt;img src="example.png" /&gt;</code>
-
-<p>	Use:</p>
-	<code>&lt;img src="example.png" height=100 width=100 /&gt;</code>
-
+<div class="row mb-4">
+    <div class="col-6">
+        <span>	Instead of:</span>
+        <p class="border bg-grey p-4"><code>&lt;img src="example.png" /&gt;</code></p>
+    </div>
+    <div class="col-6">
+        <span>	Use:</span>
+        <p class="border bg-grey p-4"><code>&lt;img src="example.png" height=100 width=100 /&gt;</code></p>
+    </div>
+</div>
 
 <h3><a name="1.2">1.2.</a> All images should have alternative text defined.</h3>
 
@@ -164,9 +161,9 @@
 
 <p>	Writing good alt text takes practice: you want to describe the most important parts of the image, but what's "most important" varies, based on the context of how the image is being used. The same image might benefit from different descriptions when used in different contexts. Also, captions and alt text are different, and should have different content: a caption usually seeks to contextualize the image, while alt text replaces it.</p>
 
-<p>	It's hard to provide examples of "how to write good alt text" in a class like this, especially since it's so context-dependent. Here are some tutorials that might help:</p>
+<p>	It's hard to provide examples of "how to write good alt text", especially since it's so context-dependent. Here are some tutorials that might help:</p>
 
-<ul><li>	<a href="http://webaim.org/techniques/alttext/">Appropriate Use of Alt Text</a> </li>
+<ul><li><a href="http://webaim.org/techniques/alttext/">Appropriate Use of Alt Text</a> </li>
 
 <li><a href="http://denise.dreamwidth.org/2013/01/31/writing-alt-text.html">Writing Alt Text (exercise)</a> </li>
 </ul>
@@ -179,34 +176,34 @@
 
 <p>	Let's say you're discussing a baseball game, and you want to use the team logo every time you refer to a team:</p>
 
-<code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code>
+<p class="border bg-grey p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code></p>
 
 <p>	In that example, the team logo is only decorative. If you included alt text:</p>
 
-<code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="Orioles logo" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="Yankees logo" /&gt; Yankees.</code>
+<p class="border bg-grey p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="Orioles logo" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="Yankees logo" /&gt; Yankees.</code></p>
 
 <p>	A screenreader would read that as, "The game tonight was the Orioles logo Orioles vs. the Yankees logo Yankees." Annoying. If you leave out the alt text, though, the screenreader will read the file name: "The game tonight was the image orioles.png Orioles vs the image yankees.png Yankees". To prevent that, set blank alt text:</p>
 
-<code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code>
+<p class="border bg-grey p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code></p>
 
 <p>	When using images decoratively as part of the layout, it's best to use CSS positioning rather than the &lt;img&gt; tag. For instance, if you want a custom image as the bullet point in front of list items, it's common to write:</p>
 
-<code>	&lt;img src="bullet.png"&gt; Thing One<br />
+<p class="border bg-grey p-4"><code>	&lt;img src="bullet.png"&gt; Thing One<br />
 	&lt;img src="bullet.png"&gt; Thing Two<br />
-	&lt;img src="bullet.png"&gt; Thing Three</code>
+	&lt;img src="bullet.png"&gt; Thing Three</code></p>
 
 <p>	A screenreader reads that as "bullet.png Thing One bullet.png Thing Two bullet.png Thing Three". Also annoying. And using images for bullets, instead of using the semantic markup of unordered or ordered lists (&lt;ul&gt;/&lt;ol&gt;), makes it impossible for assistive tech to jump from item to item easily. It's much better to do:</p>
 
-<code>	&lt;ul&gt;<br />
+<p class="border bg-grey p-4"><code>	&lt;ul&gt;<br />
 		&lt;li&gt; Thing One &lt;/li&gt;<br />
 		&lt;li&gt; Thing Two &lt;/li&gt;<br />
 		&lt;li&gt; Thing Three &lt;/li&gt;<br />
-	&lt;/ul&gt;</code>
+	&lt;/ul&gt;</code></p>
 
 <p>	Then, in your CSS:</p>
 
-<code>	li {<br />
-		background: transparent url(bullet.png) no-repeat; }</code>
+<p class="border bg-grey p-4"><code>	li {<br />
+		background: transparent url(bullet.png) no-repeat; }</code></p>
 
 <p>	Assistive technology will identify this as a list, and do the right thing with it, while the pretty graphics will still be there to enhance your design.</p>
 
@@ -221,7 +218,7 @@
 
 <p>	For instance:</p>
 
-<code>&lt;h1&gt;My Awesome Home Page&lt;/h1&gt;<br /><br />
+<p class="border bg-grey p-4"><code>&lt;h1&gt;My Awesome Home Page&lt;/h1&gt;<br /><br />
 
 	&lt;h2&gt;Recipes&lt;/h2&gt;<br /><br />
 		&nbsp;&lt;h3&gt;Food Recipes&lt;/h3&gt;<br />
@@ -241,7 +238,7 @@
 			&nbsp;&nbsp;(content goes here!)<br />
 		&nbsp;&lt;/ul&gt;<br />
 		&nbsp;&lt;h3&gt;Search our site&lt;/h3&gt;<br />
-			&nbsp;&nbsp;(search box goes here!)</code>
+			&nbsp;&nbsp;(search box goes here!)</code></p>
 
 <p>	WAI-ARIA roles (more about which in the <a href="#development">Development section</a>) and HTML5 semantic elements (such as &lt;section&gt;, &lt;nav&gt;, &lt;menu&gt;, &lt;article&gt;, and &lt;header&gt;) improve the semantic descriptions of your documents and identify the function of each element on the page. The more you describe each element and how it functions in the page, the better your accessibility will be.</p>
 
@@ -270,21 +267,21 @@
 
 <p>	There are times, though, where some information is conveyed visually, but isn't an image, or where a particular design pattern makes immediate sense visually but makes less sense when read out in a linear fashion. For instance, a site with "you are here" breadcrumbs presented at the top of the page to help the user orient themselves in the information architecture:</p>
 
-<code>	Home / Research / 2010 Studies</code>
+<p class="border bg-grey p-4"><code>	Home / Research / 2010 Studies</code></p>
 
 <p>	People browsing graphically or visually are pretty used to that convention, but it can be disorienting for a screenreader user to have the page start reading them links, with no hint whether those links are breadcrumbs, on-page navigation, or links they're supposed to follow for more content. You can eliminate the confusion by putting an invisible label in front of the breadcrumbs.</p>
 
-<p>	You can hide text like this with a CSS class: call it <var>".hidden"</var> or <var>".offscreen"</var>, whatever will make it obvious to you what it's for, and then put the text in it. You can't just use the "display: none" or "visibility: hidden" CSS styles: all the commonly-available screenreaders out there obey those, and won't read things contained in elements with those styles. Instead, use absolute positioning and move the hidden content offscreen. Then, add an extra CSS declaration to make sure the absolutely positioned content doesn't disrupt the other content:</p>
+<p>	You can hide text like this with a CSS class: call it <code>".hidden"</code> or <code>".offscreen"</code>, whatever will make it obvious to you what it's for, and then put the text in it. Bootstrap has a predefined class for this: <code>.sr-only</code>. You can't just use the "display: none" or "visibility: hidden" CSS styles: all the commonly-available screenreaders out there obey those, and won't read things contained in elements with those styles. Instead, use absolute positioning and move the hidden content offscreen. Then, add an extra CSS declaration to make sure the absolutely positioned content doesn't disrupt the other content:</p>
 
-<code>	&lt;div class="offscreen"&gt;You are here:&lt;/div&gt; Home / Research  / 2010 Studies</code><br />
+<p class="border bg-grey p-4"><code>&lt;div class="offscreen"&gt;You are here:&lt;/div&gt; Home / Research  / 2010 Studies</code></p>
 
-<code>.offscreen {<br />
+<p class="border bg-grey p-4"><code>.offscreen {<br />
 	position:absolute;<br />
 	left:-10000px;<br />
 	top:auto;<br />
 	width:1px;<br />
 	height:1px;<br />
-	overflow:hidden; }</code>
+	overflow:hidden; }</code></p>
 
 <p>	For more examples of when you might want to use this trick, check WebAIM's article <a href="http://webaim.org/techniques/css/invisiblecontent/">"CSS in Action: Invisible Content Just for Screen Reader Users"</a> (from which some of these examples were taken).</p>
 
@@ -316,7 +313,7 @@
 
 <h3><a name="2.8">2.8.</a> Never use tables unless you're presenting tabular data.</h3>
 
-<p>	<strong>Screenreader access</strong>: Don't use the <var>&lt;table&gt</var>; tag unless the data you're presenting is actually a table and makes sense if read, out loud, horizontally instead of vertically. It's hard to write screenreader-accessible tables, and most of the time people use them, the text or data could be presented just as easily as a list. That being said, if you have tabular data that really should be presented as a table, make sure you use the right semantic markup to associate column labels and row labels with the content they label. Make sure each column has a <var>&lt;th&gt;</var> (table header) row, and label them with ARIA roles. (See <a href="#4.7">tip 4.7</a>.)</p>
+<p>	<strong>Screenreader access</strong>: Don't use the <code>&lt;table&gt</code>; tag unless the data you're presenting is actually a table and makes sense if read, out loud, horizontally instead of vertically. It's hard to write screenreader-accessible tables, and most of the time people use them, the text or data could be presented just as easily as a list. That being said, if you have tabular data that really should be presented as a table, make sure you use the right semantic markup to associate column labels and row labels with the content they label. Make sure each column has a <code>&lt;th&gt;</code> (table header) row, and label them with ARIA roles. (See <a href="#4.7">tip 4.7</a>.)</p>
 
 <h2><a name="pagecontent">3. Page Content</a></h2>
 
@@ -326,7 +323,7 @@
 many times have you seen text on a webpage like "To change your
 password, <a href="#">click here</a>", with "click here" being the link? Those constructions are bad for cognitive accessibility because they give no real sense of what lies on the other side of the link. Screenreaders, meanwhile, have the ability to pull out all the links on a page and only read those &mdash; intended to keep you from having to listen to the whole page to find that one link you know is buried somewhere on the page &mdash; except they read by link anchor text, isolated from link context. A page that's full of "click here" links will be read as "click here, click here, click here".</p>
 
-<p>	As a good rule of thumb, links to another page on your site should use the title of the page (as it appears in the browser tab, which should also be the same as the <var>&lt;h1&gt;</var> heading on the page) as the link anchor text. You can vary this rule to make sentences make more sense or to provide some variety, but it's a good rule to start off with.</p>
+<p>	As a good rule of thumb, links to another page on your site should use the title of the page (as it appears in the browser tab, which should also be the same as the <code>&lt;h1&gt;</code> heading on the page) as the link anchor text. You can vary this rule to make sentences make more sense or to provide some variety, but it's a good rule to start off with.</p>
 
 <p>	Rephrasing sentences so you can use meaningful link text takes some practice. It's the subtle sort of thing few people consciously notice, but once you get in the habit of doing it, you'll notice your site copy is much more concise, dynamic and vivid:</p>
 
@@ -347,14 +344,11 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
     <td>Before you can take vacation time, you must fill out a vacation request form and submit it to your supervisor. To download vacation forms, <a href="#">click here</a>.</td>
     <td>To request vacation, fill out a <a href="#">vacation request form</a> and submit it to your supervisor.</td>
 </tr>
-<tr>
-    <td>You can read this booklet <a href="#">here</a>.</td>
-    <td>Read <a href="#">"Web Accessibility for the 21st Century".</a></td>
-</tr>
+
 </table>
 
 
-<p>	Avoid bare URLs, meanwhile, unless you're writing something intended primarily for print (like this booklet's print version!) &mdash; even if your platform/content management system/web framework automatically links bare URLs. Bare URLs can be a form of cognitive "friction" for some people &mdash; they need a few more seconds to comprehend bare URLs as something meaningful than they would need to comprehend words.</p>
+<p>	Avoid bare URLs, meanwhile, unless you're writing something intended primarily for print &mdash; even if your platform/content management system/web framework automatically links bare URLs. Bare URLs can be a form of cognitive "friction" for some people &mdash; they need a few more seconds to comprehend bare URLs as something meaningful than they would need to comprehend words.</p>
 
 <h3><a name="3.2">3.2.</a> Explicitly label all form fields.</h3>
 
@@ -364,29 +358,29 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	So, instead of doing:</p>
 
-<code>	&lt;form&gt;<br />
+<p class="border bg-grey p-4"><code>	&lt;form&gt;<br />
 		Name: &lt;input type="text" name="name" /&gt;<br />
-	&lt;/form&gt;</code>
+	&lt;/form&gt;</code></p>
 
 <p>	Do this instead:</p>
 
-<code>	&lt;form&gt;<br />
+<p class="border bg-grey p-4"><code>	&lt;form&gt;<br />
 		&lt;label for="name"&gt;Name:&lt;/label&gt; <br />
 		&lt;input name="name" id="name" type="text" /&gt;<br />
-	&lt;/form&gt;</code>
+	&lt;/form&gt;</code></p>
 
 <p>	Even better, use WAI-ARIA labeling in addition to HTML form labeling:</p>
 
-<code>	&lt;form role="form"&gt;<br />
+<p class="border bg-grey p-4"><code>	&lt;form role="form"&gt;<br />
 		&lt;label for="name"&gt;Name:&lt;/label&gt; <br />
 		&lt;input name="name" id="name" type="text" aria-labelledby="Name:"/&gt;<br />
-	&lt;/form&gt;</code>
+	&lt;/form&gt;</code></p>
 
 <p>	If you have commentary or warning text in the middle of your form, it will only be read by screen readers in forms mode if you use the WAI-ARIA markup to indicate it's part of the form:</p>
 
-<code>	&lt;label for="test"&gt;Date: &lt;/label&gt;<br />
+<p class="border bg-grey p-4"><code>	&lt;label for="test"&gt;Date: &lt;/label&gt;<br />
 	&lt;input type="text" name="test" id="test" aria-describedby="instructs" /&gt;<br />
-	&lt;span id="instructs"&gt;must be mm/dd/yyyy format&lt;/span&gt;</code>
+	&lt;span id="instructs"&gt;must be mm/dd/yyyy format&lt;/span&gt;</code></p>
 
 <p>	Without using aria-describedby, a screenreader in forms mode will skip right over the text explaining the date format.</p>
 
@@ -427,7 +421,7 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <h3><a name="3.7">3.7.</a> Caption and transcribe all audio and video (by humans, not machines).</h3>
 
-<p>	<strong>Deaf/hard of hearing access, cognitive access</strong>: Video and audio can enhance a site wonderfully, but it's important that all audio have a text transcription and all video have both captions and available text transcription. This benefits Deaf and hard of hearing people who otherwise wouldn't have been able to access your video/audio. Check out "This American Life" on NPR for an example of how they transcribe all their audio, for instance: you can listen to the program, or you can read the transcription. </p>
+<p>	<strong>Deaf/hard of hearing access, cognitive access</strong>: Video and audio can enhance a site wonderfully, but it's important that all audio have a text transcription and all video have both captions and available text transcription. This benefits Deaf and hard of hearing people who otherwise wouldn't have been able to access your video/audio.</p>
 
 <p>	Captioning video doesn't involve taking a transcript file and loading it into the video (and likewise, transcribing a file doesn't involve posting the caption file underneath the video, either) &mdash; captions and transcriptions are two different things. It's important to have both. Captions serve Deaf/hard of hearing users, while transcriptions serve people with cognitive disabilities (as well as people in noisy environments, people who can't watch videos at work, and people with low bandwidth &mdash; it always comes back to how much the principles of universal design help more of your users than you expect).</p>
 
@@ -468,7 +462,7 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 <ul><li>checking whether or not a form is submitted with a "secret token" auth that only the server knows and can only be used once (to prevent spammers from using the same form multiple times);</li>
 <li>checking timestamps to see whether the form was submitted immediately after it was loaded, which can be a warning sign that it's being filled in robotically;</li>
 <li>checking the "referer" header to make sure the form is being submitted from your website (and then putting checks in your load balancer, etc, that prevents the same IP from loading pages too quickly);</li>
-<li>adding an invisible "honeypot" field, CSS-styled with "display: none" that will cause the form to silently fail (or redirect the contents to a "spam" queue) if anything is entered in the text box. Spam bots generally try to fill in every field they find. Use an innocuous label (some available spam bot software will ignore anything called 'honeypot', for instance), and include instructions for people not to touch it, in case someone's using one of the few screenreaders that ignore "display: none" declarations. This is the best method for spammer prevention out there right now.</li></ul>
+<li>adding an invisible "honeypot" field, CSS-styled with "display: none" that will cause the form to silently fail (or redirect the contents to a "spam" queue) if anything is entered in the text box. Spam bots generally try to fill in every field they find. Use an innocuous label (some available spam bot software will ignore anything called 'honeypot', for instance), and include instructions for people not to touch it, in case someone's using one of the few screenreaders that ignore "display: none" declarations.</li></ul>
 
 
 <h3><a name="4.3">4.3.</a> Retain user input when presenting errors.</h3>
@@ -483,11 +477,11 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	<strong>Cognitive access, screenreader access</strong>: No matter what language your content is in, declare it in the headers of the page. For instance, for English content:</p>
 
-<code>	&lt;html lang="en"&gt;</code>
+<p class="border bg-grey p-4"><code>	&lt;html lang="en"&gt;</code></p>
 
 <p>	If you have a block of text in a language that's not the primary language of the page, declare that, too:</p>
 
-<code>	&lt;blockquote lang="de"&gt;</code>
+<p class="border bg-grey p-4"><code>	&lt;blockquote lang="de"&gt;</code></p>
 
 <p>	Doing this helps screenreaders and text-to-speech software know how to pronounce the text. (There are other benefits, too, but that's the big one!)</p>
 
@@ -505,29 +499,29 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	<strong>All forms of access</strong>: WAI-ARIA is a method of labeling elements of a page to identify what role that page element is filling. Ultimately, it bridges the gap between the HTML or Javascript being used, and the clever ways in which people use those various elements of HTML and Javascript to produce specific design effects. WAI-ARIA is most useful when a page updates dynamically. For instance, if your page quietly watches in the background for new email being sent to the user's inbox, you can use an ARIA role to announce when that's been updated:</p>
 
-<code>	&lt;div role="status"&gt;3 new messages.&lt;/div&gt;</code>
+<p class="border bg-grey p-4"><code>	&lt;div role="status"&gt;3 new messages.&lt;/div&gt;</code></p>
 
 <p>	The "status" role is advisory; a well-behaved screenreader will generally announce to the user that it's changed when it gets a chance (that is, when the screenreader isn't reading something else). You can also do a more aggressive notification that will break in to whatever's being read:</p>
 
-<code>	&lt;div role="alert"&gt;The site is on fire.&lt;/div&gt;</code>
+<p class="border bg-grey p-4"><code>&lt;div role="alert"&gt;The site is on fire.&lt;/div&gt;</code></p>
 
 <p>	There are many, many ARIA roles available, and they don't just govern dynamic content. For instance, you can identify what section is the main content of your site:</p>
 
-<code>	&lt;div role="main"&gt;</code> 
+<p class="border bg-grey p-4"><code>&lt;div role="main"&gt;</code> </p>
 
 <p>Or, if you're using HTML5:</p>
 
-<code>&lt;main role="main"&gt;</code> 
+<p class="border bg-grey p-4"><code>&lt;main role="main"&gt;</code> </p>
 
 <p>Yes, there's still benefit to labeling HTML5!</p>
 
 <p>	You can label the site search box:</p>
 
-<code>	&lt;div role="search"&gt;</code>
+<p class="border bg-grey p-4"><code>&lt;div role="search"&gt;</code></p>
 
 <p>	You can label the section of the layout that serves as the main banner of your site:</p>
 
-<code>	&lt;div role="banner"&gt;</code>
+<p class="border bg-grey p-4"><code>&lt;div role="banner"&gt;</code></p>
 
 <p>	Client implementation of the full range of the WAI-ARIA spec is still a bit spotty across browsers and screenreaders, but even though not every browser and screenreader supports the full range of roles, states, and properties, there is absolutely no downside to using them &mdash; clients that don't understand them will silently ignore them. At the very least, label your main content, your navigation, and your forms, and use ARIA labeling for all inputs in addition to HTML form labeling (aria-labelledby="Label").</p>
 
@@ -540,13 +534,13 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	<strong>Visual access</strong>: Large type is the most frequently used assistive technology on the internet. If you design with pixel or point measurements, zooming in on the text or increasing the browser font size will result in elements of the page overlapping each other, becoming unreadable, or just failing to get bigger. Using ems, on the other hand, defines everything in relation to the user's browser-specified font size, and allows the page to resize gracefully.</p>
 
-<p>	This doesn't just apply to text sizing. For instance, if you have a <var>&lt;div&gt;</var> that you want to be a reasonable width, it's tempting to define something like:</p>
+<p>	This doesn't just apply to text sizing. For instance, if you have a <code>&lt;div&gt;</code> that you want to be a reasonable width, it's tempting to define something like:</p>
 
-<code>	&lt;div style="width:300px;"&gt;</code>
+<p class="border bg-grey p-4"><code>	&lt;div style="width:300px;"&gt;</code></p>
 
 <p>	Don't do this! Instead, do:</p>
 
-<code>	&lt;div style="width:40em;"&gt;</code>
+<p class="border bg-grey p-4"><code>	&lt;div style="width:40em;"&gt;</code></p>
 
 <p>	The "em" as a unit of measurement is an old typesetting term &mdash; it means the width of the capital character 'M'. Many browsers have wandered pretty far from that definition these days (today the "em" measures height, not width, and can vary from OS to OS) but as a very (very!) rough rule of thumb, you can generally estimate 1.0 to 1.2 characters per em in a fixed-width font, and anywhere between 1.2 and 1.5 characters per em in a proportional-width font.</p>
 
@@ -558,10 +552,9 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	For instance:</p>
 
-<code>	&lt;div class="article-body"&gt; (2,000 words of an article) &lt;/div&gt;</code>
+<p class="border bg-grey p-4"><code>	&lt;div class="article-body"&gt; (2,000 words of an article) &lt;/div&gt;</code></p>
 
-<code>	.article-body {
-		max-width: 70em; }</code>
+<p class="border bg-grey p-4"><code>	.article-body { max-width: 70em; }</code></p>
 
 <p>	This might cause wide left and right margins if someone's using higher resolution or smaller font sizes and running a browser window full-screen &mdash; but wide margins are still better for readability than long lines.</p>
 
@@ -608,7 +601,7 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <h3><a name="6.1">HTML5</a></h3>
 
-<p>	Much of HTML5's promise for accessibility is still potential rather than reality. For example, using input element types will allow accessible browser controls to do form validation, instead of relying on developers writing their own (potentially inaccessible) JavaScript. In practice, right now, that functionality only exists accessibly in Firefox, so developers still need to write JavaScript form validation. Similarly, eventually HTML5 page sections might allow accessibility improvements. For example, the "nav" element, marking up a section of page navigation, might eventually remove the need for skip links, but browser implementation isn't consistent enough to rely on it.</p>
+<p>	Much of HTML5's promise for accessibility is still potential rather than reality. For example, using input element types will allow accessible browser controls to do form validation, instead of relying on developers writing their own (potentially inaccessible) JavaScript. In practice, right now, that functionality only exists accessibly <a href="https://caniuse.com/#feat=input-datetime">in parts</a>, so developers still need to write JavaScript form validation. Similarly, eventually HTML5 page sections might allow accessibility improvements. For example, the "nav" element, marking up a section of page navigation, might eventually remove the need for skip links, but browser implementation isn't consistent enough to rely on it.</p>
 
 <p>	For now, even though the rich functionality doesn't work consistently, there's rarely a reason not to use HTML5 markup now: the rich functionality will be automatically added as browsers become more powerful.</p>
 
@@ -624,9 +617,9 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	If you create fake page elements, make sure you use ARIA roles so screenreader and keyboard users can access them: It's becoming increasingly common on dynamic webpages to create "fake" page elements (links or buttons) using spans, CSS, and JavaScript, instead of native HTML elements. Unless you label these with appropriate roles, screenreader and keyboard users won't be able to interact with the page elements at all.  For example:</p>
 
-<code>&lt;span style="background-color: #ddd; border: medium outset white;" role="button" tabindex="0" onkeydown="if(event.keyCode==13 || event.keyCode==32) alert('You activated me with the keyboard');" onclick="alert('You clicked me with the mouse');"&gt;Push Me&lt;/span&gt;</code>
+<p class="border bg-grey p-4"><code>&lt;span style="background-color: #ddd; border: medium outset white;" role="button" tabindex="0" onkeydown="if(event.keyCode==13 || event.keyCode==32) alert('You activated me with the keyboard');" onclick="alert('You clicked me with the mouse');"&gt;Push Me&lt;/span&gt;</code></p>
 
-<p>	Without <var>role="button" tabindex="0"</var>, this button won't be accessible to screenreader or keyboard users. <var>role="button"</var> tells the browser to treat this span as if it were a button; <var>tabindex="0"</var> makes sure that it's accessible via the keyboard (since under normal circumstances, a plain span would not be).</p>
+<p>	Without <code>role="button" tabindex="0"</code>, this button won't be accessible to screenreader or keyboard users. <code>role="button"</code> tells the browser to treat this span as if it were a button; <code>tabindex="0"</code> makes sure that it's accessible via the keyboard (since under normal circumstances, a plain span would not be).</p>
 
 <p>	Use existing libraries wherever possible, and choose ones where the author has made a point to add accessibility: Don't assume that just because a library on the whole cares about accessibility (as jQuery does) that all widgets written with that library and available for use have built-in accessibility. Very few, if any JavaScript libraries require accessibility in all of their shared modules. Check the accessibility of the widgets you are using; widgets that make an effort to be accessible will usually include information in their documentation about their accessibility features. Many JavaScript libraries have made some of the most basic widgets available in accessible versions.</p>
 
@@ -652,7 +645,7 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <h3><a name="6.4">Word</a></h3>
 
-<p>	Just as semantic page elements (<var>&lt;h1&gt;</var>, <var>&lt;h2&gt;</var>, <var>&lt;p&gt;</var>) allow navigation via outline in HTML, they also do so in Microsoft Word (as well as in PDF documents created from Microsoft Word, and in most Word analogues such as LibreOffice). Use Microsoft Word styles to create a navigable structure. In the most recent versions of Word, these are available on the Home ribbon, with the most common styles (e.g. "Normal," "Heading 1") easily available. If you don't like the way they look, you can customize the styles, or pick another style set, just as with HTML you would still use the semantic page element and change the way it looked with CSS. It's very important to use these in any document of length, or any document which will be used as the source text for HTML or PDF.</p>
+<p>	Just as semantic page elements (<code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;p&gt;</code>) allow navigation via outline in HTML, they also do so in Microsoft Word (as well as in PDF documents created from Microsoft Word, and in most Word analogues such as LibreOffice). Use Microsoft Word styles to create a navigable structure. In the most recent versions of Word, these are available on the Home ribbon, with the most common styles (e.g. "Normal," "Heading 1") easily available. If you don't like the way they look, you can customize the styles, or pick another style set, just as with HTML you would still use the semantic page element and change the way it looked with CSS. It's very important to use these in any document of length, or any document which will be used as the source text for HTML or PDF.</p>
 
 <p>	It's also important to use alt text and column headers in Word, just as you would in HTML. How you do this varies between versions of Word, so check your help files. The one thing that's consistent between every version of Microsoft Word is that adding alt text is usually incredibly nonintuitive, so you'll want to look it up!</p>
 
@@ -686,7 +679,7 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <h2><a name="finalword">A final word</a></h2>
 
-<p>	You may feel overwhelmed while reading this booklet. Some of these tips are definitely more involved than others. Some of the tips are also far easier to implement on a site that's still in the design stages, and if your existing site is of any significant size, the prospect of going over all your pages might seem daunting.</p>
+<p>	You may feel overwhelmed while reading this. Some of these tips are definitely more involved than others. Some of the tips are also far easier to implement on a site that's still in the design stages, and if your existing site is of any significant size, the prospect of going over all your pages might seem daunting.</p>
 
 <p>Some of these fixes were easy and quick; many of them make take years to properly weave into a pre-existing site.</p>
 
