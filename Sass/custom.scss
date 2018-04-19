@@ -23,8 +23,16 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$font-family-sans-serif: 'Open Sans',sans-serif;
+$font-family-sans-serif: 'Open Sans', sans-serif;
 $headings-font-family:   'Barlow Semi Condensed', sans-serif;
+
+.main-font {
+  font-family: $font-family-sans-serif !important;
+}
+
+.alt-font {
+  font-family: $headings-font-family !important;
+}
 
 ins {
   text-decoration: none;

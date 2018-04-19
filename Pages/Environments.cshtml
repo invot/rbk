@@ -128,7 +128,14 @@
 
             <p>Developing software with things like Cross-Browser Compatibility in mind from the beginning helps ensure that special stylesheets, code, or hacks aren't required for the software to properly run in particular browsers. </p>
             <p>Unexpected behaviors can arise between browsers if the markup isn't strictly valid. Tools like the <a href="https://validator.w3.org/" target="_blank">W3C Markup Validation</a> Service can detect anything that isn't standards-compliant. Also, consider how the software may perform with the stylesheets or JavaScript disabled.</p>
-            <p class="text-center"><img src="/img/cross-browser.png"  width="100%" /></p>
+
+            <div class="row justify-content-md-center mb-4">
+                <div class="col-6 p-3 border bg-grey">
+                    <a href="/img/cross-browser.png" target="_blank"><img src="/img/cross-browser.png"  width="100%" class="border" /></a>
+                    <div class="text-muted"><i>List of features supported by popular browsers</i></div>
+                </div>
+            </div>
+
             <p>Though web standards encourage developers to build sites that degrade gracefully, older browsers lack the ability to support modern frameworks. As time progresses, this gap only continues to grow. </p>
             <p>Modern browsers like Microsoft's Edge, Google Chrome, Mozilla Firefox, and Safari, have all incorporated ways to address continuous technological progress by automatically installing updates that patch security issues and support the latest web functionalities. Browsers that update automatically are considered Evergreen Browsers.</p>
             <p>It is counter-intuitive for modern software to support a browser that will never adopt any new features. Today, less than 1% of the computers used in a professional environment are unable to support modern browsers. This is why dropping official support for non-evergreen browsers is inevitable.</p>
@@ -141,11 +148,17 @@
             <p>A user accessing software from an unsupported browser should either be greeted with a warning that things may appear or behave oddly as they continue, or be prompted to update their browser before they're allowed access.</p>
 
             <h3>Responsive Behavior</h3>
+
             <p>Though the size of devices will continue to fluctuate as time progresses, there will nonetheless be only a few categories that device displays can fall into. It's important to create a design that can adapt between mobile, tablet, and desktop displays without losing functionality or a common aesthetic. </p>
 
-            <p>It's important to define breakpoints for each category of device and not for one particular device at a time. Breakpoints are chunks of code that change the layout of an application depending on the size of the User's screen. Common places to set breakpoints are between the typical mobile screen widths and tablet widths. Any screen width between two breakpoints should share a common, flexible layout.</p>
+            <div class="row justify-content-md-center ">
+                <div class="col-6 p-3 border bg-grey mb-4">
+                    <a href="/img/responsive.png" target="_blank"><img src="/img/responsive.png" width="100%" class="border" /></a>
+                    <div class="text-muted"><i>Where to place breakpoints for common displays</i></div>
+                </div>
+            </div>
 
-            <p class="text-center"><img src="/img/responsive.png" width="100%" /></p>
+            <p>It's important to define breakpoints for each category of device and not for one particular device at a time. Breakpoints are chunks of code that change the layout of an application depending on the size of the User's screen. Common places to set breakpoints are between the typical mobile screen widths and tablet widths. Any screen width between two breakpoints should share a common, flexible layout.</p>
 
             <p>A common practice is to design mobile-first. This means designing and coding for mobile devices before designing and coding for desktop or any other device, which generally results in the fastest loading time for mobile and a cleaner, better organized layout overall. This means setting breakpoints for screens with a minimum width of approx. 600, 900, 1200, and 1800 pixels. Any device with a display below 600 pixels wide would then take advantage of the default styling. </p>
 
