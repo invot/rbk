@@ -17,20 +17,29 @@
 
 </head>
 <body class="bg-white">
-    @{
-        // <header id="mainHead" class="bg-light">
-        // @Html.Partial("./partials/_Header")
-        // </header>
+    @{ if(@ViewBag.hasHeader == true) {
+            <header id="mainHead" class="zindex-fixed bg-dark">
+            @Html.Partial("./partials/_Header")
+            </header>
+        }
     }
     <div id="content" class="content">
-        <aside id="mainSide" class="bg-primary d-print-none">
-            @Html.Partial("./partials/_Sidebar")
-        </aside>
+        @{ if(@ViewBag.hasSidebar == true) {
+            <aside id="mainSide" class="bg-primary d-print-none">
+                @Html.Partial("./partials/_Sidebar")
+            </aside>
+            }
+        }
         <main id="main" class="mt-4">
             @RenderBody()
-            <footer id="fmain">
-                @Html.Partial("./partials/_Footer")
-            </footer>
+
+            @{ if(@ViewBag.hasFooter == true) {
+                <footer id="fmain">
+                    @Html.Partial("./partials/_Footer")
+                </footer>
+                }
+            }
+
         </main>
     </div>
     <script src="~/js/site.min.js" asp-append-version="true"></script>

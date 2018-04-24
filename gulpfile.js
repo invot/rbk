@@ -31,63 +31,6 @@ gulp.task('styles', function() {
     }));
 });
 
-// Task to minify new or changed HTML pages
-// gulp.task('html', function() {
-//   gulp.src('./app/*.html')
-//     .pipe(minifyHTML())
-//     .pipe(gulp.dest('./build/'));
-// });
-
-// Task to concat, strip debugging and minify JS files
-// gulp.task('scripts', function() {
-//   gulp.src(['./app/scripts/lib.js', './app/scripts/*.js'])
-//     .pipe(concat('script.js'))
-//     .pipe(stripDebug())
-//     .pipe(uglify())
-//     .pipe(gulp.dest('./build/scripts/'));
-// });
-
-// Task to minify images into build
-// gulp.task('images', function() {
-//   gulp.src('./app/images/*')
-//   .pipe(imagemin({
-//     progressive: true,
-//   }))
-//   .pipe(gulp.dest('./build/images'));
-// });
-
-// Task to run JS hint
-// gulp.task('jshint', function() {
-//   gulp.src('./app/scripts/*.js')
-//     .pipe(jshint())
-//     .pipe(jshint.reporter('jshint-stylish'));
-// });
-
-// Task to get the size of the app project
-// gulp.task('size', function() {
-//   gulp.src('./app/**')
-// 	.pipe(size({
-//     showFiles: true,
-//   }));
-// });
-
-// Task to get the size of the build project
-// gulp.task('build-size', function() {
-//   gulp.src('./build/**')
-//   .pipe(size({
-//     showFiles: true,
-//   }));
-// });
-
-// Serve application
-// gulp.task('serve', ['styles', 'html', 'scripts', 'images', 'jshint', 'size'], function() {
-//   browserSync.init({
-//     server: {
-//       baseDir: 'app',
-//     },
-//   });
-// });
-
 // Run all Gulp tasks and serve application
 gulp.task('default', ['styles'], function() {
   gulp.watch('Sass/**/*.scss', ['styles']);

@@ -1,0 +1,28 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Layouts";
+    var pg = ViewBag;
+        pg.title = ViewData["Title"];
+        pg.id = 20;
+        pg.parent = null;
+        pg.hasSidebar = true;
+        pg.hasFooter = true;
+        pg.type = "default";
+}
+
+<section class="introduction">
+    <div class="wrapper">
+
+        <blockquote class="jumbotron">
+            <h1>Layouts</h1>
+            <p class="lead">Every page in a web application is special, but they all share similar qualities and form relationships between one-another. Standardized layouts help applications maintain consistency and flow by assigning visual and functional framewoks for each page.</p>
+            <p></p>
+        </blockquote>
+
+        <div class="mb-4">
+            <a href="/templates/login">Login</a>
+        </div>
+
+    </div>
+</section>

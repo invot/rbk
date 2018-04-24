@@ -1,0 +1,101 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Login";
+    var pg = ViewBag;
+        pg.title = ViewData["Title"];
+        pg.id = 100;
+        pg.parent = "Layouts";
+        pg.hasSidebar = false;
+        pg.hasFooter = false;
+        pg.hasHeader = true;
+        pg.type = "default";
+}
+
+<style>
+    #signin {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fafafc;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.signin {
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 600px; }
+
+.form-signin {
+  padding: 15px;
+  margin: 0 auto; }
+  .form-signin .form-signin-heading {
+    margin-bottom: 10px; }
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+    font-weight: normal; }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px; }
+    .form-signin .form-control:focus {
+      z-index: 2; }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
+</style>
+
+<div id="signin">
+  <div class="logo-holder p-2"><img src="/img/logo-color.png" height="50"></div>
+  <div class="signin bg-white p-2 border">
+    <form class="form-signin" action="/dashboard.html">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user fa-fw"></i></span></div>
+        <input class="form-control mb-0" id="inputEmail" type="text" placeholder="User Name" required="" autofocus="">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-key fa-fw"></i></span></div>
+        <input class="form-control mb-0" id="inputPassword" type="password" placeholder="Password" required="">
+      </div>
+      <div class="checkbox custom-control custom-checkbox mb-2">
+        <input class="custom-control-input" type="checkbox" value="remember-me" id="remember">
+        <label class="custom-control-label" for="remember">Remember me</label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-sign-in-alt"></i> Sign in</button>
+    </form>
+  </div>
+  <div class="options-holder">
+    <ul class="nav pt-2 pb-4">
+      <li class="nav-item">
+        <u><a class="text-light nav-link">Forgot Password</a></u>
+      </li>
+      <li class="nav-item">
+        <u><a class="text-light nav-link">Create Account</a></u>
+      </li>
+    </ul>
+  </div>
+</div>
