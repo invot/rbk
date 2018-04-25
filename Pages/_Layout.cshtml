@@ -9,23 +9,22 @@
     <meta name="author" content="">
     <link rel="apple-touch-icon" href="~/apple-touch-icon.png">
 
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="~/css/main.css" />
 
 </head>
 <body class="bg-white">
     @{ if(@ViewBag.hasHeader == true) {
-            <header id="mainHead" class="zindex-fixed bg-dark">
             @Html.Partial("./partials/_Header")
-            </header>
+            <div class="m-2 p-2"></div>
         }
     }
     <div id="content" class="content">
         @{ if(@ViewBag.hasSidebar == true) {
-            <aside id="mainSide" class="bg-primary d-print-none">
+            <aside id="mainSide" class="bg-secondary d-print-none">
                 @Html.Partial("./partials/_Sidebar")
             </aside>
             }
@@ -42,6 +41,6 @@
 
         </main>
     </div>
-    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <!-- <script src="~/js/site.min.js" asp-append-version="true"></script> -->
 </body>
 </html>

@@ -1,6 +1,44 @@
-<nav class="navbar">
+<header id="mainHead" class="bg-dark fixed-top">
+    <div class="container">
+        <div class="row p-2">
+            <div class="col-6">
+                <a href="javascript:window.history.back();" class="btn btn-primary" role="button"><i class="fas fa-chevron-left"></i> Go Back</a>
+                <button id="viewSource" class="btn btn-link" role="button" data-toggle="modal" data-target="#sourceModal">View Source</button>
+            </div>
+            <div class="col-6 text-right">
+                <div class="text-grey pt-1">Template view for: <code>@ViewBag.title</code></div>
+            </div>
+        </div>
+    </div>
+</header>
 
-    <a href="javascript:window.history.back();" class="btn btn-secondary" role="button"><i class="fas fa-chevron-left"></i> Go Back</a>
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="sourceModal" tabindex="-1" role="dialog" aria-labelledby="sourceModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Page Source</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre>
+            <code id="sourceCode"></code>
+        </pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-</nav>
-
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',function(){
+        $('#viewSource').on('click',function(){
+            let cont = $('main').html().replace(/[<>]/g, function (m) { return {'<':'&lt;','>':'&gt;'}[m]});
+            $("#sourceCode").html(cont);
+        });
+    });
+</script>

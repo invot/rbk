@@ -1,0 +1,13 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Form";
+    var pg = ViewBag;
+        pg.title = ViewData["Title"];
+        pg.id = 100;
+        pg.parent = "Layouts";
+        pg.hasSidebar = false;
+        pg.hasFooter = false;
+        pg.hasHeader = true;
+        pg.type = "default";
+}

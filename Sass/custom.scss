@@ -1,8 +1,8 @@
 @import "bootstrap/functions";
 
 $theme-colors: (
-  "primary":    #445566,
-  "secondary":  #4f92b3,
+  "primary":    #4f92b3,
+  "secondary":  #445566,
   "success":    #469d6f,
   "info":       #22b0b2,
   "warning":    #c48d37,
@@ -44,6 +44,16 @@ del {
   text-decoration: theme-color("danger") wavy line-through;
 }
 
+input[disabled]:hover,
+select[disabled]:hover,
+textarea[disabled]:hover,
+a.disabled:hover,
+button.disabled:hover,
+.disabled:hover {
+    cursor: not-allowed !important;
+    // pointer-events: none;
+}
+
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $h1-font-size:                $font-size-base * 2.2 !default;
 $h2-font-size:                $font-size-base * 2.0 !default;
@@ -68,8 +78,8 @@ a:hover, .btn:hover, label:before, label:after {
   cursor: pointer;
 }
 
-button:not(.btn-link), .btn:not(.btn-link) {
-  box-shadow:inset 0 -2px 0 0 rgba(0,0,0,.2), 1px 1px 2px rgba(0,0,0,.1);
+button:not(.btn-link, .close), .btn:not(.btn-link, .close) {
+    box-shadow:inset 0 -2px 0 0 rgba(0,0,0,.2), 1px 1px 2px rgba(0,0,0,.1);
 }
 
 .btn-group-vertical>.btn-group:not(:last-child)>.btn, .btn-group-vertical>.btn:not(:last-child):not(.dropdown-toggle) {
