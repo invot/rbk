@@ -12,43 +12,204 @@
         pg.type = "default";
 }
 
+<!-- add styles to a seperate stylesheet, ensure they only apply to this page -->
+<style>
+    .tab-content {
+        min-height:400px;
+    }
+</style>
+
 <section class="container">
 
     <div class="nav-holder">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <a class="nav-link nav-link active" data-toggle="tab" role="tab" href="#firstStep"><i class="fas fa-home"></i> First Step</a>
-            <a class="nav-link nav-link disabled" data-toggle="tab" role="tab" href="#secondStep"><i class="fas fa-dollar-sign"></i> Second Step</a>
-            <a class="nav-link nav-link disabled" data-toggle="tab" role="tab" href="#thirdStep"><i class="fas fa-briefcase"></i> Third Step</a>
-            <a class="nav-link nav-link disabled" data-toggle="tab" role="tab" href="#success"><i class="fas fa-check"></i> Success</a>
+            <a class="nav-link active" data-toggle="tab" role="tab" href="#firstStep"><i class="fas fa-home"></i> First Step</a>
+            <a class="nav-link disabled" data-toggle="tab" role="tab" href="#secondStep"><i class="fas fa-dollar-sign"></i> Second Step</a>
+            <a class="nav-link disabled" data-toggle="tab" role="tab" href="#thirdStep"><i class="fas fa-briefcase"></i> Third Step</a>
+            <a class="nav-link disabled success" data-toggle="tab" role="tab" href="#success"><i class="fas fa-check"></i> Success</a>
         </div>
     </div>
 
+<form id="tabbedForm">
+    <div class="tab-content border border-top-0 p-4" id="nav-tabContent">
 
-    <div class="tab-content border border-top-0 p-2" id="nav-tabContent">
-        <form>
-        <div class="tab-pane fade show active" id="firstStep" role="tabpanel" aria-labelledby="firstStep-tab">
+        <div class="tab-pane slide show active" id="firstStep" role="tabpanel" aria-labelledby="firstStep-tab">
 
             <fieldset>
-                <div class="form-group">
+                <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
 
                 </div>
+                <div class="col-md-6">
 
-                <div class="form-group">
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
 
+                    <div class="form-group">
+                        <label class="col-form-label">Custom Checkboxes</label>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                            <label class="custom-control-label" for="customCheck2">custom checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <label class="custom-control-label" for="customCheck3">custom checkbox</label>
+                        </div>
+                    </div>
+
+                </div>
                 </div>
             </fieldset>
 
         </div>
-        <div class="tab-pane fade" id="secondStep" role="tabpanel" aria-labelledby="secondStep-tab">
+        <div class="tab-pane slide" id="secondStep" role="tabpanel" aria-labelledby="secondStep-tab">
+
+            <fieldset>
+                <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
+
+                </div>
+                </div>
+            </fieldset>
 
         </div>
-        <div class="tab-pane fade" id="thirdStep" role="tabpanel" aria-labelledby="thirdStep-tab">
+        <div class="tab-pane slide" id="thirdStep" role="tabpanel" aria-labelledby="thirdStep-tab">
+
+            <fieldset>
+                <div class="row">
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-form-label">Custom Checkboxes</label>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                            <label class="custom-control-label" for="customCheck2">custom checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <label class="custom-control-label" for="customCheck3">custom checkbox</label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-form-label">Custom Checkboxes</label>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                            <label class="custom-control-label" for="customCheck2">custom checkbox</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                            <label class="custom-control-label" for="customCheck3">custom checkbox</label>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label" for="inputDefault">Default input</label>
+                        <input type="text" class="form-control" placeholder="Default input" id="inputDefault">
+                    </div>
+
+                </div>
+                </div>
+            </fieldset>
 
         </div>
-        <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success-tab">
+        <div class="tab-pane slide" id="success" role="tabpanel" aria-labelledby="success-tab">
+
+            <p class="lead text-success">You did a thing!</p>
+            <p><a href="javascript:location.reload();" class="btn btn-primary">Do it again!</a></p>
+            <p>Ensure the last tab in the form is a confirmation.</p>
 
         </div>
-        </form>
+
     </div>
 
+    <div class="nav-holder pt-4 text-right">
+        <button class="btn btn-primary" id="btnNextStep">Next Step &nbsp; <i class="fas fa-chevron-right"></i></button>
+        <button class="btn btn-success hidden" id="btnSubmit">Submit &nbsp; <i class="fas fa-paper-plane"></i></button>
+    </div>
+</form>
+
 </section>
+
+<!-- load JavaScript from seperate file only on pages using this form -->
+<script type="text/javascript">
+    $('#btnNextStep').on('click',function(e){
+        let valid = true;// validation is another beast
+        e.preventDefault();
+        if(valid) {
+            $('#tabbedForm .nav-link.active').next().removeClass('disabled').trigger('click');
+        } else {
+            // code that will run if form is not valid
+        }
+    });
+
+    $('#btnSubmit').on('click',function(e){
+        e.preventDefault();
+        let valid = true;// validation is another beast
+        if(valid) {
+            $('#tabbedForm .nav-link').addClass('disabled');
+            $('#tabbedForm .nav-link.active').next().removeClass('disabled').trigger('click');
+            $('#btnNextStep, #btnSubmit').addClass('hidden');
+        } else {
+            // code that will run if form is not valid
+        }
+    });
+
+    $('#tabbedForm a.nav-link').on('shown.bs.tab', function(){
+        if($('#tabbedForm .nav-link.active').next().is(':last-child')) {
+            $('#btnNextStep').addClass('hidden');
+            $('#btnSubmit').removeClass('hidden');
+        } else {
+            $('#btnSubmit').addClass('hidden');
+            $('#btnNextStep').removeClass('hidden');
+        }
+    });
+
+</script>
