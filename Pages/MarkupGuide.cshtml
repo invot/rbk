@@ -1,0 +1,1196 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Front-End Development Guidelines";
+    var pg = ViewBag;
+        pg.title = ViewData["Title"];
+        pg.id = 21;
+        pg.parent = null;
+        pg.hasSidebar = true;
+        pg.type = "default";
+}
+
+<section class="introduction">
+    <div class="wrapper">
+
+    <h1><a href="/Layouts/"><i class="far fa-caret-square-left fa-xs align-baseline"></i></a> Front-End Development Guidelines</h1>
+
+    <section><h2 class="border-bottom mt-4 pb-1" id="introduction"><a name="introduction"></a>Introduction</h2>
+    <p>The following are guidelines and best practices for front-end web development. </p>
+    <p>Each item here represents either:</p>
+    <ol>
+    <li>A reminder to follow existing standards or industry conventions,</li>
+    <li>guidance on what constitutes professional patterns and organization, or </li>
+    <li>a decision we&#39;ve made favoring one method over its alternatives.</li>
+    </ol>
+    <p>This document is not intended to replace common sense, conventions requested by particular clients, teams, or prevent expressive or creative solutions to problems. Team or project-specific agreements or client requests will always supersede this document&#39;s content.</p>
+
+    <h3 id="getting-started">Getting Started</h3>
+    <p>At the outset of the project it is essential to <strong>properly understand the goals of the project</strong> and <strong>identify the specific deliverables</strong> expected of the front-end team. Where your responsibilities begin and end should not be taken for granted or assumed.</p>
+    <p>It&#39;s important to understand how the development environment will work, what tools will be available, and what the differences between development, test, and production environments may ultimately be.</p>
+    <p>Finally, all project teams should get a reasonable understanding of the what client&#39;s <strong>browser and device requirements</strong> are. Make no assumptions as to the technology available either from the client or their audience.</p>
+
+    <h4 id="pillars-of-front-end-development">Pillars of Front-end Development</h4>
+    <p>Whenever possible, the front-end technology solutions produced shall adhere to industry best practices honoring as strict a separation of concerns as possible between:</p>
+    <ul>
+    <li><a href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml">Semantic</a> HyperText Markup Language (HTML) for structure</li>
+    <li>Cascading Style Sheets (CSS) for presentation</li>
+    <li>JavaScript (JS) for behavior and interaction</li>
+    </ul>
+    <p>When at all possible, we strive for a <a href="https://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> strategy.</p>
+    <h3 id="general-standards">General Standards</h3>
+    <p>For any project:</p>
+    <ul>
+    <li>Consistency and conventions between team members is paramount.</li>
+    <li>Solutions should be as simple and clear as possible.</li>
+    <li>Solutions should serve a specific purpose.</li>
+    <li>Clever code does not mean good code; readability is <strong>critical</strong></li>
+    </ul>
+    <p>A key hallmark of professional code includes a notion that while we are writing code that must reach a desired goal, we are also creating code that must be read and understood by others.</p>
+    <h4 id="code-consistency">Code Consistency</h4>
+    <p>Usage of the same patterns is critical between team members so as to never cause confusion.</p>
+    <p>It&#39;s worth establishing conventions at the project start or enabling automatic settings in the build or editor environments that might enforce particular rules.</p>
+    <h4 id="indentation">Indentation</h4>
+    <p>Please consistently indent, nest, include braces, quotes, and new lines so that code is clear and can be read easily. New code that is added should never deviate from existing formatting conventions or change the indent levels.</p>
+    <p>For all code languages, we recommend the <strong>use soft tabs</strong> comprised of four spaces per tab. Hitting the Tab key in your text editor should generate four space characters rather than one tab character. This results in our code appearing identical across platforms.</p>
+    <p>If <strong>tab stops</strong> are favored by a team, simply <strong>maintain consistency</strong> for a project and it&#39;s deliverables so developers can make adjustments to their editing environments a <strong>single</strong> time.</p>
+    <h4 id="readability">Readability</h4>
+    <p>We encourage liberal use of whitespace, comments, and descriptive variable names as appropriate for writing easy-to-read code.</p>
+    <ul>
+    <li>There is no need to write code in an obfuscated or compressed way for the purpose of file-size savings.</li>
+    <li>We will use automated server-side or other build processes to optimize files.</li>
+    <li>This includes concatenating files, code minification, gzipping, and setting &quot;Far Future Expires&quot;.</li>
+    </ul>
+    <p>The ability for another developer to read the code is paramount above other concerns, especially if optimization can be handled another way.</p>
+    <h4 id="third-party-libraries">Third-Party Libraries</h4>
+    <p>Un-minified libraries and third-party scripts should be leveraged in local development environments for easier debugging if available. The code should be committed to source control in an unmodified state, or simply referenced in dependency management components that resolve the files in a build. The final products will be compressed with the rest of the source for delivery.</p>
+    <p>Likewise, third-party code and libraries should never be modified and their original source and the license must be documented and be appropriate for a project. Any changes to third party code must be agreed upon and must be for specific reasons. If changes are mandated by bug fixes then the appropriate upstream project should have the changes submitted (assuming the code is part of an open source repository).</p>
+    <p>Library code should be treated as an external dependency and should be considered something that may need to be wholesale updated or replaced at a later time.</p>
+    <p>Inclusion of any third-party code should be carefully considered and verified with the project team as the appropriate solution to a given problem. &quot;Adding another plug-in&quot; is not always the best solution. Finally, selection of third party libraries should be done carefully and not be out of alignment with the nature of the problem being addressed. </p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Note:</strong><br>
+        Please see the <a href="#javascript_javascript_libraries_frameworks_and_plugins">JavaScript section</a> for more information about selection of third party code in a project.</p>
+    </aside>
+
+    <p>To be blunt, <strong>use the right tool for the right job</strong>.</p>
+    <h3 id="deliverables">Deliverables</h3>
+    <p>Quality deliverables are essential for professionals. Sloppy or messy deliverables are unprofessional and reflect poorly on the final product and the delivery team. Please remove legacy files, be certain the work is delivered in a clean file system, and in an orderly, logical structure that serves a clear purpose.</p>
+    </section>
+    <section><h2 class="border-bottom mt-4 pb-1" id="html"><a name="html"></a>HTML</h2>
+    <p>HTML markup defines the content of a document and gives it a rudimentary structure such as section dividers, headers, paragraphs, lists, menus, and forms.</p>
+    <h3 id="goals-for-markup">Goals for Markup</h3>
+    <p>Please follow conventions established for a given project so all team members can have the same expectations around document structure and markup.</p>
+    <p>Structural consistency is critical when talking about the types of pages being used on a site or in a Web app. The markup structure provides all the necessary hooks for scripting and behavior, so it&#39;s important that the appropriate hooks are in place.</p>
+    <p>A clear, clean, and concise HTML structure is also necessary for semantics, flexibility, and a <strong>reliable deployment environment</strong>. Do <strong>not</strong> deviate from established templates or patterns without architect approval.</p>
+    <p>Which markup is used does matter:</p>
+    <ul>
+    <li>Use the most <em>meaningful</em> yet <em>minimal</em> markup required to present the styles and interaction required</li>
+    <li>Application-centric deliverables often have different types of requirements; please code accordingly </li>
+    <li><strong>Maintain a clear separation of concerns, avoid in-line styles and in-line JavaScript whenever possible</strong></li>
+    <li>Have reference implementations so that each team member knows what sorts of structures are appropriate, as well as where to add new code.</li>
+    <li>Build pages as a <strong>library of components</strong>, in such a way that blocks of code can be broken up and reused when implemented.</li>
+    <li>Be sure front-end code is compatible with destination environments and delivery platforms.</li>
+    </ul>
+    <p>The flexible nature of HTML markup and how loosely browsers interpret markup sometimes lends itself to inconsistencies not always being discovered immediately. This belies the care necessary in crafting a document&#39;s structure and in following established patterns.</p>
+    <h3 id="getting-started-on-markup">Getting Started on Markup</h3>
+    <p>When crafting the HTML for a website, environment or technical constraints may impact the type of markup that can be used. Please discuss the final delivery environment in depth with technical leads and clients so that pages are not structured or styled in some way that is not effective for the project solution. </p>
+    <p>Discuss types of:</p>
+    <ul>
+    <li>Templates and types of pages.</li>
+    <li>Which sections of pages (i.e. components) are reused or managed by software vs. by hand.</li>
+    <li>Frameworks, CSS grid systems (custom or otherwise).</li>
+    <li>Server-Side delivery platforms.</li>
+    </ul>
+    <p><em>Note that it is vital to take into account how the site will ultimately be maintained and who will be doing that work.</em></p>
+    <h3 id="html-markup-best-practices">HTML Markup Best Practices</h3>
+    <p>As noted these guidelines are flexible for projects as long as consensus or need determines a particular path, consistency is what matters most.</p>
+    <h4 id="semantic-markup">Semantic Markup</h4>
+    <p>HTML provides a number of <a href="http://www.bbc.co.uk/guidelines/futuremedia/technical/semantic_markup.shtml">semantic constructs</a> that allow automated tools like search engines and screen readers to make sense of the document and to understand relationships between pieces of content. Use <em>semantic</em> markup whenever possible — that is to say use elements with specific meanings for specific purposes to convey the spirit of the markup. </p>
+    <p>A well-written HTML document will make appropriate use of these semantic elements and leave all responsibility for controlling the presentation of the document to the CSS style sheet. </p>
+    <h4 id="html-standards-and-browser-support">HTML Standards and Browser Support</h4>
+    <p>All markup will be written using the latest HTML5 markup specifications from the W3C, as implemented by browsers and devices that meet project requirements. When creating markup be sure that the target environments support the techniques being implemented, or that there is a fall-back plan.</p>
+    <p>Please use a common <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">HTML5 polyfill</a> or HTML5 Shiv to enable styling and recognition of HTML5 elements in older devices&#39; browsers.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn more:</strong><br>
+        You will frequently hear the term &quot;polyfill&quot;, &quot;shim&quot;, or &quot;shiv&quot; passed around where backwards compatibility for HTML5 and older browsers is concerned. <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">What is a Polyfill</a>?</p>
+        <p>Please note that a tool like <a href="http://modernizr.com">Modernizr</a> will include a HTML5 Shiv, but Modernizr does much more than this — so unless you need the feature detection features it provides, it may be better to simply include the the <a href="https://github.com/afarkas/html5shiv">HTML5shiv</a>.</p>
+    </aside>
+
+    <h4 id="doctype">Doctype</h4>
+    <p>Always include a proper doctype to trigger standards mode. Omitting the doctype <a href="https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode">triggers quirks mode</a> and should always be avoided. The HTML5 doctype is simple and easy to remember.</p>
+    <pre><code class="language-markup">&lt;!doctype html&gt;</code></pre>
+    <h4 id="character-encoding">Character Encoding</h4>
+    <p>All markup should be delivered as UTF-8, since it has the best support for internationalization. The character encoding should be designated in both the HTTP header and the head of the document via a meta tag. If the server happens to omit the HTTP header, browsers can take a guess at the character encoding and begins parsing and rendering the markup in a particular way. If there are inconsistencies, the browser will re-parse and re-render, throwing away all that work and starting over if it encounters the meta tag and its guess was incorrect. As a best practice, we always put the meta tag as early in the <code>&lt;head&gt;</code> tag as early as possible — however server-settings are ideal.</p>
+    <pre><code class="language-markup">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
+    <h4 id="optional-and-self-closing-tags">Optional and Self-closing Tags</h4>
+    <p>While current standards designate certain closing elements and even document level elements as optional, use all open and closing elements nested in the correct ways to ensure maximum compatibility and clarity of document structure. </p>
+    <p>Generally speaking, self-closing XML (i.e. XHTML, XML) style tags are not necessary.</p>
+    <pre><code class="language-markup">&lt;!-- closing &quot;/&quot; is not necessary --&gt;
+    &lt;img src=&quot;/logo.png&quot; alt=&quot;Project Name&quot;&gt;
+
+    &lt;!-- include closing tags, however --&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit:&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Vero sunt veritatis magni sit odit,&lt;/li&gt;
+        &lt;li&gt;voluptatum ratione suscipit.&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+    <p>Unusual markup (or indeed, invalid) can lead to bugs in page rendering, DOM interpretation, or even how styles are applied, so it should be avoided whenever possible.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Note:</strong><br>
+        While a library like jQuery might recognize tags that are not typically self closed (e.g. <code>&lt;div /&gt;</code>), it is recommended to avoid this usage directly in your markup, as some browsers choke on it.</p>
+    </aside>
+
+    <h5 id="validation">Validation</h5>
+    <p><a href="https://validator.w3.org/">Valid markup</a> is a goal but not a mandate. However, be aware validation can be an excellent starting place while debugging a Web page — especially if the problems are unusual.</p>
+    <p>If it becomes necessary, please have reasons for invalid markup — otherwise it is just sloppy code. </p>
+    <h4 id="indentation-in-html">Indentation in HTML</h4>
+    <p>Indent nested elements and tags with single indentation settings, whatever they may be, for each level in the hierarchy of the document.</p>
+    <pre><code class="language-markup">&lt;div&gt;
+        &lt;p&gt;Lorem ipsumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,&lt;/li&gt;
+            &lt;li&gt;quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse&lt;/li&gt;
+            &lt;li&gt;cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non&lt;/li&gt;
+            &lt;li&gt;proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;</code></pre>
+    <h4 id="html5-elements">HTML5 Elements</h4>
+    <p>To provide additional semantic value to our documents, make use of HTML5 elements such as <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code> where appropriate. However, in cases where the HTML needs to be as backwards-compatible as possible, do not apply IDs or classes to them, since older browsers do not understand these elements by default and will not apply styling to them.</p>
+    <pre><code class="language-markup">&lt;header&gt;
+        &lt;div class=&quot;site-header&quot;&gt;
+            ...
+        &lt;/div&gt;
+    &lt;/header&gt;</code></pre>
+    <h4 id="attribute-values">Attribute Values</h4>
+    <p>Use quotes to surround all attribute values in HTML, despite quotes being optional in HTML5. This maintains consistency between attribute values that contain whitespace and those that don&#39;t.</p>
+    <pre><code class="language-markup">&lt;form class=&quot;registration module&quot; action=&quot;/register&quot; method=&quot;POST&quot;&gt;</code></pre>
+    <h4 id="ids-vs-classes">IDs vs. Classes</h4>
+    <p>HTML elements can be identified by using the <code>id</code> and <code>class</code> attributes. An ID is a unique identifier for that particular element; no other element on the page should use the same ID.</p>
+    <p>This uniqueness allows <code>&lt;label&gt;</code> elements to associate themselves with a particular input and URLs to jump to a particular scroll position on a page.</p>
+    <p>Classes are not unique. The same class can be used on multiple elements within a page, and a single element can have more than one class, in a space delimited list.</p>
+    <pre><code class="language-markup">&lt;ul id=&quot;categories&quot;&gt;
+        &lt;li class=&quot;category&quot;&gt;Jackets&lt;/li&gt;
+        &lt;li class=&quot;category specials&quot;&gt;Accessories&lt;/li&gt;
+        &lt;li class=&quot;category&quot;&gt;Shoes&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+    <p>When coming up with names for an ID or class, we use semantic names like &quot;secondary-nav&quot; or &quot;primary-button&quot; that describe what the element is, rather than names like &quot;left-nav&quot; or &quot;blue-button&quot; that describe what the element looks like, which can change over time. We also use <em>lowercase names with hyphens</em> separating words as opposed to camelCase or underscores.</p>
+    <h4 id="anchors-links">Anchors &amp; Links</h4>
+    <p>All links should point to absolute or relative URLs with user-readable content. Do not link to XML or JSON resources that are designed to be Ajaxed by JavaScript instead of navigated to directly, and do not put JavaScript in an anchor&#39;s <code>href</code> attribute like <code>javascript:loadPage(2);</code>. This allows search engines to index the content, allows the user to open the links in a new tab or window, and means the links will still work when JavaScript is broken, disabled, or not supported. This will require that the back-end be able to return a full HTML page for each important content state (e.g. sorting a table column).</p>
+    <h4 id="paragraphs">Paragraphs</h4>
+    <p>Avoid using <code>&lt;br&gt;</code> tags to separate paragraphs or lines of text. Use <code>&lt;p&gt;</code> instead with proper opening and closing elements.</p>
+    <h4 id="definition-lists">Definition Lists</h4>
+    <p>Use definition lists to display a single record of name-value pairs, like a contact card.</p>
+    <h4 id="tables">Tables</h4>
+    <p>Tables should not be used for page layout; only use them when you need <strong>to display tabular data</strong>. Tables provide an important semantic association (used mostly by screen readers for the sight-impaired) between row/column headers and their data, so use <code>&lt;table&gt;</code> rather than other elements when displaying multiple records of data.</p>
+    <p>The <code>&lt;caption&gt;</code> element is the recommended way to describe a table for both sighted and sight-impaired users, though this can also be done less semantically in the normal page text around the table. Use the <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements to denote which row contains column headers so when a user prints the website and the table runs onto another page, browsers can display the <code>&lt;thead&gt;</code> on each page for easier readability. Remember to use the <code>scope</code> attribute on the <code>&lt;th&gt;</code> element to indicate whether the header applies to the row or column.</p>
+    <pre><code class="language-markup">&lt;table&gt;
+        &lt;caption&gt;First two U.S. presidents&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope=&quot;col&quot;&gt;Name&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Took office&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Party&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;George Washington&lt;/td&gt;
+                &lt;td&gt;April 30, 1789&lt;/td&gt;
+                &lt;td&gt;n/a&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;John Adams&lt;/td&gt;
+                &lt;td&gt;March 4, 1797&lt;/td&gt;
+                &lt;td&gt;Federalist&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+    <h4 id="forms">Forms</h4>
+    <p>For both semantic and functional reasons, we make full use of the <code>&lt;form&gt;</code> tag for all sections requiring user input. All form <code>action</code> attributes should point to URLs with user-readable content, so they will still work if the form is submitted by the user before JavaScript has loaded on a page, or if JavaScript is broken, disabled, or not supported. This will require that the back-end be able to return a full HTML page for form submission (e.g. registering a new user, editing the quantity in a shopping cart).</p>
+    <p>Do not nest the HTML <code>form</code> element tag.</p>
+    <h4 id="input-labels">Input Labels</h4>
+    <p>All input fields should be associated with a <code>&lt;label&gt;</code> element. The <code>for</code> attribute of the <code>&lt;label&gt;</code> element should contain the ID of the corresponding input field. This means the input field will receive focus when a user clicks the label and also enables screen readers for sight-impaired users to read out an appropriate description of the input field.</p>
+    <pre><code class="language-markup">&lt;label for=&quot;home-address&quot;&gt;Home Address&lt;/label&gt;
+    &lt;input id=&quot;home-address&quot; type=&quot;text&quot;&gt;</code></pre>
+    <h3 id="markup-deliverables">Markup Deliverables</h3>
+    <p>Typically HTML deliverables are incorporated into Content Management Systems or application delivery platforms as templates. A plan for incorporation of templates that leverage patterns created during the markup creation phase should be followed and matching types of pages to templates that were created, so that an association between the source markup and the destination markup can be maintained over time.</p>
+    <h3 id="next-steps-html5-resources">Next Steps &amp; HTML5 Resources</h3>
+    <p>Considerations:</p>
+    <ol>
+    <li>Site maintenance procedures</li>
+    <li>Browser testing strategies</li>
+    <li>How new features will be added</li>
+    <li>Where new features will be added</li>
+    <li>What the file system looks like for static site assets</li>
+    <li>If a CDN is involved</li>
+    <li>Naming conventions and organization of graphics and photography assets</li>
+    <li>If the &quot;back-end implementation&quot; of static HTML templates will require review by front-end team members</li>
+    </ol>
+    <p>For current links and references, please see our Wiki on Github.</p>
+    </section>
+    <section><h2 class="border-bottom mt-4 pb-1" id="css"><a name="css"></a>CSS</h2>
+    <p>Cascading Style Sheets (CSS) is where the visual presentation and design rules for a website belong. Well-written CSS makes good use of its cascading nature - general styles are applied first, and those styles are overridden for more specific instances as necessary.</p>
+    <h3 id="goals-for-effective-css">Goals for Effective CSS</h3>
+    <p>CSS is an unusual language which can easily lead to code bloat, inconsistencies in design or clashing code techniques. It is easy to end up with CSS code that is so fragile it can cause site-wide regressions with small changes.</p>
+    <p>CSS should:</p>
+    <ul>
+    <li>Be easy to maintain.</li>
+    <li>Follow clear enough patterns to understand.</li>
+    <li>Offer a clear place for new styles going forwards.</li>
+    <li>Not be a drag on page loading performance.</li>
+    <li>Not include unused style rules.</li>
+    <li>Address different devices, browser versions, and do as much as it can with as little code as possible.</li>
+    </ul>
+    <p>When setting up the CSS for a site, always consider:</p>
+    <ul>
+    <li>What the default styles for HTML elements are going to be.</li>
+    <li>Which styles are global styles versus specific one-off use-cases.</li>
+    <li>Distinctions between code for layout and for content.</li>
+    <li>How the code will evolve and grow.</li>
+    <li>Potential impact of bug fixes on the overall site.</li>
+    <li>Use of images as CSS background images vs. in-line HTML (content).</li>
+    </ul>
+    <h3 id="getting-started-with-css">Getting Started with CSS</h3>
+    <p>Planning for a CSS build isn&#39;t that different than any other software requirements for Web development. A solid foundation starting point is critical.</p>
+    <p>Before coding, you should always:</p>
+    <ul>
+    <li>Review the design.</li>
+    <li>Plan around technical constraints.</li>
+    <li>Identify how content will be managed.</li>
+    <li>Be certain who will be able to modify the design directly via code.</li>
+    </ul>
+    <p>Try to segment code in logical ways:</p>
+    <ul>
+    <li>Separate page grids and containers from the content.</li>
+    <li>Create baseline components which may be extended by other styles.</li>
+    </ul>
+    <p>Baseline components should rarely be modified directly.</p>
+    <p>More specifically, you may have:</p>
+    <ul>
+    <li>Core brand styles.</li>
+    <li>Basic typography or default HTML rules.</li>
+    <li>Site-wide styles.</li>
+    <li>Distinct sections of the site.</li>
+    <li>Micro-sites and landing pages.</li>
+    <li>Components, widgets, or re-usable modules.</li>
+    </ul>
+    <h4 id="tools">Tools</h4>
+    <p>Sometimes a third party library helpful — but please be certain to not include extra code for no reason other than personal enjoyment. Libraries or tools should be picked based on the advantages they provide.</p>
+    <p>Common types CSS-related tools might include:</p>
+    <ul>
+    <li>File concatenation</li>
+    <li>Preprocessors</li>
+    <li>Minifiers</li>
+    <li>Post processors</li>
+    </ul>
+    <p>These should be considered in the context of the rest of the site construction, back-end, and continuous integration processes. Discuss the options with the technical lead on the project.</p>
+    <p>Be careful as these tools can also introduce unnecessary complexity unless used wisely.</p>
+    <h4 id="frameworks">Frameworks</h4>
+    <p>Pre-built UI components or CSS frameworks can be beneficial, however just like any third party code please choose wisely and based on benefit of features and flexibility. Locking development into a library that unintentionally imposes limits is not good.</p>
+    <p>Some examples of third party frameworks might include:</p>
+    <ul>
+    <li>UI component or widget libraries (e.g. Foundation, Bootstrap, jQuery UI)</li>
+    <li>Grid Systems</li>
+    <li>Typography adjustments</li>
+    <li>Normalizing code </li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p><strong>Note:</strong><br>External libraries should always be assessed for the pros/cons and potential benefits, vs. the barrier to entry and level of effort involved in their usage. </p>
+    <p>For instance, a grid system may not match the grids in the design, and it may not be adjustable enough for a given design.</p>
+    </aside>
+
+    <h4 id="establishing-conventions-and-development-strategies">Establishing Conventions and Development Strategies</h4>
+    <p>Like other aspects of the code on a site, consistency is key. Areas of critical consistency include:</p>
+    <ul>
+    <li>Code formatting</li>
+    <li>Naming conventions</li>
+    <li>File and folder structure</li>
+    <li>Examples or sample code</li>
+    <li>How page components might be broken down or re-used</li>
+    </ul>
+    <p>On a large site never develop using a single CSS style sheet, though a single file served for a page is best. To this end we often recommend the use of CSS preprocessors to break style sheets into smaller, better organized files, or the use of a build process to combine files for serving via HTTP.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Note:</strong><br>
+        It is a great idea to approach front-end development like a set of <a href="http://patternlab.io/">reusable components</a> are being created. This matches how they are designed, how they must adapt to responsive layouts, and how they will be implemented inside content management or other server-side frameworks.</p>
+        <p><a href="http://getbootstrap.com/">Bootstrap</a> is a commonly cited framework that uses an approach similar to this.</p>
+    </aside>
+
+    <h5 id="living-style-guides-and-reference-implementations">Living Style Guides and Reference Implementations</h5>
+    <p>One technique to consider is maintaining static HTML style reference implementations well into integration with server-side / back-end systems. These could be a series of templates or widgets that use the live styles being built. This helps reduce regressions that can happen across the board as the code for the site evolves. Continue to test these reference implementations as they will be the &quot;source of record&quot; for the styles created on the site. They also allow you to more easily distinguish the front-end bugs from the bugs potentially introduced by integration with a complex back-end.</p>
+    <p>These reference implementations can serve as a <em>living style guide</em> and broken components are easily spotted in testing over time.</p>
+    <p>Defining a solid style guide to be applied to tag names can significantly reduce the size of the CSS if that style guide is adhered to by both the design and development teams. It is recommended that a style guide is agreed upon at the beginning of a project, defined in HTML and then iterated on by both the design and development teams.</p>
+    <h3 id="css-best-practices">CSS Best Practices</h3>
+    <p>What follows are some basic concepts for standardization of CSS code. Naturally, feel free to fork, update per project, and even issue pull requests for further discussion based upon experience.</p>
+    <h4 id="inclusion">Inclusion</h4>
+    <p>Use the <code>&lt;link&gt;</code> tag to include all your style sheets in the <code>&lt;head&gt;</code> of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the <code>&#64;import</code> command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.</p>
+    <pre><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot;&gt;</code></pre>
+    <h4 id="formatting-css">Formatting CSS</h4>
+    <p>Basic rules for formatting CSS files:</p>
+    <ul>
+    <li>Use a new line for every selector and every declaration.</li>
+    <li>Use a single space before the opening brace in a set of rules.</li>
+    <li>Use lowercase for elements and shorthand hex values, e.g., <code>#aaa</code>.</li>
+    <li>Hyphenate class selector names; avoid underscores and camelCase </li>
+    <li>Quote attribute values in selectors</li>
+    <li>Use one level of indentation for each declaration.</li>
+    <li>The closing brace of declaration goes in the same column as the first character of the set of rules.</li>
+    <li>Use a single blank line between sets of rules.</li>
+    </ul>
+    <p>Inside sets of rules or style declarations:</p>
+    <ul>
+    <li>Add a single space between the property and value, for example:<br>
+    <code>prop: value;</code> and <em>not</em> <code>prop:value;</code>.</li>
+    <li>Use double quotes for quoted values</li>
+    <li>Always include a semi-colon at the end of the last declaration.</li>
+    <li>Use shorthand if you can, like:<br>
+    <code>padding: 15px 0;</code> and <em>not</em> <code>padding: 15px 0px 15px 0px;</code></li>
+    <li>When allowed, use <code>0</code> without units.</li>
+    </ul>
+    <p>Putting each selector on its own line and each property on its own line is great for readability and so version control systems can clearly show which parts have changed in a diff.</p>
+    <p>The attributes within a selector can be alphabetized for easy scanning and so that compression algorithms like gzip have a greater chance of finding repeatable patterns.</p>
+    <p>Some examples:</p>
+    <!-- do we want more examples to cover most of the notes above? -->
+
+    <pre><code class="language-css"><span class="class">.content</span> <span class="rules">{
+        <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">2</span>%</span></span>;
+    <span class="rule">}</span></span>
+
+    <span class="class">.twitter-popular</span>,
+    <span class="class">.twitter-favorites</span>,
+    <span class="class">.twitter-feed</span> <span class="rules">{
+        <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
+        <span class="rule"><span class="attribute">padding-left</span>:<span class="value"> <span class="number">2</span>%</span></span>;
+        <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">33.33</span>%</span></span>;
+        <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">15</span>px <span class="number">0</span></span></span>;
+    <span class="rule">}</span></span></code></pre>
+    <p><strong>Do not indent child styles</strong> underneath their parent styles; this is important for a number of reasons:</p>
+    <ul>
+    <li>We usually recommend indenting media queries, so this can cause confusion.</li>
+    <li>Some CSS preprocessors heavily use indentation.</li>
+    <li>Various levels of indentation hinders maintainability. </li>
+    <li>HTML and CSS structure can change frequently over the course of a project, quickly rendering obsolete the parent-child relationship the indentation used to represent.</li>
+    </ul>
+    <h4 id="specificity">Specificity</h4>
+    <p>Use the minimum specificity required to achieve the desired style. It can be difficult to quickly read and locate styles or even bugs with heavily nested styles in the CSS.</p>
+    <p>The ID is the most specific selector, since it can only match one element, and the class is a close second. Use those whenever possible rather than HTML tag names. </p>
+    <pre><code class="language-css">/* BAD */
+    button#back-button { ... }
+    .popular ul li a { ... }
+    .popular &gt; ul &gt; li &gt; a { ... }
+
+    /* GOOD */
+    .back-button { ... }
+    .popular-link { ... }
+    .unpopular-link { ... }</code></pre>
+    <p>As a rule, CSS is most maintainable with the simplest selectors possible. Try applying a class to the element you want to target instead.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p><strong>Note:</strong><br>
+    While performance of CSS selectors has been a debated topic, browsers perform quite well on most types of selectors. That said, specificity reduced to the most simple name to get the desired results is the best idea in most cases <strong>for readability</strong> and <strong>maintainability</strong>.</p>
+    </aside>
+
+    <h5 id="do-not-use-important">Do Not Use !important</h5>
+    <p>Avoid using the <code>!important</code> keyword. Treat it like the nuclear option, only to be used in the most extreme of cases. This fundamentally destroys the specificity feature and can even break accessibility for some users.</p>
+    <p>There is usually another way to achieve the same goal without causing headaches for developers in the future who are either trying to debug a styling issue, or trying to use normal specificity to override a style for a particular element only to find that they can&#39;t.</p>
+    <h4 id="id-selectors">ID Selectors</h4>
+    <p>As noted above, use the lowest level of specificity necessary to get the desired results. This means the use of the ID selector should be minimized. Often creating a new class is preferable to using inheritance or additional specificity to target an element or elements. </p>
+    <p>ID selectors, if used, should be used mainly as access points for JavaScript or if a very particular use case surfaces. Styles and classes can be applied via the same element with a className.</p>
+    <h4 id="vendor-prefixes">Vendor Prefixes</h4>
+    <p>When using vendor prefixed features, put the standardized rule at the end to ensure browsers optimize and use the standard if they recognize it. </p>
+    <p>For example: </p>
+    <pre><code class="language-css"><span class="class">.thing</span> <span class="rules">{
+        <span class="rule"><span class="attribute">-webkit-transition</span>:<span class="value"> all <span class="number">100</span>ms</span></span>;
+        <span class="rule"><span class="attribute">transition</span>:<span class="value"> all <span class="number">100</span>ms</span></span>;
+    <span class="rule">}</span></span></code></pre>
+    <h4 id="inline-styling">Inline Styling</h4>
+    <p>Do not hard code style information into your HTML markup directly, either with the <code>style</code> attribute that accepts CSS or with deprecated attributes such as <code>align</code>, <code>border</code>, or <code>width</code>. These are difficult to maintain and make it harder to track down what is causing an element to appear as it does.</p>
+    <h5 id="performance-caveats">Performance Caveats</h5>
+    <p>In some cases for performance reasons it may be good practice to in-line critical styles in a <code>style</code> block in the document&#39;s <code>head</code>. This delivers these styles to the browser in the fastest method possible by preventing the need for an additional HTTP request. Fetching linked style sheets are a blocking operation on the rendering of a Web page in a browser in most cases. An enormous CSS file can mean a highly reduced time to first rendering because a browser may pause during loading of the page to download CSS which may not even be used on the first page. </p>
+    <p>With the above in mind it may be desirable to include the rules required to render the top portions of a page (i.e. &quot;Above the fold&quot;) in advance of styles loaded after the rendering begins. Critical styles can be identified either manually or through the use of a tool. Non critical styles can then be asynchronously loaded, increasing the perceived page load speed.</p>
+    <h4 id="box-model">Box Model</h4>
+    <p>To simplify CSS authoring, we set the <code>box-sizing</code> attribute to <code>border-box</code> for all page elements. This enables us to use round numbers for width like 50% and then apply a padding or border to that same element without needing to</p>
+    <ol>
+    <li>adjust the width accordingly using calc (since borders use pixels rather than percents) or</li>
+    <li>create an element inside it to take the padding and border. This is the only case where we use the inefficient universal selector (<code>*</code>).</li>
+    </ol>
+    <p>Example:</p>
+    <pre><code class="language-css">* <span class="rules">{
+        <span class="rule"><span class="attribute">-moz-box-sizing</span>:<span class="value"> border-box</span></span>;
+        <span class="rule"><span class="attribute">-webkit-box-sizing</span>:<span class="value"> border-box</span></span>;
+        <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;
+    <span class="rule">}</span></span></code></pre>
+    <h4 id="coding-patterns">Coding Patterns</h4>
+    <p>There are a number of popular design patterns for naming conventions on selectors, groupings or extensions of styles in CSS files. Sometimes these are of value and may be used on projects as long as the developers are on board and they are used consistently by the team. </p>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>Examples of pattern systems include BEM, SMACSS, Object Oriented CSS, Atomic design, and others.</p>
+    </aside>
+
+    <!-- links? -->
+
+    <p>The downsides to some of these systems are:</p>
+    <ul>
+    <li>Often rely on less obvious rules that may be difficult to follow.</li>
+    <li>They may use syntax that may be objectionable to some developers.</li>
+    <li>Some developers may find the syntax difficult to read.</li>
+    </ul>
+    <p>For these reasons it is often best to go with the most simple, basic set of conventions possible, based on obvious patterns.</p>
+    <h4 id="a-simple-css-code-pattern">A Simple CSS Code Pattern</h4>
+
+    <p>The following sections describe one simple approach, and as long as the types are defined on a project and the patterns are followed, then a clear meaning can be interpreted fairly quickly and easily reading through the CSS, HTML, and JavaScript.</p>
+    <p>Every site will have distinct requirements but some examples of things that can be standardized on a site build include:</p>
+    <ul>
+    <li>Global Defaults</li>
+    <li>Page Level Rules (grids, site template types, and so on)</li>
+    <li>Components</li>
+    <li>Modifiers</li>
+    <li>State</li>
+    <li>JavaScript-only Rules</li>
+    <li>Utilities</li>
+    </ul>
+    <p>The following sections describe how some might work.</p>
+    <h5 id="global-defaults">Global Defaults</h5>
+    <p>For the purposes of discussion we could refer to the global defaults as the baseline HTML elements and their associated styles. Frequently you may wish to use a third party library which normalizes CSS behavior across browsers. Either way, it makes sense to keep these files in their own files.</p>
+    <h5 id="page-level-rules">Page Level Rules</h5>
+    <!-- need more content here -->
+
+    <p>Any site is liable to have a standard baseline set of grids and types of pages. These grids can be collected into their own distinct set of component files — using a broad definition of a global &quot;thing&quot; as a component.</p>
+    <h5 id="components">Components</h5>
+    <p>Components are a high level concept for organizing CSS files and rules. A component simply means a grouped set of rules pertaining to an object or set of related objects on a page.</p>
+    <p>Additionally, encapsulating these components into distinct files is a great option. Within this file, using a naming convention is a tremendous help here for code maintainability and readability. </p>
+    <p>Group styles under a simple name-space using a <strong>prefix-suffix-modifier</strong> type pattern such as:</p>
+    <pre><code class="language-css">/* core component */
+    .component { ... }
+
+    /* component elements */
+    .component-header { ... }
+    .component-content { ... }
+
+    /* component descendant */
+    .component-content-group { ... }
+
+    /* component descendant element */
+    .component-content-group-header { ... }
+    .component-content-group-imgs { ... }</code></pre>
+    <p>This type of pattern is easy to read, extend, and follow in the absence of something more sophisticated.</p>
+    <p>Additionally, generally components will be the only CSS class with distinct names that do not have prefixes before the core, root, or base name of the component (e.g. above we are using <code>component</code>).</p>
+    <p>Just to get developers thinking, these might be things like:</p>
+    <ul>
+    <li>navbar</li>
+    <li>footer</li>
+    <li>page-info</li>
+    <li>article-date</li>
+    <li>lead</li>
+    <li>widgetfoo</li>
+    <li>byline</li>
+    </ul>
+    <h5 id="modifiers">Modifiers</h5>
+    <p>If you need to extend an existing component then create distinct modifier classes with the prefix <code>mod-</code> to easily indicate that it is a modifier and not a complete style. Using the <code>mod</code> name prefix prevents confusing the class with a full class.</p>
+    <pre><code class="language-css">.mod-modifier-a { ... }
+    .mod-modifier-b { ... }</code></pre>
+    <p>Then, when used in the HTML, the class stands out:</p>
+    <pre><code class="language-markup">&lt;div class=&quot;component-content mod-modifier-a&quot;&gt;...&lt;/div&gt;</code></pre>
+    <p>This is a strong technique because the modifier classes can stand on their own in the CSS. Further, they may also be altered via more complex rules:</p>
+    <pre><code class="language-css">.component-header.mod-modifier-a { ... }</code></pre>
+    <p>This is simplistic and easy to follow, understand, and expand upon.</p>
+    <h5 id="state">State</h5>
+    <p>A <em>state</em> for an element or component is presentation information for a given component. This may be a dynamic state set by JavaScript or a user interaction, but not always. It could also be a preset from the server or the results after a transaction. State modifiers are a great way for a distinct class to be provided to engineers unfamiliar with the design to be provided hooks for various things. This is slightly different than JS specific classes, however.</p>
+    <p>State rules will use the <code>is-</code> prefix.</p>
+    <pre><code class="language-css">.component-group.is-full { ... }
+    .component-group.is-expired { ... }</code></pre>
+    <p>Treating components&#39; <em>state</em> as a modifier that is boolean (i.e. <code>true</code> or <code>false</code>) also:</p>
+    <ul>
+    <li>Semantically helps provide information about the content.</li>
+    <li>Separates the code for state from default presentation.</li>
+    <li>Removes the need to update corresponding states or components if the name of either changes.</li>
+    </ul>
+    <p>This last point is important from a maintenance perspective.</p>
+    <p>It&#39;s best to try to restrict these state indicators as being restricted to a specific component.</p>
+    <h5 id="javascript-js-prefix">JavaScript (JS) Prefix</h5>
+    <p>The usage of a <code>js-</code> prefix is present in the markup but should never really appear in the CSS file itself. If the styles are being set, then use modifiers or state type classes.</p>
+    <pre><code class="language-markup">&lt;button class=&quot;component-button js-execute&quot;&gt;...&lt;/button&gt;</code></pre>
+    <p>The <code>js-execute</code> rule should not appear in the CSS file, but only in JS files they are tied to behavior. These are events, verbs, or action related, and are access points for JavaScript not a toggle or state changer. It&#39;s best to think of these classes as closer to and ID attribute in the HTML.</p>
+    <h5 id="utilities">Utilities</h5>
+    <p>A utility is a type of component modifier that is specifically designed to be used on more than one component type. If it was restricted to a single component, it would simply be a modifier.</p>
+    <p>Utilities will use the prefix of <code>u-</code> and should serve only the modifier purpose intended without side effects when applied to any component, or component descendant.</p>
+    <pre><code class="language-css"><span class="class">.u-warning</span> <span class="rules">{
+
+    <span class="rule">}</span></span>
+    <span class="class">.u-scroll-infobox</span> <span class="rules">{
+        <span class="rule"><span class="attribute">overflow-x</span>:<span class="value"> scroll</span></span>;
+        <span class="rule"><span class="attribute">width</span>:<span class="value"> auto</span></span>;
+    <span class="rule">}</span></span></code></pre>
+    <h4 id="the-mobile-web-media-queries-responsive-design">The Mobile Web, Media Queries, Responsive Design</h4>
+    <p>With the mobile Web taking off Media Queries are mandatory in CSS going forwards.</p>
+    <p>We discuss media queries in the <a href="#responsive_responsive_web_design">Mobile / Responsive</a> section of this document.</p>
+    <h3 id="css-deliverables">CSS Deliverables</h3>
+    <p>Please be aware of potential conflicts between the original development environment for CSS and an ultimate deployment to production systems, if continuous integration will allow the continued use of CSS preprocessors, or if there should a cross-platform development strategy.</p>
+    <p>Delivered CSS should be concatenated, minified, tested against browser bugs (e.g. MSIE selector count bugs) and extra files should be removed.</p>
+    <p>File naming conventions should be consistent and language or use-case specific files should be clear and not be easily confused with the global style CSS.</p>
+    <h3 id="next-steps-css-resources">Next Steps &amp; CSS Resources</h3>
+    <p>This is just the tip of the iceberg where CSS is concerned. </p>
+    <ul>
+    <li>Browser Compatibility</li>
+    <li>Media Queries</li>
+    <li>Accessibility and CSS</li>
+    <li>CSS pre-processors usage</li>
+    <li>Internet Explorer, or browser-specific bugs</li>
+    <li>Usage of CSS3 transitions, transforms, and more</li>
+    <li>Vendor prefixes</li>
+    <li>Color Management</li>
+    </ul>
+    <p>For current links and references, please see our Wiki on Github.</p>
+    </section>
+    <section><h2 class="border-bottom mt-4 pb-1" id="javascript"><a name="javascript"></a>JavaScript</h2>
+    <p>JavaScript is where extra behaviors, features, and functionality not offered natively by Web browsers through CSS and HTML is created. </p>
+    <p>JavaScript has gained an enormous amount of attention in recent years due to more feature rich, faster browsers and server run-times such as Node.js. For the purposes, general discussion here focuses on client-side JavaScript development, with references to where it crosses over.</p>
+    <p>It is of note that many techniques identified these days as &quot;HTML5&quot; are actually enabled by the related JavaScript APIs.</p>
+    <h3 id="goals">Goals</h3>
+    <p>Unless we are talking about a complex client-side Single Page Application (SPA), JavaScript should be used sparingly, and when a deliberate choice is made to not perform a task with other available technologies. The decision to add more scripts to a Web page should be made carefully. Even with a SPA, it is critical to make controlled choices so as to not include too much unorganized impossible to maintain code.</p>
+    <p>Any and all JavaScript code that&#39;s added to a Web page should be there <em>if and only if</em> it is needed for the page to achieve the desired ends or if there aren&#39;t any negative impacts with it there.</p>
+    <p>Included JavaScript should:</p>
+    <ul>
+    <li>Be included after careful consideration.</li>
+    <li>Have the performance overhead and file size evaluated.</li>
+    <li>Have a feature set that is understood and appropriate.</li>
+    <li>Perform only the necessary tasks without needless overhead.</li>
+    <li>Have maintainability carefully assessed.</li>
+    </ul>
+    <p>While being:</p>
+    <ul>
+    <li>Fast, efficient, and perform well.</li>
+    <li>Re-usable if possible.</li>
+    <li>Not conflict with other code on a given page or sets of pages.</li>
+    <li>Executed only when necessary on a given page or sets of pages.</li>
+    </ul>
+    <p>Likewise, the absence or failure of the code should be carefully considered:</p>
+    <ul>
+    <li>What happens if for some reason this code is missing or does not run? </li>
+    <li>What happens if the code triggers an error?</li>
+    </ul>
+    <h3 id="getting-started-on-javascript">Getting Started on JavaScript</h3>
+    <p>All too often a developer will solve a problem in a closed context and not consider the whole picture. &quot;Add another plugin&quot; is not always a good answer. </p>
+    <p>It is well worth considering if parts or all of the code being added can be useful elsewhere. Centralized code is excellent because it can be updated once and re-used everywhere.</p>
+    <p>For JavaScript, a Front-end developer should be thinking about:</p>
+    <ul>
+    <li>If there is code that does this task already?</li>
+    <li>Code formatting rules, naming conventions, file locations, etc.</li>
+    <li>Testing the code on various browsers and devices.</li>
+    <li>If <code>strings</code> of text should be external for content management or translation.</li>
+    <li>If code being added might be useful outside of the current problem.</li>
+    </ul>
+    <p>Examples of possible things to centralize:</p>
+    <ul>
+    <li>Code that modifies the DOM</li>
+    <li>Ajax, validation, or other libraries</li>
+    <li>Query string parsing utilities, router-type code</li>
+    <li>Tests for global conditions (e.g. window size, feature support, etc.)</li>
+    <li>Page, window, or document level events (e.g. Ajax, resize, etc.)</li>
+    <li>UI controls (e.g. spinners, modals, tabs, etc.)</li>
+    <li>Date handling utilities</li>
+    <li>Files with strings of text in a given language</li>
+    <li>Finally, settings and configuration options (e.g. paths to services, debug flags, duration settings, minimum or maximum values, etc.) are common things to set in a centralized, distinct place.</li>
+    </ul>
+    <p>Bottom line, please understand what the JavaScript does and how it does it if you are including third party code.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Note:</strong><br>
+        Client buy-in may be necessary for the usage of JavaScript for some features. It may be a forgone conclusion but usage of libraries or custom code should be discussed with the team and client technical leads to be certain the teams are on the same page.</p></aside>
+
+    <h4 id="javascript-libraries-frameworks-and-plugins">JavaScript Libraries, Frameworks, and Plugins</h4>
+    <p>Recent years have seen a virtual explosion in new JavaScript libraries sometimes calling themselves &quot;frameworks&quot;.</p>
+    <p>Libraries and frameworks can be useful, especially when the client-side is become more responsible for larger parts of applications and Web sites.</p>
+    <ul>
+    <li><strong>Libraries</strong> are code you use within your structure, featuring code that is available for you call upon.</li>
+    <li><strong>Frameworks</strong> are code collections that serve specific purposes in a particular way, and call your code that is included following their patterns. </li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey"><p><strong>Learn more:</strong><br>
+    The basic idea is an &quot;inversion of control&quot; in the code. This is debatable, but something like jQuery could be said to be a library, while Angular, React, or Backbone could be a framework.</p></aside>
+
+    <p>Either way, this is typically <em>third party code</em> that should be carefully considered when it is determined to be included in a project or not.</p>
+    <h5 id="selection-of-third-party-code">Selection of Third Party Code</h5>
+
+    <p>Selection of a library or framework is never an easy task. Things that should be considered include:</p>
+    <ul>
+    <li>Technical Requirements for the project.</li>
+    <li>Quality and maturity of code in question.</li>
+    <li>Future support for the code.</li>
+    <li>Staffing skill sets required to support the code.</li>
+    <li>How tightly coupled to the layers of the application the code may be.</li>
+    <li>How actively supported its open source community may be.</li>
+    <li>Be tested against various devices and platform requirements to verify it works for the project.</li>
+    </ul>
+    <h5 id="usage-of-third-party-code">Usage of Third Party Code</h5>
+    <p>Third party code should be included as-is and:</p>
+    <ul>
+    <li>Treated as it may be updated (i.e. versions) at some point in the future.</li>
+    <li>Should <strong>never be modified</strong> unless documented thoroughly for the project.</li>
+    <li>As many conventions of its use followed in their recommended standard ways.</li>
+    <li>Un-minified code should be included.</li>
+    <li>Any required licenses should be included as specified by the library.</li>
+    <li>Commercial code must be approved if necessary.</li>
+    </ul>
+    <p>A team may decide to write wrapper code around the third party library and provide a more simple API for the code.</p>
+    <h4 id="ecmascript-6-es6-ecmascript-2015">ECMAScript 6, ES6, ECMAScript 2015</h4>
+    <p>Developers are encouraged to begin learning and using the <a href="https://leanpub.com/understandinges6/read/">latest version of JavaScript, ES6</a>. Please use appropriate transpilers and never release untested or unsupported code in the deliverables. Do <strong>not</strong> assume a feature <a href="https://kangax.github.io/compat-table/es6/">is supported</a> in a browser.</p>
+
+    <h3 id="javascript-best-practices">JavaScript Best Practices</h3>
+    <h4 id="inclusion-of-code">Inclusion of Code</h4>
+    <p>Use external JavaScript files. <strong>Do NOT include JavaScript in-line in the page unless there is a good reason</strong>.</p>
+    <p>Use the <code>&lt;script&gt;</code> tag to include your JavaScript files at the bottom of your HTML document just before the closing <code>&lt;/body&gt;</code> tag. For optimal page performance, concatenate your JavaScript into as few files as possible.</p>
+    <pre><code class="language-markup">&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <ul>
+    <li>This should link to concatenated and minified, finalized JavaScript files. </li>
+    <li>Enable source maps to assist with debugging and testing. </li>
+    </ul>
+    <p>In development environments, this may point at a non-optimized file, however having techniques in place to toggle optimized files on and off is often beneficial.</p>
+    <p>A reference similar to this may need to include a build-specific file name based upon a hash or something along those lines for HTTP cache purposes.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn more:</strong><br>
+        For information about build tools that help with these techniques, please see the <a href="#appendix_appendix">Appendix</a>.</p>
+    </aside>
+
+    <h5 id="loading-files-on-demand">Loading Files On Demand</h5>
+    <p>On some sites it may be appropriate to load a single JavaScript file with all dependencies bundled together, or it may be more appropriate (such as in a very large SPA) to load files <em>on demand</em>, as they are needed, asynchronously.</p>
+
+    <h4 id="writing-and-formatting-javascript">Writing and Formatting JavaScript</h4>
+    <p>The use of whitespace should follow long-standing English writing conventions, with blank lines between ideas and groups of code such as objects, functions, and new lines for new statements.</p>
+    <p>Formatting the language statements and patterns should follow these basics:</p>
+    <ul>
+    <li><strong>Open braces</strong> are preceded by a single space.</li>
+    <li><strong>Open braces</strong> should appear on the same line as their preceding argument.</li>
+    <li><strong>Close braces</strong> should appear at the same indentation as the statement preceding the opening brace</li>
+    <li>There should be no space characters between <strong>parentheses</strong> and their contents.</li>
+    <li>Use <strong>semicolons</strong> and do not rely on automatic semicolon insertion.</li>
+    <li>Each <strong>comma</strong> and <strong>colon</strong> (and semi-colons that don&#39;t end a line) should be followed by a single space.</li>
+    <li><strong>Binary</strong> and <strong>ternary operators</strong> should have a single space on each side.</li>
+    <li><strong>Quoted values</strong> should be in &#39;single quotes&#39; so that double quotes may easily exist inside them.</li>
+    <li><strong>Comment JavaScript</strong> code thoroughly and consider using a pattern such as those described by <a href="http://usejsdoc.org/">JSDocs</a> so that documentation may be generated automatically.</li>
+    <li>Conditional statements go on a new line followed by the opening brace.</li>
+    <li>Else/else go on the same line as the brace.</li>
+    <li>Use type strict checks with <code>===</code> as opposed to <code>==</code> whenever possible.</li>
+    </ul>
+    <pre><code class="language-javascript"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) {
+        <span class="keyword">var</span> example = <span class="number">1</span>;
+        <span class="keyword">if</span> (example === i) {
+            <span class="comment">// we are looping</span>
+        } <span class="keyword">else</span> {
+            <span class="comment">// this will never happen</span>
+        }
+    }</code></pre>
+    <p>To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.</p>
+    <pre><code class="language-javascript"><span class="keyword">if</span> ((allowUpdate) &amp;&amp; ((user.isAdmin) || (user.role === item.owner))) {
+        <span class="comment">// do something</span>
+    }</code></pre>
+    <h4 id="variable-declaration">Variable Declaration</h4>
+    <p>To avoid confusion between global and local variables, we declare each variable on its own line with the <code>var</code> keyword. We do not use a single <code>var</code> keyword and then chain several variable declarations onto it separated by a comma.</p>
+    <pre><code class="language-javascript"><span class="keyword">var</span> windowWidth;
+    <span class="keyword">var</span> windowHeight;
+    <span class="keyword">var</span> currentVal = $(<span class="keyword">this</span>).val();
+    <span class="keyword">var</span> min = parseInt($(<span class="keyword">this</span>).attr(<span class="string">'min'</span>), <span class="number">10</span>);</code></pre>
+    <p>This has been <a href="http://benalman.com/news/2012/05/multiple-var-statements-javascript/">debated at length</a> and is controversial, however we believe this is a better practice due to several technical reasons:</p>
+    <ul>
+    <li>Easier debugging with debuggers.</li>
+    <li>Easier merges with version control and diff utilities.</li>
+    <li>Most technical issues are resolved by &#39;use strict&#39;.</li>
+    </ul>
+    <h4 id="best-practices">Best Practices</h4>
+    <ul>
+    <li>Avoid user-agent sniffing and rely on <a href="#javascript_feature-detection">feature detection</a> instead. Browser detection is dangerous and error-prone.</li>
+    <li>Avoid using <code>document.write</code>.</li>
+    <li>Only run scripts on a page that are needed for that page.</li>
+    <li>Don&#39;t repeat yourself (i.e. keep your code <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>)</li>
+    <li>Do not modify JavaScript core objects <code>.prototype</code> unless you really know what you&#39;re doing.</li>
+    <li>Use method names that make sense, such as <code>init()</code> or <code>setup()</code> for code that starts things off. Be consistent on your project.</li>
+    </ul>
+    <h5 id="variable-scope">Variable Scope</h5>
+    <p>Minimize the use of <code>global</code> or <code>window</code> level variables and name-spaces. Pollution of the global name-space is error prone and a bad practice.</p>
+    <p>If referencing a <code>window</code> or <code>global</code> level variable that isn&#39;t obvious, please comment as such or explicitly state it.</p>
+    <pre><code class="language-javascript"><span class="keyword">var</span> window.thing = {};</code></pre>
+    <h5 id="variable-names-and-types">Variable Names and Types</h5>
+    <p>Always use meaningful variable names that can be read as words, not as silly abbreviations only you understand.</p>
+    <ul>
+    <li>Variable names should be <code>camelCase</code>. </li>
+    <li>Objects, classes, and name-spaces should be <code>TitleCase</code>. </li>
+    <li>Boolean values should be prefixed with <code>is</code> if at all possible.</li>
+    <li>Cached jQuery objects can be prefixed with <code>$</code>.</li>
+    <li>Use shorthand versions of empty <code>Arrays</code> and <code>Objects</code>.</li>
+    </ul>
+    <pre><code class="language-javascript"><span class="comment">// some examples</span>
+    <span class="keyword">var</span> exampleValue = <span class="string">'my example variable value'</span>;
+    <span class="keyword">var</span> numberOfTimes = <span class="number">3</span>;
+    <span class="comment">// booleans</span>
+    <span class="keyword">var</span> isThisWorking = <span class="literal">true</span>;
+    <span class="keyword">var</span> isNotWorking = <span class="number">0</span>;
+    <span class="comment">// cache a selector</span>
+    <span class="keyword">var</span> $body = $(<span class="string">'body'</span>);
+    <span class="comment">// short hand objects and arrays</span>
+    <span class="keyword">var</span> newObject = {};
+    <span class="keyword">var</span> newArray = [];</code></pre>
+    <h5 id="settings-constants">Settings, Constants</h5>
+    <p>Put settings together in obvious places such as an Object literal space inside your module. Make settings that are possibly to be considered &quot;constants&quot; to be obvious -- some developers like to use <code>ALLCAPS</code>.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn more:</strong><br>
+        Did you know that <a href="https://strongloop.com/strongblog/es6-variable-declarations/">ES6 now features</a> real life <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">constants</a>?</p>
+    </aside>
+
+    <h5 id="feature-detection">Feature Detection</h5>
+    <p>Always test for the existence of a browser API, function, or object property before you use it, and make sure the user experience is still functional (to the extent possible) if it&#39;s not found. We rely on JavaScript-based feature detection rather than server-side device detection because it&#39;s more robust, easily maintained, and future-proof.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn More:</strong><br>The goto library for feature detection is of course <a href="http://modernizr.com/">Modernizr</a>.</p>
+    </aside>
+
+    <h5 id="limit-events-use-event-delegation">Limit Events — Use Event Delegation</h5>
+    <p>It is always preferable to use fewer events being bound to objects on a page as possible. Too many events bound on a page can mean memory leaks or just an accumulation of handlers bound to DOM elements which becomes less and less efficient over time. Additionally, event delegation has the added benefit of persisting events over dynamic page updates when items are added or removed from the DOM.</p>
+    <p>With jQuery this is easy, simply use the <code>on</code> method with a selector:</p>
+    <pre><code class="language-javascript">$(<span class="string">'body'</span>).on(<span class="string">'click'</span>, <span class="string">'a.scroller'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    <span class="comment">// this only runs if the a.scroller is matched</span>
+    });</code></pre>
+
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn more:</strong><br>The jQuery API site has an excellent overview of the <a href="http://api.jquery.com/on/">on</a> method.</p>
+    </aside>
+
+    <h5 id="javascript-performance">JavaScript Performance</h5>
+    <p>One of the most costly operations a browser can perform is updating the DOM in the page via inefficient JavaScript techniques. The most important thing to know is that the more you do on a Web page with JavaScript, the more work is being done, the more memory and the bigger the footprint it can generate. Additionally, updating a complex DOM structure over and over in JavaScript can cause re-flow, repainting, and jank.</p>
+    <p>A book could be written on the subject, but here&#39;s a taste of various references:</p>
+    <ul>
+    <li><a href="https://developers.google.com/speed/articles/reflow?hl=en">Minimizing browser re-flow</a></li>
+    <li><a href="http://blog.letitialew.com/post/30425074101/repaints-and-reflows-manipulating-the-dom">Repaints and Reflows, Manipulating the DOM Responsibly</a></li>
+    <li><a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/">Reflows &amp; Repaints: Css Performance Making Your Javascript Slow?</a></li>
+    <li><a href="http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/">Rendering: repaint, reflow/relayout, restyle</a></li>
+    <li><a href="http://www.nczonline.net/blog/2009/02/03/speed-up-your-javascript-part-4/">Speed Up Your JavaScript (part 4)</a></li>
+    <li><a href="https://gist.github.com/dypsilon/4252079">Memory Management and Performance</a></li>
+    <li><a href="http://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/">Writing Fast, Memory-Efficient JavaScript</a></li>
+    <li><a href="http://www.punkchip.com/javascript-efficiency/">Front-end developer essentials – 5 tips for efficient jQuery</a></li>
+    </ul>
+    <h4 id="basic-javascript-architecture">Basic JavaScript Architecture</h4>
+    <p>Today it is common for the JavaScript code on a site to be a vast collection of &quot;Modules&quot; brought together by build scripts, dependency tools, or even manually by the developer (not really recommended).</p>
+    <p>Smaller sites can get away with more simple structures, but for longer term, JavaScript-heavy code bases the following rule is critical:</p>
+    <ul>
+    <li>For a complex site, never use a single JavaScript file for development, unless it is tiny and serves a very targeted purpose.</li>
+    </ul>
+    <p>This is so that the code is maintainable and scalable. Smaller files are easier to debug, swap in and out, and blocks of code should serve as small a purpose as possible (<a href="http://blog.codinghorror.com/curlys-law-do-one-thing/">single responsibility principle</a>).</p>
+    <p>In most simple terms, most sites benefit from a basic structure similar to:</p>
+    <ul>
+    <li>Global site-wide JavaScript</li>
+    <li>Specific modules for specific sections of the site</li>
+    <li>Specific modules used for specific purposes / features</li>
+    <li>Available vendor libraries</li>
+    </ul>
+    <p>With this in mind, for strict control over the code base it&#39;s best to consider:</p>
+    <ul>
+    <li>What is the <strong>central entry point</strong>, or the central point of execution? This is to say, what kicks off the JavaScript? This may be a simple jQuery <code>document.ready()</code> or some other mechanism to run the site&#39;s code, such as a router.</li>
+    </ul>
+    <p>Having explicit control over the page life-cycle is preferable to having a dozen jQuery <code>document.ready()</code> statements all competing for the first chance to execute on a page.</p>
+    <p>Effectively the application core, it should kick off the rest of the code to run. Typically this has module-management baked in in some way.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Note:</strong><br>One way to control which code runs on a page is through <a href="http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/">DOM-based routing</a>.</p>
+    </aside>
+
+    <p>Additional considerations:</p>
+    <ul>
+    <li>How are the modules going to communicate with each other?</li>
+    <li>How tightly coupled are the modules in the code base?</li>
+    <li>How much JavaScript code would need to be updated if/when the HTML / CSS changes on the project?</li>
+    <li>Can individual parts call as few libraries or plugins as indirectly as possible, to facilitate changes later?</li>
+    <li>Does the server need to provide the scripts dynamic values for JavaScript?</li>
+    </ul>
+    <h5 id="about-javascript-modules">About JavaScript Modules</h5>
+    <p>The term &quot;module&quot; in JavaScript has probably been over-used. It can refer to specific patterns used by specific tools and frameworks, or simple blocks of code following some typical <a href="http://www.slideshare.net/stoyan/javascript-patterns">JavaScript design patterns</a>.</p>
+    <p>These days options for JavaScript modules include some of the following.</p>
+    <p><strong>Vanilla JavaScript</strong>:</p>
+    <ul>
+    <li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">Object literal notation</a></li>
+    <li>The <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript">Revealing Module Pattern</a></li>
+    </ul>
+    <p>Or, a <strong>common standard</strong>, used by many dependency tools:</p>
+    <ul>
+    <li><a href="http://requirejs.org/docs/whyamd.html">AMD modules</a>  (most commonly used by <a href="http://requirejs.org/">require.js</a>)</li>
+    <li>CommonJS modules (most common used by node.js and browserify)</li>
+    <li><a href="https://leanpub.com/understandinges6/read/#leanpub-auto-modules">ES6 modules</a></li>
+    </ul>
+    <p><strong>Frameworks</strong> will have their own unique set ups.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn more:</strong><br>
+        ES6 has just recently standardized how script loading, importing, and more about <a href="https://leanpub.com/understandinges6/read/#leanpub-auto-modules">how modules will be handled</a> as part of the standard spec going forward.</p>
+    </aside>
+
+    <h3 id="javascript-deliverables">JavaScript Deliverables</h3>
+    <p>The most obvious fact is you will need to provide working files that are error-free and will work in a variety of scenarios. We can&#39;t assume that clients will always leave scripts and pages as we leave them, though we can provide direction as to how scripts should be used.</p>
+    <h4 id="understanding-the-code-s-place-in-the-project">Understanding the Code&#39;s Place in the Project</h4>
+    <ul>
+    <li>Understand where your code will live vs. any code introduced in a destination environment</li>
+    <li>Understand if the code will need to coexist with other code.</li>
+    </ul>
+    <h4 id="clean-clear-organized-readable-code">Clean, Clear, Organized, Readable Code</h4>
+    <ul>
+    <li>As bug free as possible.</li>
+    <li>Always remember we write code for other developers, not for a runtime or a browser.</li>
+    <li>Remove code that is no longer used. Remove excess &quot;noise&quot; or distractions from source code such as large commented out blocks of unused code. Source control can solve problems like this.</li>
+    <li>Have <code>console</code> and debugging statements be removed or a plan in place for suppression during the build or deployment.</li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey">
+        <p><strong>Learn more:</strong><br><a href="http://code.tutsplus.com/tutorials/the-essentials-of-writing-high-quality-javascript--net-15145">The Essentials of Writing High Quality JavaScript</a> is an older article but still holds up today.</p>
+    </aside>
+
+    <p>Delivery of a flat folder full of JavaScript files is not advised.</p>
+    <pre><code class="language-markup">├── _assets/
+    │   ├── js/
+    │   │   ├── app.js
+    │   │   ├── tools.js
+    │   │   ├── ...
+    │   │   ├── vendor
+    │   │   │   ├── source01.js
+    │   │   │   ├── source02.js
+    │   │   │   ├── ...
+    │   │   ├── views
+    │   │   │   ├── view01.js
+    │   │   │   ├── view02.js
+    │   │   │   ├── ...</code></pre>
+    <h3 id="next-steps-amp-javascript-resources">Next Steps &amp; JavaScript Resources</h3>
+    <p>There is an enormous volume of JavaScript reference material out in the wild today. We hope to add more at some point but here are various topics worth following up on:</p>
+
+    <ul>
+    <li>Debugging JavaScript</li>
+    <li><a href="https://github.com/addyosmani/es6-equivalents-in-es5">Learning more about ES6</a></li>
+    <li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns">JavaScript Design Patterns</a></li>
+    <li>Unit Testing JavaScript code</li>
+    <li><a href="https://nodejs.org/">Node.js</a></li>
+    <li>Compare <a href="http://todomvc.com/">JS Frameworks, Frameworks, and more Frameworks</a></li>
+    <li><a href="http://rmurphey.com/blog/2012/04/12/a-baseline-for-front-end-developers/">Baseline For Front End Developers</a></li>
+    <li><a href="http://addyosmani.com/blog/javascript-style-guides-and-beautifiers/">JavaScript Style Guides and Beautifiers</a></li>
+    <li><a href="http://javascript.crockford.com/code.html">Douglas Crockford&#39;s JS Code Conventions</a></li>
+    <li><a href="http://shop.oreilly.com/product/0636920025245.do">Maintainable JavaScript Book</a></li>
+    <li><a href="http://www.slideshare.net/nzakas/maintainable-javascript-2012">Maintainable JavaScript Presentation</a></li>
+    <li><a href="https://speakerdeck.com/addyosmani/large-scale-javascript-application-architecture">Large Scale JavaScript Applications</a></li>
+    </ul>
+    <p>For more current links and references, please see <a href="https://github.com/class="card p-4 mb-4 bg-grey"-idev/code-standards/wiki/Useful-Links-and-Resources">our Wiki on Github</a>.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p><strong>Note:</strong><br>We could write a book on JavaScript frameworks and what we&#39;ve learned there, but this isn&#39;t the time. We may add more in the near future.</p>
+    </aside>
+
+    <!--
+
+    Exceptional Sources
+    Eloquent JavaScript
+        http://eloquentjavascript.net/
+    http://perfectionkills.com/
+
+    JavaScript Weekly
+    http://javascriptweekly.com/archive/
+
+    ├── _assets/
+    │   ├── readme.md
+    │   ├── css
+    │   │   ├── example01.css
+    │   │   ├── example02.css
+    │   │   ├── vendor
+    │   │   │   ├── source01.css
+    │   │   │   ├── source02.css
+    │   │   │   ├── ...
+    │   ├── js
+    │   │   ├── app.js
+    │   │   ├── tools.js
+    │   │   ├── ...
+    │   │   ├── vendor
+    │   │   │   ├── source01.js
+    │   │   │   ├── source02.js
+    │   │   │   ├── ...
+    │   ├── img
+    │   │   ├── example00.png
+    │   │   ├── ...
+    │   │   ├── icons
+    │   │   │   ├── example01.gif
+    │   │   │   ├── example02.png
+    │   │   │   ├── ...
+    -->
+
+
+    </section>
+    <section><h2 class="border-bottom mt-4 pb-1" id="responsive-web-design"><a name="responsive-web-design"></a>Responsive Web Design</h2>
+    <p>Responsive Web Design (RWD) is the term used for the practice of creating page layouts and user experiences that work on a variety of devices and screen sizes.</p>
+    <p>With the ever expanding mobile landscape and the evolution of the Internet of Things (IoT), the idea of a &quot;standard&quot; screen size has fallen by the wayside in favor of the rise of a device-agnostic approach. It is less and less common to launch two versions of a site, one for desktop and one for mobile.</p>
+    <p>To this end a series of techniques have been put together for pages to adjust based off browsers&#39; current specs (e.g. width, height, pixel density, orientation, etc).</p>
+    <p>The techniques are referred to as Responsive Web Design (RWD) and it is another technique in the toolbox of <em>progressive enhancement</em> and <em>adaptive web design</em>.</p>
+    <h3 id="goals-of-responsive-web-design">Goals of Responsive Web Design</h3>
+    <p>The goals of RWD are:</p>
+    <ul>
+    <li>Offer an optimized user experience (UX),</li>
+    <li>regardless of the user&#39;s screen size or features supported on their device.</li>
+    </ul>
+    <p>This is true whether it is a stadium jumbotron or the screen of a watch — and of course everything between.</p>
+    <p>Despite this lofty ideal, on Web projects the term &quot;responsive web design&quot; has generally been used in reference to an optimized experience for a set of target devices, usually:</p>
+    <ul>
+    <li>A particular set of cell (smart) phones,</li>
+    <li>various tablets,</li>
+    <li>or desktop computer monitors (depending upon the target audience).</li>
+    </ul>
+    <p>Typically reasonable effort is applied to accommodate the ideal UX for devices with screen sizes that fall outside of and in between.</p>
+    <p>Overall, critical content and features on a site should be:</p>
+    <ul>
+    <li>Adjustable to different types of user interaction (e.g. click, swipe, pinch)</li>
+    <li>Realistically accessible based on the capabilities of different devices.</li>
+    </ul>
+    <p>If meeting desktop browsers&#39; feature sets and dealing with different platforms was difficult before, RWD introduces an almost infinite ecosystem of hardware and software that Web pages need to work on. The level of effort does often increase on projects featuring RWD.</p>
+    <h3 id="getting-started-with-mobile-development">Getting Started with Mobile Development</h3>
+    <p>As the name of RWD implies, it all starts with a flexible design that features components having mutable characteristics based on the available screen canvas and varied types of user interactions. Careful consideration needs to be taken when innovating to derive a design that can respond to various screens.</p>
+    <p>For a given project, always consider:</p>
+    <ul>
+    <li>The extent of the use cases for each feature on the site.</li>
+    <li>The target audience and likelihood they may be using an alternative device to conduct certain activities on the site.</li>
+    <li>If all target devices will support all the technologies required.</li>
+    <li>That the UX will <strong>not</strong> be 100% the same across all devices, browsers and screens — nor should it be!</li>
+    <li>What happens to the design when the screen gets smaller and larger than the static canvas size it is being designed on.</li>
+    <li>For placement of content and decorative elements, are there patterns or rules that can describe where it falls and adjust with screen sizes?</li>
+    <li>Will some components be better suited as vector graphics (SVG or fonts) instead of raster files to allow for distortion free scaling?</li>
+    <li>Will assets need to be produced in different formats for different devices (e.g. Flash video vs. HTML5 video, lower resolution artwork vs. high resolution artwork, smaller file sizes vs. larger sizes).</li>
+    <li>If a device offers a superior UX for some types of interaction (e.g.  native date-pickers vs. traditional browser controls, or swiping instead of clicking on dots).</li>
+    <li>What happens when a feature is not supported by a device, or if a feature were to fail in a given device?</li>
+    <li>What if a device went off-line during usage of a feature?</li>
+    <li>The best ways to detect support for various features (e.g. Modernizr, etc.).</li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>Brad Frost&#39;s <a href="https://bradfrost.github.io/this-is-responsive/patterns.html">Responsive Design Patterns</a> and <a href="https://bradfrost.github.io/this-is-responsive/resources.html">Responsive Design Resources</a> are two great resources that continue to grow due to user contributions.</p>
+    </aside>
+
+    <h4 id="to-use-a-pre-built-grid-or-not-">To Use A Pre-built Grid Or Not?</h4>
+
+    <p>Sometimes CSS grid frameworks are a good place to start ... but sometimes not.</p>
+    <p>They must match the design in terms of flexibility.</p>
+    <p>It&#39;s critical a developer learn the basics of how grid systems</p>
+    <p>It may be beneficial to learn the coming Flexbox techniques as well.</p>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>While using a Framework isn&#39;t always the way to go, there is much to be learned from examining <a href="https://bradfrost.github.io/this-is-responsive/resources.html#frameworks">how they work and how they are put together</a>.</p>
+    </aside>
+
+    <h4 id="progressive-enhancement">Progressive Enhancement</h4>
+    <p>Since mobile phones and tablets are frequently the lower end in terms of capabilities, it is recommended to start with building the mobile experience first, and gradually add features. With this in mind, RWD could be considered a type of <a href="https://www.filamentgroup.com/dwpe/">Progressive Enhancement</a>, whereby users with basic devices can access basic content and features, however care is taken to layer on more sophisticated features for more powerful devices and desktop users.</p>
+    <p>With these techniques, users only get what their device or browser can handle, and feature detection can be used to add more features when appropriate — without breaking on less capable devices.</p>
+    <h4 id="setting-target-device-requirements">Setting Target Device Requirements</h4>
+    <p>For a given project, check Web server logs, current industry statistics and trends, and consult with a client on their audience and proposed use cases when determining a baseline set of devices to build the site and test for.</p>
+    <p>What types of users are there? Is an audience:</p>
+    <ul>
+    <li>Working on their commute from a bus or train?</li>
+    <li>Paying bills or their taxes on the go?</li>
+    <li>Accessioning financial information with their clients on the go, over lunch?</li>
+    <li>Entering sales figures remotely?</li>
+    <li>Enjoying witty content or editorials?</li>
+    <li>Comfortably browsing for fun at home?</li>
+    </ul>
+    <p>It is near impossible to test on every version of every platform, particularly with something like Android where fragmentation of the feature set is totally unpredictable. Comparison of platforms and statistics regarding particular releases of particular versions of an operating system may need to be considered.</p>
+
+    <h3 id="responsive-design-best-practices">Responsive Design Best Practices</h3>
+    <p>RWD is frequently said to be achieved through the use of:</p>
+    <ol>
+    <li>Percentage-based grids, </li>
+    <li>flexible images that scale, </li>
+    <li>and <strong>CSS media queries</strong>. </li>
+    </ol>
+    <p>These are the core ideas behind RWD, though other techniques are often employed as the term grows in popularity and the use cases evolve. </p>
+    <p>Like all programming and creative processes there is flexibility in how you go about achieving these, so long as there is consistency within your team. </p>
+    <p>Some core guidelines:</p>
+    <ul>
+    <li>Always design and develop the <strong>mobile UX first</strong> (thus start with small defaults and scale upwards; please see Mobile First)</li>
+    <li>Set the <strong>baseline Media Queries as a team</strong> for various types of devices, and try to stick to them as much as possible. </li>
+    <li><strong>Add additional Media Queries</strong> — <strong>as necessary</strong> — for less than ideal experiences at the sizes in between, as appropriate for different types of content and components.</li>
+    <li><strong>Build for speed</strong> (load time and interaction) and the minimum viable product for slower connection speeds and less able devices.</li>
+    <li>Be careful of <strong>images</strong>. Do not render a 5GB image at 100px by 100px. This does not change the bandwidth needed to download the file! Similarly if you are hiding an image with <code>display: none</code>, <code>visibility: hidden</code> or similar, the image may still be downloaded.</li>
+    <li>Test on <strong>real hardware</strong>. Actual testing on <em>actual devices</em> cannot be substituted with resizing a browser window, or even an &quot;emulation&quot; mode offered by a desktop browser.</li>
+    <li>A <strong>mobile browser</strong> is not a small desktop browser. Mobile versions of desktop browsers are frequently woefully different (or a totally different product) than their desktop counterparts, so do not assume that just because it works on Chrome desktop that it will work on an Android device.</li>
+    </ul>
+    <p>Initial work, and first pass tests of media queries, may be performed in desktop browsers by resizing the screen or using a browser&#39;s developer tools that may feature an emulation mode (e.g. Chrome DevTools).</p>
+    <p>However, this is <em>never a substitution</em> for actual testing on actual devices with various Operating System versions and </p>
+
+    <h4 id="media-queries-and-css-breakpoints">Media Queries and CSS Breakpoints</h4>
+    <p>Added as part of the CSS3 specification, <strong>media queries</strong> consist of a media type and at least one expression of a media feature (such as height, width and orientation) that describe the conditions under which a set of CSS rules apply. </p>
+    <p>For example:</p>
+    <pre><code class="language-css"><span class="at_rule">&#64;<span class="keyword">media</span> screen (min-width: <span class="number">300</span>px) and (max-width: <span class="number">800</span>px) </span>{
+    <span class="class">.some-selector</span><span class="rules">{
+        <span class="comment">/* CSS declarations go here */</span>
+    <span class="rule">}</span></span>
+    }</code></pre>
+    <p>These widths are referred to as <em>breakpoints</em> as they are the point at which layout behavior breaks with the design at the prior size. This is typically screen size, and sometimes other conditions such as pixel density or even screen orientation (e.g. landscape or portrait; although this isn&#39;t that useful).</p>
+    <p>These are applied with CSS Media Queries test the device or browsers current feature set for various conditions and feature support. The most common example is screen size.</p>
+    <p>The golden rule is:</p>
+    <ul>
+    <li><strong>Don’t specify vendor- or device-specific widths</strong></li>
+    </ul>
+    <p>Let the content and the design dictate the breakpoints.</p>
+    <ul>
+    <li>For instance, targeting an ipad in portrait or an ipad landscape.</li>
+    <li>Popular devices will come and go and even within devices the specifications will change over time. </li>
+    <li>Avoid orientation/resolution based specifications in favor of width based ones (remember you are <strong>not</strong> targeting devices!). </li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p><a href="https://bradfrost.github.io/this-is-responsive/resources.html#media-queries">Media Query Resources</a></p>
+    <p><a href="http://www.smashingmagazine.com/2012/03/device-agnostic-approach-to-responsive-web-design/">A Device Agnostic Approach to Responsive Web Design</a> is a great read on responsive techniques that do not favor one device over another, and are driven by content elements.</p>
+    </aside>
+
+    <p>If you are placing breakpoints every 50-100px you are doing something wrong. While there is not a correct number of breakpoints there must be a balance between the control of the design and a manageable code base.</p>
+    <p>While working with media queries here are a few things to consider:</p>
+    <ul>
+    <li>All modern browsers support CSS3 Media Queries (including browsers as far back as the stock Android 2.1 browser)</li>
+    <li>IE8 and below do not support Media Queries.<ul>
+    <li><a href="https://github.com/scottjehl/Respond">Respond.js</a> (and similar JavaScript libraries) can be used to enable support for Media Queries in these older browsers (if needed).</li>
+    <li>Attempting to polyfill Media Query behavior in older browsers is usually not advisable. This is because the JS needed will cause an additional performance hit to the already slow JavaScript and rendering engine. </li>
+    </ul>
+    </li>
+    </ul>
+    <p>Instead, you are better off forcing older browsers to experience the site through a desktop experience (optionally tailored specifically for these older browsers).</p>
+    <ul>
+    <li>This can be done either through feature detection (with the likes of Modernizr) or with IE conditional statements and optionally including additional CSS style sheets.</li>
+    </ul>
+    <h4 id="mobile-first">Mobile First</h4>
+    <p>The &quot;Mobile First&quot; techniques consider the lowest common denominator first, which is likely to be your mobile devices due to bandwidth limitations, loading times (not just screen size!), and even CPU speed of the devices.</p>
+    <p>Key considerations and techniques include:</p>
+    <ul>
+    <li>Starting small, and work upwards. Use <code>min-width</code>, <strong>not</strong> <code>max-width</code> breakpoint definitions). </li>
+    <li>Begin with global content styles that apply across all breakpoints.</li>
+    <li>Next, add the styles that are seen below the smallest break point -- remember that using the <code>min-width</code> approach means that the &quot;first breakpoint&quot; will not be for small screens (like mobile size screens) but rather for larger ones (like mobile landscape or phablet size screens).</li>
+    <li>From here add additional styles at successive breakpoints using <code>min-width</code> media queries leveraging the CSS cascade to progressively add additional styles.</li>
+    <li>As the queries increase in minimum sizes, add the markup and styles necessary to lay components out differently on larger screens.</li>
+    <li>Examine site features for mobile-specific JavaScript events (e.g. touch, pointer, vs. mouse) and interactions (e.g. swipe).</li>
+    </ul>
+    <p>Generally speaking smaller screen designs are a bit less complex (fewer images, effects, etc). Thus as the screens get larger the complexity tends to increase, conveniently lending to an additive approach to styling, very much in line with a mobile first pattern. </p>
+    <p>An example of working upwards in a CSS file might be:</p>
+    <pre><code class="language-css">/* GENERAL STYLES */
+    .example {...}
+
+    /* SECTION SPECIFIC STYLES - aimed at the smallest devices*/
+    .hero {...}
+
+    &#64;media(min-width: 600px) {
+    .hero {
+        /* just the new stuff here, no need to be repetitive... */
+    }
+    }
+
+    &#64;media(min-width: 800px) {
+    .hero {
+        /* just the new stuff here, no need to be repetitive... */
+    }
+    }
+
+    &#64;media(min-width: 1400px) {
+    .hero {
+        /* might need larger font sizes at largest screen sizes */
+    }
+    }</code></pre>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>Note: the breakpoints specified above are <strong>not</strong> intended to be recommended breakpoints, but rather just illustrative of this general concept.</p>
+    </aside>
+
+    <p>Another way of thinking about a mobile first pattern (from a design and development standpoint) is to:</p>
+    <ul>
+    <li>Innovate for your smallest reasonable target device.</li>
+    <li>Then start &quot;sizing your window up&quot; until the user experience or the design degrades.</li>
+    <li>Add in a breakpoint and make some design modifications to fix the degradation.</li>
+    <li>Resume sizing up your view port until you reach a similar breakdown in design and repeat this exercise.</li>
+    </ul>
+    <p>Recurse on this until you reach your largest reasonable target device - this is the mobile first pattern. </p>
+    <h4 id="speed-is-a-feature">Speed is a feature</h4>
+    <p>People expect page load time to be as fast if not faster on their mobile phones in comparison to a desktop experience. </p>
+    <ul>
+    <li>Try to keep your Web site&#39;s foot print as small as possible (this is a general best practice).</li>
+    <li>Start with global styles that apply across all breakpoints<ul>
+    <li>Optionally in-line these vital styles for faster initial render time</li>
+    </ul>
+    </li>
+    <li>Consider every HTTP request<ul>
+    <li>The request itself may end up taking as much if not more time then the transfer of the data and could block downstream actions or more vital downloads.</li>
+    </ul>
+    </li>
+    <li>Concatenate, gzip and minified your production CSS/JS where possible as this will lower page load size and time</li>
+    <li>Load the least amount of JavaScript that is needed.<ul>
+    <li>Wherever possible include script files at the end of your HTML document just before the <code>&lt;/body&gt;</code> tag.</li>
+    </ul>
+    </li>
+    </ul>
+    <p>Advanced CSS3 techniques are easy to implement, but when you start combining them, rendering and scrolling performance can be affected.</p>
+    <p>Be careful of images! </p>
+    <ul>
+    <li>Use a responsive image pattern that starts by serving a mobile optimized (and thus smaller file size) image first.</li>
+    </ul>
+    <h4 id="responsive-images">Responsive Images</h4>
+    <p>Currently there is little to no native support for responsive images. </p>
+    <p>The proposal with the most traction appears to be the <code>&lt;picture&gt;</code> element and related <code>srcset</code> and <code>sizes</code> attributes. </p>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>You can read about this element and the evolution and standard at <a href="http://responsiveimages.org/">ResponsiveImages.org</a></p>
+    <p>At this time the best application of the <code>&lt;picture&gt;</code> is with the <a href="https://scottjehl.github.io/picturefill/">Picturefill polyfill</a>.</p>
+    </aside>
+
+    <p>It can be cumbersome to set up, so take care and be certain the benefits are worth it on a given site.</p>
+    <p>Some basic rules to follow:</p>
+    <ul>
+    <li><strong>Always</strong> optimize your images using a tool such as Adobe Photoshop to assure you have the ideal image size and right amount of lossy compression. </li>
+    <li>Run all images though a lossless compressor like <a href="https://compressor.io/">Compressor.io</a>, <a href="https://smush.it">Smush.it</a> or <a href="https://imageoptim.com/">ImageOptim</a> (which has related tools also available as build-time scripts).</li>
+    </ul>
+    <p>You can also consider “Compressive Images”, which are basically higher-resolution jpegs compressed at a higher percentage rate:</p>
+    <ul>
+    <li><a href="http://filamentgroup.com/lab/rwd_img_compression/">Compressive Images</a></li>
+    <li><a href="http://blog.netvlies.nl/design-interactie/retina-revolution/">Retina Revolution</a></li>
+    <li><a href="http://www.vanseodesign.com/web-design/compressive-image-tests/">Compressive Image Tests</a></li>
+    </ul>
+    <p>However, there are drawbacks:</p>
+    <ul>
+    <li>The browser tends to use significantly more memory when storing and resizing these higher resolution images than scaling them to fit a container</li>
+    </ul>
+    <p>What’s important to realize is that this is changing faster than we can develop. What you do now will be obsolete very soon, so be sure to stay on top of current trends.</p>
+    <h4 id="vector-graphics-svg-">Vector Graphics (SVG)</h4>
+    <p>When working with an audience on unknown screen sizes and resolutions, as is the pretense in RWD, having graphics that can scale without degrading is a very appealing prospect. There are several vector implementation options.  </p>
+    <p>Web fonts: Fonts are vectors. With the exposure of custom web fonts as part of the CSS level 2 specification, many developers have turned to custom font packages as a solution for icons and simple vectors.</p>
+    <ul>
+    <li>Pros: this option allows for easy control of vector color, size and usage</li>
+    <li>Cons: all of the vectors single color and must be grouped others in one file.</li>
+    </ul>
+    <p>SVG: SVG is an XML syntax for describing vector shapes. </p>
+    <ul>
+    <li>Pros: vectors can be manipulated by CSS and/or JavaScript and allows for complex filters, animations and transitions.</li>
+    <li>Cons: SVG is only supported by IE9+</li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey"><p><a href="http://www.filamentgroup.com/lab/grumpicon-workflow.html">Grumpicon</a> is a script that will detect SVG support and server the appropriate CSS (or needed fall back CSS code to assure compatibility.</p></aside>
+
+    <h4 id="other-categories">Other Categories</h4>
+    <p>Virtually everything can change when screen sizes change:</p>
+    <ul>
+    <li>Grids</li>
+    <li>Typography</li>
+    <li>Accessible forms / validation messages</li>
+    <li>Main site navigation</li>
+    <li>Header or Footer content</li>
+    <li>In-page navigation, such as tabbed navigation, or accordions</li>
+    <li>Images</li>
+    <li>Data tables</li>
+    <li>Interactions and animations</li>
+    <li>Advertising types</li>
+    <li>Performance metrics</li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>More thoughts and ideas: <a href="http://www.lukew.com/ff/entry.asp?1514">Multi-device Layout Patterns</a></p></aside>
+
+    <h5 id="navigation-changes">Navigation Changes</h5>
+    <p>Large horizontal navigation and mega-drop downs are not always practical on smaller screens. Frequently this means off-canvas navigation, collapsing menus into select boxes, or other approaches such as a full-screen overlay.</p>
+
+
+    <aside class="card p-4 mb-4 bg-grey">
+    <p><a href="http://www.smashingmagazine.com/2012/02/progressive-and-responsive-navigation/">Progressive and Responsive Navigation</a> is a great example of modifying the types of menu based on screen size.</p>
+    <p><a href="http://bradfrost.com/blog/web/responsive-nav-patterns/">Responsive Navigation Patterns</a> and <a href="http://bradfrost.com/blog/web/complex-navigation-patterns-for-responsive-design/">Complex Navigation Patterns</a></p>
+    </aside>
+
+    <p>How navigation changes per screen size will depend entirely on the requirements and design for the project.</p>
+
+    <h5 id="responsive-data-tables">Responsive Data Tables</h5>
+    <p>Displaying data tables in a responsive way on Mobile sites is a challenge. There are only so many good ways to address this.</p>
+    <ul>
+    <li>Simply make a wrapper around the table and scroll horizontally.</li>
+    <li>Have CSS rules which collapse the tables.</li>
+    <li>Sometimes JavaScript might be used to hide/show certain less critical columns, however this does add overhead.</li>
+    </ul>
+    <aside class="card p-4 mb-4 bg-grey">
+    <p>The always excellent Brad Frost has a nice collection of links regarding <a href="https://bradfrost.github.io/this-is-responsive/resources.html#tables">responsive data tables</a>.</p>
+    </aside>
+    </section>
+
+    </div>
+</section>
+
+<div class="mb-4 p-4"></div>

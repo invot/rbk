@@ -21,11 +21,55 @@
         </blockquote>
 
         <div class="mb-4">
+            <h2>HTML Good Practices</h2>
+
+            <p>The following is a quick overview of some best practices for front-end development.
+
+            <p class="lead">Close your tags</p>
+            <p class="ml-4">Leaving some tags open is simply bad practice and you should try to avoid it. Otherwise, you'll encounter validation issues.</p>
+
+            <p class="lead">Never use inline styles</p>
+            <p class="ml-4">When creating your markup, don’t ever dare to think about the styling yet, as it would be very hard to override these styles in case you need to. The only moment when it’s not a sin to add styles is once the page has been completely coded.</p>
+
+            <p class="lead">Include external CSS inside the HEAD tag</p>
+            <p class="ml-4">You can place style sheets anywhere but the HTML specification recommends that they be placed within the document HEAD tag. The primary benefit is that your pages will load faster and you’ll swear less.</p>
+
+            <p class="lead">Consider placing JavaScript at the bottom</p>
+            <p class="ml-4">When loading a script, the browser can’t continue until the entire file has been loaded. If you have JavaScript files in order to add functionality, place those files at the bottom, just before the closing body tag. This is a good performance practice and the results are really noticeable.</p>
+
+            <p class="lead">Never use inline JavaScript</p>
+            <p class="ml-4">Instead, try transferring this code to an external JS file.</p>
+
+            <p class="lead">Use lowercase in you tags</p>
+            <p class="ml-4">It is a good practice to keep your markup lower-case. Capitalizing your markup will work and will probably not affect how your web pages are rendered, but it does affect code readability. Keep it simple.</p>
+
+            <p class="lead">Structure your HTML using appropriate tags</p>
+            <p class="ml-4">Instead of staying with divs for everything, learn and use the new HTML 5 elements like 
+            &lt;header&gt;, &lt;footer&gt;, &lt;article&gt; and others. They work the same way but improve readability with less writing. Avoid creating mountains of divs by using them sparingly and responsibly.</p>
+
+            <p class="lead">Use semantics elements</p>
+            <p class="ml-4">A semantic element describes its meaning to the browser and the developer.</p>
+
+            <p class="lead">Keep the syntax organized</p>
+            <p class="ml-4">As pages might (and will) grow, managing HTML can be hard. There are some quick rules that can help us to keep our syntax clean and organized. These include: Indent nested elements, use double quotes (not single or completely omitted quotes), and omit the values on Boolean attributes</p>
+
+            <p class="lead">Use practical ID and classes names and values</p>
+            <p class="ml-4">You should only give elements an ID attribute if they are unique. Classes can be applied to multiple elements that share the same style properties. It is always preferable to name something ID or class, by the nature of what it is rather than by what it looks like.</p>
+        </div>
+
+        <blockquote class="jumbotron">
+            <p class="lead">For a complete rundown of Front-End development standards and guidelines, view the following guide:</p>
+            <a href="/MarkupGuide/" class="btn btn-primary"><i class="far fa-file-alt"></i> &nbsp; Front-End Development Guidelines</a>
+        </blockquote>
+
+        <div class="mb-4">
             <ul>
                 <li><a href="/templates/login">Login</a></li>
                 <li><a href="/templates/formSteps">Tabbed Form</a>
             </ul>
         </div>
+
+
 
     </div>
 </section>
