@@ -147,11 +147,11 @@
 <div class="row mb-4">
     <div class="col-6">
         <span>	Instead of:</span>
-        <p class="border bg-grey p-4"><code>&lt;img src="example.png" /&gt;</code></p>
+        <p class="border bg-dark p-4"><code>&lt;img src="example.png" /&gt;</code></p>
     </div>
     <div class="col-6">
         <span>	Use:</span>
-        <p class="border bg-grey p-4"><code>&lt;img src="example.png" height=100 width=100 /&gt;</code></p>
+        <p class="border bg-dark p-4"><code>&lt;img src="example.png" height=100 width=100 /&gt;</code></p>
     </div>
 </div>
 
@@ -176,25 +176,25 @@
 
 <p>	Let's say you're discussing a baseball game, and you want to use the team logo every time you refer to a team:</p>
 
-<p class="border bg-grey p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code></p>
+<p class="border bg-dark p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code></p>
 
 <p>	In that example, the team logo is only decorative. If you included alt text:</p>
 
-<p class="border bg-grey p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="Orioles logo" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="Yankees logo" /&gt; Yankees.</code></p>
+<p class="border bg-dark p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="Orioles logo" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="Yankees logo" /&gt; Yankees.</code></p>
 
 <p>	A screenreader would read that as, "The game tonight was the Orioles logo Orioles vs. the Yankees logo Yankees." Annoying. If you leave out the alt text, though, the screenreader will read the file name: "The game tonight was the image orioles.png Orioles vs the image yankees.png Yankees". To prevent that, set blank alt text:</p>
 
-<p class="border bg-grey p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code></p>
+<p class="border bg-dark p-4"><code>The game tonight was the &lt;img src="orioles.png" height=50 width=50 alt="" /&gt; Orioles vs. the &lt;img src="yankees.png" height=50 width=50 alt="" /&gt; Yankees.</code></p>
 
 <p>	When using images decoratively as part of the layout, it's best to use CSS positioning rather than the &lt;img&gt; tag. For instance, if you want a custom image as the bullet point in front of list items, it's common to write:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;img src="bullet.png"&gt; Thing One<br />
+<p class="border bg-dark p-4"><code>	&lt;img src="bullet.png"&gt; Thing One<br />
 	&lt;img src="bullet.png"&gt; Thing Two<br />
 	&lt;img src="bullet.png"&gt; Thing Three</code></p>
 
 <p>	A screenreader reads that as "bullet.png Thing One bullet.png Thing Two bullet.png Thing Three". Also annoying. And using images for bullets, instead of using the semantic markup of unordered or ordered lists (&lt;ul&gt;/&lt;ol&gt;), makes it impossible for assistive tech to jump from item to item easily. It's much better to do:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;ul&gt;<br />
+<p class="border bg-dark p-4"><code>	&lt;ul&gt;<br />
 		&lt;li&gt; Thing One &lt;/li&gt;<br />
 		&lt;li&gt; Thing Two &lt;/li&gt;<br />
 		&lt;li&gt; Thing Three &lt;/li&gt;<br />
@@ -202,7 +202,7 @@
 
 <p>	Then, in your CSS:</p>
 
-<p class="border bg-grey p-4"><code>	li {<br />
+<p class="border bg-dark p-4"><code>	li {<br />
 		background: transparent url(bullet.png) no-repeat; }</code></p>
 
 <p>	Assistive technology will identify this as a list, and do the right thing with it, while the pretty graphics will still be there to enhance your design.</p>
@@ -218,7 +218,7 @@
 
 <p>	For instance:</p>
 
-<p class="border bg-grey p-4"><code>&lt;h1&gt;My Awesome Home Page&lt;/h1&gt;<br /><br />
+<p class="border bg-dark p-4"><code>&lt;h1&gt;My Awesome Home Page&lt;/h1&gt;<br /><br />
 
 	&lt;h2&gt;Recipes&lt;/h2&gt;<br /><br />
 		&nbsp;&lt;h3&gt;Food Recipes&lt;/h3&gt;<br />
@@ -267,15 +267,15 @@
 
 <p>	There are times, though, where some information is conveyed visually, but isn't an image, or where a particular design pattern makes immediate sense visually but makes less sense when read out in a linear fashion. For instance, a site with "you are here" breadcrumbs presented at the top of the page to help the user orient themselves in the information architecture:</p>
 
-<p class="border bg-grey p-4"><code>	Home / Research / 2010 Studies</code></p>
+<p class="border bg-dark p-4"><code>	Home / Research / 2010 Studies</code></p>
 
 <p>	People browsing graphically or visually are pretty used to that convention, but it can be disorienting for a screenreader user to have the page start reading them links, with no hint whether those links are breadcrumbs, on-page navigation, or links they're supposed to follow for more content. You can eliminate the confusion by putting an invisible label in front of the breadcrumbs.</p>
 
 <p>	You can hide text like this with a CSS class: call it <code>".hidden"</code> or <code>".offscreen"</code>, whatever will make it obvious to you what it's for, and then put the text in it. Bootstrap has a predefined class for this: <code>.sr-only</code>. You can't just use the "display: none" or "visibility: hidden" CSS styles: all the commonly-available screenreaders out there obey those, and won't read things contained in elements with those styles. Instead, use absolute positioning and move the hidden content offscreen. Then, add an extra CSS declaration to make sure the absolutely positioned content doesn't disrupt the other content:</p>
 
-<p class="border bg-grey p-4"><code>&lt;div class="offscreen"&gt;You are here:&lt;/div&gt; Home / Research  / 2010 Studies</code></p>
+<p class="border bg-dark p-4"><code>&lt;div class="offscreen"&gt;You are here:&lt;/div&gt; Home / Research  / 2010 Studies</code></p>
 
-<p class="border bg-grey p-4"><code>.offscreen {<br />
+<p class="border bg-dark p-4"><code>.offscreen {<br />
 	position:absolute;<br />
 	left:-10000px;<br />
 	top:auto;<br />
@@ -358,27 +358,27 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	So, instead of doing:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;form&gt;<br />
+<p class="border bg-dark p-4"><code>	&lt;form&gt;<br />
 		Name: &lt;input type="text" name="name" /&gt;<br />
 	&lt;/form&gt;</code></p>
 
 <p>	Do this instead:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;form&gt;<br />
+<p class="border bg-dark p-4"><code>	&lt;form&gt;<br />
 		&lt;label for="name"&gt;Name:&lt;/label&gt; <br />
 		&lt;input name="name" id="name" type="text" /&gt;<br />
 	&lt;/form&gt;</code></p>
 
 <p>	Even better, use WAI-ARIA labeling in addition to HTML form labeling:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;form role="form"&gt;<br />
+<p class="border bg-dark p-4"><code>	&lt;form role="form"&gt;<br />
 		&lt;label for="name"&gt;Name:&lt;/label&gt; <br />
 		&lt;input name="name" id="name" type="text" aria-labelledby="Name:"/&gt;<br />
 	&lt;/form&gt;</code></p>
 
 <p>	If you have commentary or warning text in the middle of your form, it will only be read by screen readers in forms mode if you use the WAI-ARIA markup to indicate it's part of the form:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;label for="test"&gt;Date: &lt;/label&gt;<br />
+<p class="border bg-dark p-4"><code>	&lt;label for="test"&gt;Date: &lt;/label&gt;<br />
 	&lt;input type="text" name="test" id="test" aria-describedby="instructs" /&gt;<br />
 	&lt;span id="instructs"&gt;must be mm/dd/yyyy format&lt;/span&gt;</code></p>
 
@@ -477,11 +477,11 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	<strong>Cognitive access, screenreader access</strong>: No matter what language your content is in, declare it in the headers of the page. For instance, for English content:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;html lang="en"&gt;</code></p>
+<p class="border bg-dark p-4"><code>	&lt;html lang="en"&gt;</code></p>
 
 <p>	If you have a block of text in a language that's not the primary language of the page, declare that, too:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;blockquote lang="de"&gt;</code></p>
+<p class="border bg-dark p-4"><code>	&lt;blockquote lang="de"&gt;</code></p>
 
 <p>	Doing this helps screenreaders and text-to-speech software know how to pronounce the text. (There are other benefits, too, but that's the big one!)</p>
 
@@ -499,29 +499,29 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	<strong>All forms of access</strong>: WAI-ARIA is a method of labeling elements of a page to identify what role that page element is filling. Ultimately, it bridges the gap between the HTML or Javascript being used, and the clever ways in which people use those various elements of HTML and Javascript to produce specific design effects. WAI-ARIA is most useful when a page updates dynamically. For instance, if your page quietly watches in the background for new email being sent to the user's inbox, you can use an ARIA role to announce when that's been updated:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;div role="status"&gt;3 new messages.&lt;/div&gt;</code></p>
+<p class="border bg-dark p-4"><code>	&lt;div role="status"&gt;3 new messages.&lt;/div&gt;</code></p>
 
 <p>	The "status" role is advisory; a well-behaved screenreader will generally announce to the user that it's changed when it gets a chance (that is, when the screenreader isn't reading something else). You can also do a more aggressive notification that will break in to whatever's being read:</p>
 
-<p class="border bg-grey p-4"><code>&lt;div role="alert"&gt;The site is on fire.&lt;/div&gt;</code></p>
+<p class="border bg-dark p-4"><code>&lt;div role="alert"&gt;The site is on fire.&lt;/div&gt;</code></p>
 
 <p>	There are many, many ARIA roles available, and they don't just govern dynamic content. For instance, you can identify what section is the main content of your site:</p>
 
-<p class="border bg-grey p-4"><code>&lt;div role="main"&gt;</code> </p>
+<p class="border bg-dark p-4"><code>&lt;div role="main"&gt;</code> </p>
 
 <p>Or, if you're using HTML5:</p>
 
-<p class="border bg-grey p-4"><code>&lt;main role="main"&gt;</code> </p>
+<p class="border bg-dark p-4"><code>&lt;main role="main"&gt;</code> </p>
 
 <p>Yes, there's still benefit to labeling HTML5!</p>
 
 <p>	You can label the site search box:</p>
 
-<p class="border bg-grey p-4"><code>&lt;div role="search"&gt;</code></p>
+<p class="border bg-dark p-4"><code>&lt;div role="search"&gt;</code></p>
 
 <p>	You can label the section of the layout that serves as the main banner of your site:</p>
 
-<p class="border bg-grey p-4"><code>&lt;div role="banner"&gt;</code></p>
+<p class="border bg-dark p-4"><code>&lt;div role="banner"&gt;</code></p>
 
 <p>	Client implementation of the full range of the WAI-ARIA spec is still a bit spotty across browsers and screenreaders, but even though not every browser and screenreader supports the full range of roles, states, and properties, there is absolutely no downside to using them &mdash; clients that don't understand them will silently ignore them. At the very least, label your main content, your navigation, and your forms, and use ARIA labeling for all inputs in addition to HTML form labeling (aria-labelledby="Label").</p>
 
@@ -536,11 +536,11 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	This doesn't just apply to text sizing. For instance, if you have a <code>&lt;div&gt;</code> that you want to be a reasonable width, it's tempting to define something like:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;div style="width:300px;"&gt;</code></p>
+<p class="border bg-dark p-4"><code>	&lt;div style="width:300px;"&gt;</code></p>
 
 <p>	Don't do this! Instead, do:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;div style="width:40em;"&gt;</code></p>
+<p class="border bg-dark p-4"><code>	&lt;div style="width:40em;"&gt;</code></p>
 
 <p>	The "em" as a unit of measurement is an old typesetting term &mdash; it means the width of the capital character 'M'. Many browsers have wandered pretty far from that definition these days (today the "em" measures height, not width, and can vary from OS to OS) but as a very (very!) rough rule of thumb, you can generally estimate 1.0 to 1.2 characters per em in a fixed-width font, and anywhere between 1.2 and 1.5 characters per em in a proportional-width font.</p>
 
@@ -552,9 +552,9 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	For instance:</p>
 
-<p class="border bg-grey p-4"><code>	&lt;div class="article-body"&gt; (2,000 words of an article) &lt;/div&gt;</code></p>
+<p class="border bg-dark p-4"><code>	&lt;div class="article-body"&gt; (2,000 words of an article) &lt;/div&gt;</code></p>
 
-<p class="border bg-grey p-4"><code>	.article-body { max-width: 70em; }</code></p>
+<p class="border bg-dark p-4"><code>	.article-body { max-width: 70em; }</code></p>
 
 <p>	This might cause wide left and right margins if someone's using higher resolution or smaller font sizes and running a browser window full-screen &mdash; but wide margins are still better for readability than long lines.</p>
 
@@ -617,7 +617,7 @@ password, <a href="#">click here</a>", with "click here" being the link? Those c
 
 <p>	If you create fake page elements, make sure you use ARIA roles so screenreader and keyboard users can access them: It's becoming increasingly common on dynamic webpages to create "fake" page elements (links or buttons) using spans, CSS, and JavaScript, instead of native HTML elements. Unless you label these with appropriate roles, screenreader and keyboard users won't be able to interact with the page elements at all.  For example:</p>
 
-<p class="border bg-grey p-4"><code>&lt;span style="background-color: #ddd; border: medium outset white;" role="button" tabindex="0" onkeydown="if(event.keyCode==13 || event.keyCode==32) alert('You activated me with the keyboard');" onclick="alert('You clicked me with the mouse');"&gt;Push Me&lt;/span&gt;</code></p>
+<p class="border bg-dark p-4"><code>&lt;span style="background-color: #ddd; border: medium outset white;" role="button" tabindex="0" onkeydown="if(event.keyCode==13 || event.keyCode==32) alert('You activated me with the keyboard');" onclick="alert('You clicked me with the mouse');"&gt;Push Me&lt;/span&gt;</code></p>
 
 <p>	Without <code>role="button" tabindex="0"</code>, this button won't be accessible to screenreader or keyboard users. <code>role="button"</code> tells the browser to treat this span as if it were a button; <code>tabindex="0"</code> makes sure that it's accessible via the keyboard (since under normal circumstances, a plain span would not be).</p>
 
