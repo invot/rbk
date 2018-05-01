@@ -66,7 +66,7 @@
     <p>Likewise, third-party code and libraries should never be modified and their original source and the license must be documented and be appropriate for a project. Any changes to third party code must be agreed upon and must be for specific reasons. If changes are mandated by bug fixes then the appropriate upstream project should have the changes submitted (assuming the code is part of an open source repository).</p>
     <p>Library code should be treated as an external dependency and should be considered something that may need to be wholesale updated or replaced at a later time.</p>
     <p>Inclusion of any third-party code should be carefully considered and verified with the project team as the appropriate solution to a given problem. &quot;Adding another plug-in&quot; is not always the best solution. Finally, selection of third party libraries should be done carefully and not be out of alignment with the nature of the problem being addressed. </p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Note:</strong><br>
         Please see the <a href="#javascript_javascript_libraries_frameworks_and_plugins">JavaScript section</a> for more information about selection of third party code in a project.</p>
     </aside>
@@ -109,7 +109,7 @@
     <h4 id="html-standards-and-browser-support">HTML Standards and Browser Support</h4>
     <p>All markup will be written using the latest HTML5 markup specifications from the W3C, as implemented by browsers and devices that meet project requirements. When creating markup be sure that the target environments support the techniques being implemented, or that there is a fall-back plan.</p>
     <p>Please use a common <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">HTML5 polyfill</a> or HTML5 Shiv to enable styling and recognition of HTML5 elements in older devices&#39; browsers.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Learn more:</strong><br>
         You will frequently hear the term &quot;polyfill&quot;, &quot;shim&quot;, or &quot;shiv&quot; passed around where backwards compatibility for HTML5 and older browsers is concerned. <a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">What is a Polyfill</a>?</p>
         <p>Please note that a tool like <a href="http://modernizr.com">Modernizr</a> will include a HTML5 Shiv, but Modernizr does much more than this — so unless you need the feature detection features it provides, it may be better to simply include the the <a href="https://github.com/afarkas/html5shiv">HTML5shiv</a>.</p>
@@ -117,14 +117,14 @@
 
     <h4 id="doctype">Doctype</h4>
     <p>Always include a proper doctype to trigger standards mode. Omitting the doctype <a href="https://developer.mozilla.org/en-US/docs/Quirks_Mode_and_Standards_Mode">triggers quirks mode</a> and should always be avoided. The HTML5 doctype is simple and easy to remember.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;!doctype html&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;!doctype html&gt;</code></pre>
     <h4 id="character-encoding">Character Encoding</h4>
     <p>All markup should be delivered as UTF-8, since it has the best support for internationalization. The character encoding should be designated in both the HTTP header and the head of the document via a meta tag. If the server happens to omit the HTTP header, browsers can take a guess at the character encoding and begins parsing and rendering the markup in a particular way. If there are inconsistencies, the browser will re-parse and re-render, throwing away all that work and starting over if it encounters the meta tag and its guess was incorrect. As a best practice, always put the meta tag as early in the <code>&lt;head&gt;</code> tag as early as possible — however server-settings are ideal.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;meta charset=&quot;UTF-8&quot;&gt;</code></pre>
     <h4 id="optional-and-self-closing-tags">Optional and Self-closing Tags</h4>
     <p>While current standards designate certain closing elements and even document level elements as optional, use all open and closing elements nested in the correct ways to ensure maximum compatibility and clarity of document structure. </p>
     <p>Generally speaking, self-closing XML (i.e. XHTML, XML) style tags are not necessary.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;!-- closing &quot;/&quot; is not necessary --&gt;
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;!-- closing &quot;/&quot; is not necessary --&gt;
     &lt;img src=&quot;/logo.png&quot; alt=&quot;Project Name&quot;&gt;
 
     &lt;!-- include closing tags, however --&gt;
@@ -134,7 +134,7 @@
         &lt;li&gt;voluptatum ratione suscipit.&lt;/li&gt;
     &lt;/ul&gt;</code></pre>
     <p>Unusual markup (or indeed, invalid) can lead to bugs in page rendering, DOM interpretation, or even how styles are applied, so it should be avoided whenever possible.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Note:</strong><br>
         While a library like jQuery might recognize tags that are not typically self closed (e.g. <code>&lt;div /&gt;</code>), it is recommended to avoid this usage directly in your markup, as some browsers choke on it.</p>
     </aside>
@@ -144,7 +144,7 @@
     <p>If it becomes necessary, please have reasons for invalid markup — otherwise it is just sloppy code. </p>
     <h4 id="indentation-in-html">Indentation in HTML</h4>
     <p>Indent nested elements and tags with single indentation settings, whatever they may be, for each level in the hierarchy of the document.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;div&gt;
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;div&gt;
         &lt;p&gt;Lorem ipsumLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.&lt;/p&gt;
         &lt;ul&gt;
             &lt;li&gt;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,&lt;/li&gt;
@@ -156,19 +156,19 @@
     &lt;/div&gt;</code></pre>
     <h4 id="html5-elements">HTML5 Elements</h4>
     <p>To provide additional semantic value to your documents, make use of HTML5 elements such as <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code> where appropriate. However, in cases where the HTML needs to be as backwards-compatible as possible, do not apply IDs or classes to them, since older browsers do not understand these elements by default and will not apply styling to them.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;header&gt;
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;header&gt;
         &lt;div class=&quot;site-header&quot;&gt;
             ...
         &lt;/div&gt;
     &lt;/header&gt;</code></pre>
     <h4 id="attribute-values">Attribute Values</h4>
     <p>Use quotes to surround all attribute values in HTML, despite quotes being optional in HTML5. This maintains consistency between attribute values that contain whitespace and those that don&#39;t.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;form class=&quot;registration module&quot; action=&quot;/register&quot; method=&quot;POST&quot;&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;form class=&quot;registration module&quot; action=&quot;/register&quot; method=&quot;POST&quot;&gt;</code></pre>
     <h4 id="ids-vs-classes">IDs vs. Classes</h4>
     <p>HTML elements can be identified by using the <code>id</code> and <code>class</code> attributes. An ID is a unique identifier for that particular element; no other element on the page should use the same ID.</p>
     <p>This uniqueness allows <code>&lt;label&gt;</code> elements to associate themselves with a particular input and URLs to jump to a particular scroll position on a page.</p>
     <p>Classes are not unique. The same class can be used on multiple elements within a page, and a single element can have more than one class, in a space delimited list.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;ul id=&quot;categories&quot;&gt;
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;ul id=&quot;categories&quot;&gt;
         &lt;li class=&quot;category&quot;&gt;Jackets&lt;/li&gt;
         &lt;li class=&quot;category specials&quot;&gt;Accessories&lt;/li&gt;
         &lt;li class=&quot;category&quot;&gt;Shoes&lt;/li&gt;
@@ -183,7 +183,7 @@
     <h4 id="tables">Tables</h4>
     <p>Tables should not be used for page layout; only use them when you need <strong>to display tabular data</strong>. Tables provide an important semantic association (used mostly by screen readers for the sight-impaired) between row/column headers and their data, so use <code>&lt;table&gt;</code> rather than other elements when displaying multiple records of data.</p>
     <p>The <code>&lt;caption&gt;</code> element is the recommended way to describe a table for both sighted and sight-impaired users, though this can also be done less semantically in the normal page text around the table. Use the <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code> elements to denote which row contains column headers so when a user prints the website and the table runs onto another page, browsers can display the <code>&lt;thead&gt;</code> on each page for easier readability. Remember to use the <code>scope</code> attribute on the <code>&lt;th&gt;</code> element to indicate whether the header applies to the row or column.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;table&gt;
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;table&gt;
         &lt;caption&gt;First two U.S. presidents&lt;/caption&gt;
         &lt;thead&gt;
             &lt;tr&gt;
@@ -210,7 +210,7 @@
     <p>Do not nest the HTML <code>form</code> element tag.</p>
     <h4 id="input-labels">Input Labels</h4>
     <p>All input fields should be associated with a <code>&lt;label&gt;</code> element. The <code>for</code> attribute of the <code>&lt;label&gt;</code> element should contain the ID of the corresponding input field. This means the input field will receive focus when a user clicks the label and also enables screen readers for sight-impaired users to read out an appropriate description of the input field.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;label for=&quot;home-address&quot;&gt;Home Address&lt;/label&gt;
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;label for=&quot;home-address&quot;&gt;Home Address&lt;/label&gt;
     &lt;input id=&quot;home-address&quot; type=&quot;text&quot;&gt;</code></pre>
     <h3 id="markup-deliverables">Markup Deliverables</h3>
     <p>Typically HTML deliverables are incorporated into Content Management Systems or application delivery platforms as templates. A plan for incorporation of templates that leverage patterns created during the markup creation phase should be followed and matching types of pages to templates that were created, so that an association between the source markup and the destination markup can be maintained over time.</p>
@@ -293,7 +293,7 @@
     <li>Typography adjustments</li>
     <li>Normalizing code </li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p><strong>Note:</strong><br>External libraries should always be assessed for the pros/cons and potential benefits, vs. the barrier to entry and level of effort involved in their usage. </p>
     <p>For instance, a grid system may not match the grids in the design, and it may not be adjustable enough for a given design.</p>
     </aside>
@@ -308,7 +308,7 @@
     <li>How page components might be broken down or re-used</li>
     </ul>
     <p>On a large site never develop using a single CSS style sheet, though a single file served for a page is best. To this end, use CSS preprocessors to break style sheets into smaller, better organized files, or the use of a build process to combine files for serving via HTTP.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Note:</strong><br>
         It is a great idea to approach front-end development like a set of <a href="http://patternlab.io/">reusable components</a> are being created. This matches how they are designed, how they must adapt to responsive layouts, and how they will be implemented inside content management or other server-side frameworks.</p>
         <p><a href="http://getbootstrap.com/">Bootstrap</a> is a commonly cited framework that uses an approach similar to this.</p>
@@ -322,7 +322,7 @@
     <p>What follows are some basic concepts for standardization of CSS code. Naturally, feel free to fork, update per project, and even issue pull requests for further discussion based upon experience.</p>
     <h4 id="inclusion">Inclusion</h4>
     <p>Use the <code>&lt;link&gt;</code> tag to include all your style sheets in the <code>&lt;head&gt;</code> of the document. For optimal page performance, concatenate your CSS into as few files as possible and do not use the <code>&#64;import</code> command to include other style sheets, as this will fire an additional HTTP request and block page rendering until its completion.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot;&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot;&gt;</code></pre>
     <h4 id="formatting-css">Formatting CSS</h4>
     <p>Basic rules for formatting CSS files:</p>
     <ul>
@@ -349,7 +349,7 @@
     <p>The attributes within a selector can be alphabetized for easy scanning and so that compression algorithms like gzip have a greater chance of finding repeatable patterns.</p>
     <p>Some examples:</p>
 
-    <pre class="border bg-grey p-2"><code class="language-css"><span class="class">.content</span> <span class="rules">{
+    <pre class="border bg-dark text-light p-2"><code class="language-css"><span class="class">.content</span> <span class="rules">{
         <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">2</span>%</span></span>;
     <span class="rule">}</span></span>
 
@@ -371,7 +371,7 @@
     <h4 id="specificity">Specificity</h4>
     <p>Use the minimum specificity required to achieve the desired style. It can be difficult to quickly read and locate styles or even bugs with heavily nested styles in the CSS.</p>
     <p>The ID is the most specific selector, since it can only match one element, and the class is a close second. Use those whenever possible rather than HTML tag names. </p>
-    <pre class="border bg-grey p-2"><code class="language-css">/* BAD */
+    <pre class="border bg-dark text-light p-2"><code class="language-css">/* BAD */
     button#back-button { ... }
     .popular ul li a { ... }
     .popular &gt; ul &gt; li &gt; a { ... }
@@ -381,7 +381,7 @@
     .popular-link { ... }
     .unpopular-link { ... }</code></pre>
     <p>As a rule, CSS is most maintainable with the simplest selectors possible. Try applying a class to the element you want to target instead.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p><strong>Note:</strong><br>
     While performance of CSS selectors has been a debated topic, browsers perform quite well on most types of selectors. That said, specificity reduced to the most simple name to get the desired results is the best idea in most cases <strong>for readability</strong> and <strong>maintainability</strong>.</p>
     </aside>
@@ -395,7 +395,7 @@
     <h4 id="vendor-prefixes">Vendor Prefixes</h4>
     <p>When using vendor prefixed features, put the standardized rule at the end to ensure browsers optimize and use the standard if they recognize it. </p>
     <p>For example: </p>
-    <pre class="border bg-grey p-2"><code class="language-css"><span class="class">.thing</span> <span class="rules">{
+    <pre class="border bg-dark text-light p-2"><code class="language-css"><span class="class">.thing</span> <span class="rules">{
         <span class="rule"><span class="attribute">-webkit-transition</span>:<span class="value"> all <span class="number">100</span>ms</span></span>;
         <span class="rule"><span class="attribute">transition</span>:<span class="value"> all <span class="number">100</span>ms</span></span>;
     <span class="rule">}</span></span></code></pre>
@@ -411,14 +411,14 @@
     <li>create an element inside it to take the padding and border. This is the only case where the inefficient universal selector (<code>*</code>) is used.</li>
     </ol>
     <p>Example:</p>
-    <pre class="border bg-grey p-2"><code class="language-css">* <span class="rules">{
+    <pre class="border bg-dark text-light p-2"><code class="language-css">* <span class="rules">{
         <span class="rule"><span class="attribute">-moz-box-sizing</span>:<span class="value"> border-box</span></span>;
         <span class="rule"><span class="attribute">-webkit-box-sizing</span>:<span class="value"> border-box</span></span>;
         <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;
     <span class="rule">}</span></span></code></pre>
     <h4 id="coding-patterns">Coding Patterns</h4>
     <p>There are a number of popular design patterns for naming conventions on selectors, groupings or extensions of styles in CSS files. Sometimes these are of value and may be used on projects as long as the developers are on board and they are used consistently by the team. </p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>Examples of pattern systems include BEM, SMACSS, Object Oriented CSS, Atomic design, and others.</p>
     </aside>
 
@@ -455,7 +455,7 @@
     <p>Components are a high level concept for organizing CSS files and rules. A component simply means a grouped set of rules pertaining to an object or set of related objects on a page.</p>
     <p>Additionally, encapsulating these components into distinct files is a great option. Within this file, using a naming convention is a tremendous help here for code maintainability and readability. </p>
     <p>Group styles under a simple name-space using a <strong>prefix-suffix-modifier</strong> type pattern such as:</p>
-    <pre class="border bg-grey p-2"><code class="language-css">/* core component */
+    <pre class="border bg-dark text-light p-2"><code class="language-css">/* core component */
     .component { ... }
 
     /* component elements */
@@ -482,17 +482,17 @@
     </ul>
     <h5 id="modifiers">Modifiers</h5>
     <p>If you need to extend an existing component then create distinct modifier classes with the prefix <code>mod-</code> to easily indicate that it is a modifier and not a complete style. Using the <code>mod</code> name prefix prevents confusing the class with a full class.</p>
-    <pre class="border bg-grey p-2"><code class="language-css">.mod-modifier-a { ... }
+    <pre class="border bg-dark text-light p-2"><code class="language-css">.mod-modifier-a { ... }
     .mod-modifier-b { ... }</code></pre>
     <p>Then, when used in the HTML, the class stands out:</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;div class=&quot;component-content mod-modifier-a&quot;&gt;...&lt;/div&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;div class=&quot;component-content mod-modifier-a&quot;&gt;...&lt;/div&gt;</code></pre>
     <p>This is a strong technique because the modifier classes can stand on their own in the CSS. Further, they may also be altered via more complex rules:</p>
-    <pre class="border bg-grey p-2"><code class="language-css">.component-header.mod-modifier-a { ... }</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-css">.component-header.mod-modifier-a { ... }</code></pre>
     <p>This is simplistic and easy to follow, understand, and expand upon.</p>
     <h5 id="state">State</h5>
     <p>A <em>state</em> for an element or component is presentation information for a given component. This may be a dynamic state set by JavaScript or a user interaction, but not always. It could also be a preset from the server or the results after a transaction. State modifiers are a great way for a distinct class to be provided to engineers unfamiliar with the design to be provided hooks for various things. This is slightly different than JS specific classes, however.</p>
     <p>State rules will use the <code>is-</code> prefix.</p>
-    <pre class="border bg-grey p-2"><code class="language-css">.component-group.is-full { ... }
+    <pre class="border bg-dark text-light p-2"><code class="language-css">.component-group.is-full { ... }
     .component-group.is-expired { ... }</code></pre>
     <p>Treating components&#39; <em>state</em> as a modifier that is boolean (i.e. <code>true</code> or <code>false</code>) also:</p>
     <ul>
@@ -504,12 +504,12 @@
     <p>It&#39;s best to try to restrict these state indicators as being restricted to a specific component.</p>
     <h5 id="javascript-js-prefix">JavaScript (JS) Prefix</h5>
     <p>The usage of a <code>js-</code> prefix is present in the markup but should never really appear in the CSS file itself. If the styles are being set, then use modifiers or state type classes.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;button class=&quot;component-button js-execute&quot;&gt;...&lt;/button&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;button class=&quot;component-button js-execute&quot;&gt;...&lt;/button&gt;</code></pre>
     <p>The <code>js-execute</code> rule should not appear in the CSS file, but only in JS files they are tied to behavior. These are events, verbs, or action related, and are access points for JavaScript not a toggle or state changer. It&#39;s best to think of these classes as closer to and ID attribute in the HTML.</p>
     <h5 id="utilities">Utilities</h5>
     <p>A utility is a type of component modifier that is specifically designed to be used on more than one component type. If it was restricted to a single component, it would simply be a modifier.</p>
     <p>Utilities will use the prefix of <code>u-</code> and should serve only the modifier purpose intended without side effects when applied to any component, or component descendant.</p>
-    <pre class="border bg-grey p-2"><code class="language-css"><span class="class">.u-warning</span> <span class="rules">{
+    <pre class="border bg-dark text-light p-2"><code class="language-css"><span class="class">.u-warning</span> <span class="rules">{
 
     <span class="rule">}</span></span>
     <span class="class">.u-scroll-infobox</span> <span class="rules">{
@@ -586,7 +586,7 @@
     <li>Finally, settings and configuration options (e.g. paths to services, debug flags, duration settings, minimum or maximum values, etc.) are common things to set in a centralized, distinct place.</li>
     </ul>
     <p>Bottom line, please understand what the JavaScript does and how it does it if you are including third party code.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Note:</strong><br>
         Client buy-in may be necessary for the usage of JavaScript for some features. It may be a forgone conclusion but usage of libraries or custom code should be discussed with the team and client technical leads to be certain the teams are on the same page.</p></aside>
 
@@ -597,7 +597,7 @@
     <li><strong>Libraries</strong> are code you use within your structure, featuring code that is available for you call upon.</li>
     <li><strong>Frameworks</strong> are code collections that serve specific purposes in a particular way, and call your code that is included following their patterns. </li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey"><p><strong>Learn more:</strong><br>
+    <aside class="card p-4 mb-4 bg-white"><p><strong>Learn more:</strong><br>
     The basic idea is an &quot;inversion of control&quot; in the code. This is debatable, but something like jQuery could be said to be a library, while Angular, React, or Backbone could be a framework.</p></aside>
 
     <p>Either way, this is typically <em>third party code</em> that should be carefully considered when it is determined to be included in a project or not.</p>
@@ -631,17 +631,13 @@
     <h4 id="inclusion-of-code">Inclusion of Code</h4>
     <p>Use external JavaScript files. <strong>Do NOT include JavaScript in-line in the page unless there is a good reason</strong>.</p>
     <p>Use the <code>&lt;script&gt;</code> tag to include your JavaScript files at the bottom of your HTML document just before the closing <code>&lt;/body&gt;</code> tag. For optimal page performance, concatenate your JavaScript into as few files as possible.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">&lt;script src=&quot;bundle.js&quot;&gt;&lt;/script&gt;</code></pre>
     <ul>
     <li>This should link to concatenated and minified, finalized JavaScript files. </li>
     <li>Enable source maps to assist with debugging and testing. </li>
     </ul>
     <p>In development environments, this may point at a non-optimized file, however having techniques in place to toggle optimized files on and off is often beneficial.</p>
     <p>A reference similar to this may need to include a build-specific file name based upon a hash or something along those lines for HTTP cache purposes.</p>
-    <aside class="card p-4 mb-4 bg-grey">
-        <p><strong>Learn more:</strong><br>
-        For information about build tools that help with these techniques, please see the <a href="#appendix_appendix">Appendix</a>.</p>
-    </aside>
 
     <h5 id="loading-files-on-demand">Loading Files On Demand</h5>
     <p>On some sites it may be appropriate to load a single JavaScript file with all dependencies bundled together, or it may be more appropriate (such as in a very large SPA) to load files <em>on demand</em>, as they are needed, asynchronously.</p>
@@ -663,7 +659,7 @@
     <li>Else/else go on the same line as the brace.</li>
     <li>Use type strict checks with <code>===</code> as opposed to <code>==</code> whenever possible.</li>
     </ul>
-    <pre class="border bg-grey p-2"><code class="language-javascript"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) {
+    <pre class="border bg-dark text-light p-2"><code class="language-javascript"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arr.length; i &lt; len; i++) {
         <span class="keyword">var</span> example = <span class="number">1</span>;
         <span class="keyword">if</span> (example === i) {
             <span class="comment">// we are looping</span>
@@ -672,12 +668,12 @@
         }
     }</code></pre>
     <p>To maximize readability without worrying about which boolean operators bind more tightly than others, each segment of a boolean expression should be enclosed in parentheses.</p>
-    <pre class="border bg-grey p-2"><code class="language-javascript"><span class="keyword">if</span> ((allowUpdate) &amp;&amp; ((user.isAdmin) || (user.role === item.owner))) {
+    <pre class="border bg-dark text-light p-2"><code class="language-javascript"><span class="keyword">if</span> ((allowUpdate) &amp;&amp; ((user.isAdmin) || (user.role === item.owner))) {
         <span class="comment">// do something</span>
     }</code></pre>
     <h4 id="variable-declaration">Variable Declaration</h4>
     <p>To avoid confusion between global and local variables, declare each variable on its own line with the <code>var</code> keyword. Do not use a single <code>var</code> keyword and then chain several variable declarations onto it separated by a comma.</p>
-    <pre class="border bg-grey p-2"><code class="language-javascript"><span class="keyword">var</span> windowWidth;
+    <pre class="border bg-dark text-light p-2"><code class="language-javascript"><span class="keyword">var</span> windowWidth;
     <span class="keyword">var</span> windowHeight;
     <span class="keyword">var</span> currentVal = $(<span class="keyword">this</span>).val();
     <span class="keyword">var</span> min = parseInt($(<span class="keyword">this</span>).attr(<span class="string">'min'</span>), <span class="number">10</span>);</code></pre>
@@ -699,7 +695,7 @@
     <h5 id="variable-scope">Variable Scope</h5>
     <p>Minimize the use of <code>global</code> or <code>window</code> level variables and name-spaces. Pollution of the global name-space is error prone and a bad practice.</p>
     <p>If referencing a <code>window</code> or <code>global</code> level variable that isn&#39;t obvious, please comment as such or explicitly state it.</p>
-    <pre class="border bg-grey p-2"><code class="language-javascript"><span class="keyword">var</span> window.thing = {};</code></pre>
+    <pre class="border bg-dark text-light p-2"><code class="language-javascript"><span class="keyword">var</span> window.thing = {};</code></pre>
     <h5 id="variable-names-and-types">Variable Names and Types</h5>
     <p>Always use meaningful variable names that can be read as words, not as silly abbreviations only you understand.</p>
     <ul>
@@ -709,7 +705,7 @@
     <li>Cached jQuery objects can be prefixed with <code>$</code>.</li>
     <li>Use shorthand versions of empty <code>Arrays</code> and <code>Objects</code>.</li>
     </ul>
-    <pre class="border bg-grey p-2"><code class="language-javascript"><span class="comment">// some examples</span>
+    <pre class="border bg-dark text-light p-2"><code class="language-javascript"><span class="comment">// some examples</span>
     <span class="keyword">var</span> exampleValue = <span class="string">'my example variable value'</span>;
     <span class="keyword">var</span> numberOfTimes = <span class="number">3</span>;
     <span class="comment">// booleans</span>
@@ -722,25 +718,25 @@
     <span class="keyword">var</span> newArray = [];</code></pre>
     <h5 id="settings-constants">Settings, Constants</h5>
     <p>Put settings together in obvious places such as an Object literal space inside your module. Make settings that are possibly to be considered &quot;constants&quot; to be obvious -- some developers like to use <code>ALLCAPS</code>.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Learn more:</strong><br>
         Did you know that <a href="https://strongloop.com/strongblog/es6-variable-declarations/">ES6 now features</a> real life <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">constants</a>?</p>
     </aside>
 
     <h5 id="feature-detection">Feature Detection</h5>
     <p>Always test for the existence of a browser API, function, or object property before you use it, and make sure the user experience is still functional (to the extent possible) if it&#39;s not found. Rely on JavaScript-based feature detection rather than server-side device detection because it&#39;s more robust, easily maintained, and future-proof.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Learn More:</strong><br>The goto library for feature detection is of course <a href="http://modernizr.com/">Modernizr</a>.</p>
     </aside>
 
     <h5 id="limit-events-use-event-delegation">Limit Events — Use Event Delegation</h5>
     <p>It is always preferable to use fewer events being bound to objects on a page as possible. Too many events bound on a page can mean memory leaks or just an accumulation of handlers bound to DOM elements which becomes less and less efficient over time. Additionally, event delegation has the added benefit of persisting events over dynamic page updates when items are added or removed from the DOM.</p>
     <p>With jQuery this is easy, simply use the <code>on</code> method with a selector:</p>
-    <pre class="border bg-grey p-2"><code class="language-javascript">$(<span class="string">'body'</span>).on(<span class="string">'click'</span>, <span class="string">'a.scroller'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
+    <pre class="border bg-dark text-light p-2"><code class="language-javascript">$(<span class="string">'body'</span>).on(<span class="string">'click'</span>, <span class="string">'a.scroller'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span>{</span>
     <span class="comment">// this only runs if the a.scroller is matched</span>
     });</code></pre>
 
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Learn more:</strong><br>The jQuery API site has an excellent overview of the <a href="http://api.jquery.com/on/">on</a> method.</p>
     </aside>
 
@@ -777,7 +773,7 @@
     </ul>
     <p>Having explicit control over the page life-cycle is preferable to having a dozen jQuery <code>document.ready()</code> statements all competing for the first chance to execute on a page.</p>
     <p>Effectively the application core, it should kick off the rest of the code to run. Typically this has module-management baked in in some way.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Note:</strong><br>One way to control which code runs on a page is through <a href="http://paulirish.com/2009/markup-based-unobtrusive-comprehensive-dom-ready-execution/">DOM-based routing</a>.</p>
     </aside>
 
@@ -804,7 +800,7 @@
     <li><a href="https://leanpub.com/understandinges6/read/#leanpub-auto-modules">ES6 modules</a></li>
     </ul>
     <p><strong>Frameworks</strong> will have their own unique set ups.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Learn more:</strong><br>
         ES6 has just recently standardized how script loading, importing, and more about <a href="https://leanpub.com/understandinges6/read/#leanpub-auto-modules">how modules will be handled</a> as part of the standard spec going forward.</p>
     </aside>
@@ -823,12 +819,12 @@
     <li>Remove code that is no longer used. Remove excess &quot;noise&quot; or distractions from source code such as large commented out blocks of unused code. Source control can solve problems like this.</li>
     <li>Have <code>console</code> and debugging statements be removed or a plan in place for suppression during the build or deployment.</li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
         <p><strong>Learn more:</strong><br><a href="http://code.tutsplus.com/tutorials/the-essentials-of-writing-high-quality-javascript--net-15145">The Essentials of Writing High Quality JavaScript</a> is an older article but still holds up today.</p>
     </aside>
 
     <p>Delivery of a flat folder full of JavaScript files is not advised.</p>
-    <pre class="border bg-grey p-2"><code class="language-markup">├── _assets/
+    <pre class="border bg-dark text-light p-2"><code class="language-markup">├── _assets/
     │   ├── js/
     │   │   ├── app.js
     │   │   ├── tools.js
@@ -902,7 +898,7 @@
     <li>What if a device went off-line during usage of a feature?</li>
     <li>The best ways to detect support for various features (e.g. Modernizr, etc.).</li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>Brad Frost&#39;s <a href="https://bradfrost.github.io/this-is-responsive/patterns.html">Responsive Design Patterns</a> and <a href="https://bradfrost.github.io/this-is-responsive/resources.html">Responsive Design Resources</a> are two great resources that continue to grow due to user contributions.</p>
     </aside>
 
@@ -912,7 +908,7 @@
     <p>They must match the design in terms of flexibility.</p>
     <p>It&#39;s critical a developer learn the basics of how grid systems</p>
     <p>It may be beneficial to learn the coming Flexbox techniques as well.</p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>While using a Framework isn&#39;t always the way to go, there is much to be learned from examining <a href="https://bradfrost.github.io/this-is-responsive/resources.html#frameworks">how they work and how they are put together</a>.</p>
     </aside>
 
@@ -957,7 +953,7 @@
     <h4 id="media-queries-and-css-breakpoints">Media Queries and CSS Breakpoints</h4>
     <p>Added as part of the CSS3 specification, <strong>media queries</strong> consist of a media type and at least one expression of a media feature (such as height, width and orientation) that describe the conditions under which a set of CSS rules apply. </p>
     <p>For example:</p>
-    <pre class="border bg-grey p-2"><code class="language-css"><span class="at_rule">&#64;<span class="keyword">media</span> screen (min-width: <span class="number">300</span>px) and (max-width: <span class="number">800</span>px) </span>{
+    <pre class="border bg-dark text-light p-2"><code class="language-css"><span class="at_rule">&#64;<span class="keyword">media</span> screen (min-width: <span class="number">300</span>px) and (max-width: <span class="number">800</span>px) </span>{
     <span class="class">.some-selector</span><span class="rules">{
         <span class="comment">/* CSS declarations go here */</span>
     <span class="rule">}</span></span>
@@ -974,7 +970,7 @@
     <li>Popular devices will come and go and even within devices the specifications will change over time. </li>
     <li>Avoid orientation/resolution based specifications in favor of width based ones (remember you are <strong>not</strong> targeting devices!). </li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p><a href="https://bradfrost.github.io/this-is-responsive/resources.html#media-queries">Media Query Resources</a></p>
     <p><a href="http://www.smashingmagazine.com/2012/03/device-agnostic-approach-to-responsive-web-design/">A Device Agnostic Approach to Responsive Web Design</a> is a great read on responsive techniques that do not favor one device over another, and are driven by content elements.</p>
     </aside>
@@ -1006,7 +1002,7 @@
     </ul>
     <p>Generally speaking smaller screen designs are a bit less complex (fewer images, effects, etc). Thus as the screens get larger the complexity tends to increase, conveniently lending to an additive approach to styling, very much in line with a mobile first pattern. </p>
     <p>An example of working upwards in a CSS file might be:</p>
-    <pre class="border bg-grey p-2"><code class="language-css">/* GENERAL STYLES */
+    <pre class="border bg-dark text-light p-2"><code class="language-css">/* GENERAL STYLES */
     .example {...}
 
     /* SECTION SPECIFIC STYLES - aimed at the smallest devices*/
@@ -1029,7 +1025,7 @@
         /* might need larger font sizes at largest screen sizes */
     }
     }</code></pre>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>Note: the breakpoints specified above are <strong>not</strong> intended to be recommended breakpoints, but rather just illustrative of this general concept.</p>
     </aside>
 
@@ -1067,7 +1063,7 @@
     <h4 id="responsive-images">Responsive Images</h4>
     <p>Currently there is little to no native support for responsive images. </p>
     <p>The proposal with the most traction appears to be the <code>&lt;picture&gt;</code> element and related <code>srcset</code> and <code>sizes</code> attributes. </p>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>You can read about this element and the evolution and standard at <a href="http://responsiveimages.org/">ResponsiveImages.org</a></p>
     <p>At this time the best application of the <code>&lt;picture&gt;</code> is with the <a href="https://scottjehl.github.io/picturefill/">Picturefill polyfill</a>.</p>
     </aside>
@@ -1101,7 +1097,7 @@
     <li>Pros: vectors can be manipulated by CSS and/or JavaScript and allows for complex filters, animations and transitions.</li>
     <li>Cons: SVG is only supported by IE9+</li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey"><p><a href="http://www.filamentgroup.com/lab/grumpicon-workflow.html">Grumpicon</a> is a script that will detect SVG support and server the appropriate CSS (or needed fall back CSS code to assure compatibility.</p></aside>
+    <aside class="card p-4 mb-4 bg-white"><p><a href="http://www.filamentgroup.com/lab/grumpicon-workflow.html">Grumpicon</a> is a script that will detect SVG support and server the appropriate CSS (or needed fall back CSS code to assure compatibility.</p></aside>
 
     <h4 id="other-categories">Other Categories</h4>
     <p>Virtually everything can change when screen sizes change:</p>
@@ -1118,14 +1114,14 @@
     <li>Advertising types</li>
     <li>Performance metrics</li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>More thoughts and ideas: <a href="http://www.lukew.com/ff/entry.asp?1514">Multi-device Layout Patterns</a></p></aside>
 
     <h5 id="navigation-changes">Navigation Changes</h5>
     <p>Large horizontal navigation and mega-drop downs are not always practical on smaller screens. Frequently this means off-canvas navigation, collapsing menus into select boxes, or other approaches such as a full-screen overlay.</p>
 
 
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p><a href="http://www.smashingmagazine.com/2012/02/progressive-and-responsive-navigation/">Progressive and Responsive Navigation</a> is a great example of modifying the types of menu based on screen size.</p>
     <p><a href="http://bradfrost.com/blog/web/responsive-nav-patterns/">Responsive Navigation Patterns</a> and <a href="http://bradfrost.com/blog/web/complex-navigation-patterns-for-responsive-design/">Complex Navigation Patterns</a></p>
     </aside>
@@ -1139,7 +1135,7 @@
     <li>Have CSS rules which collapse the tables.</li>
     <li>Sometimes JavaScript might be used to hide/show certain less critical columns, however this does add overhead.</li>
     </ul>
-    <aside class="card p-4 mb-4 bg-grey">
+    <aside class="card p-4 mb-4 bg-white">
     <p>The always excellent Brad Frost has a nice collection of links regarding <a href="https://bradfrost.github.io/this-is-responsive/resources.html#tables">responsive data tables</a>.</p>
     </aside>
     </section>
